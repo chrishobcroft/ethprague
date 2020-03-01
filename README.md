@@ -1,2 +1,8 @@
-# ethprague-website
-placeholder website of ETHPrague
+# ETHPrague Website
+
+## Project setup
+```
+npm install
+npm run serve
+npm run build
+```
