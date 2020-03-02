@@ -66,17 +66,6 @@ export default {
     text-align: center;
   }
 
-  a {
-    /*color: #ffffff;*/
-    /*text-decoration: none;*/
-    /*border-bottom: 2px dotted;*/
-    /*font-weight: 600;*/
-  }
-
-  a:hover {
-    /*color: #f42200;*/
-  }
-
   .logo {
     filter: grayscale(100%);
     width: 150px;

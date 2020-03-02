@@ -30,24 +30,6 @@ export default {
     background-size: cover;
   }
 
-  /*body {*/
-  /*  background-repeat: no-repeat;*/
-  /*  background-size: contain, cover;*/
-  /*  background-image: url('./assets/ethprg-bg.png');*/
-  /*  !*background-repeat: no-repeat;*!*/
-  /*  height: 100vh;*/
-  /*  width: 100vh;*/
-  /*}*/
-
-  /*#bg {*/
-  /*  !*position: fixed;*!*/
-  /*  background-image: url('./assets/ethprg-bg.png');*/
-  /*  width: 100%;*/
-  /*  height: 100%;*/
-  /*  !*background-color: #000000;*!*/
-  /*  top: 0;*/
-  /*  left: 0;*/
-  /*}*/
   @font-face {
     font-family: 'LibreFranklin';
     src: url('assets/font/LibreFranklin-Regular.otf');
