@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <router-view/>
+    <MainPage/>
   </div>
 </template>
 
 <script>
 
+import MainPage from "./components/MainPage";
 export default {
   name: 'app',
+  components: {MainPage},
   methods: {
   },
   mounted () {
@@ -15,7 +17,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="css">
   @import 'styles/normalize.css';
   @import "styles/skeleton.css";
 
@@ -30,4 +32,17 @@ export default {
     background-size: cover;
   }
 
+  @font-face {
+    font-family: 'Helvetica Neue';
+    src: url('assets/font/Helvetica.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'Helvetica Neue Bold';
+    src: url('assets/font/Helvetica-Bold.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
 </style>
