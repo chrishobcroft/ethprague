@@ -1,47 +1,47 @@
 <template>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container">
+  <div class="container content" style="margin-top: 5%">
     <div class="center row">
-      <div class="u-full-width column" style="margin-top: 25%">
+      <div class=" u-full-width column">
         <h1> ETHPrague </h1>
         <sub id="tagline"> hackathon </sub>
 
 <!--        <h5> 1<sup>st</sup>-2<sup>nd</sup> July 2020</h5>-->
-        <h5> Someday in 2020 </h5>
+        <h5> 10<sup>th</sup> - 12<sup>th</sup> of June, 2022 </h5>
         <h5> Prague, CZ  </h5>
-
-<!--        <p>-->
-<!--          Let's all gather back in Prague and focus on more conciseness problems rather than building more dapps.-->
-<!--          Through a series of workshops we aim to identify and tackle major issues of adoption and discovering security-->
-<!--          loopholes in existing dapps. We won't prefer a ready to ship products but rather new techniques and exploits-->
-<!--          that were discovered throughout the event.-->
-<!--        </p>-->
-        <br>
         <p>
-          ETHPrague isn't looking for the next get rich quickly scheme or a groundbreaking DeFi app, instead it aims to
-          tackle the underlying issues of how decentralized applications can be securely used even by your mom (you are
-          like 20.. c'mon.. she is not too old)!
+          ETHPrague isn't looking for the next get rich quickly scheme or a groundbreaking DeFi app, instead it aims
+          at the future of society. We want to tackle challenges yet arise in the next decades and we
+          believe Ethereum will play a major role in solving these. The future is in your hands. You decide if we end up
+          living in an authoritarian dystopia or a bright solarpunk utopia.
         </p>
+      </div>
+    </div>
 
+    <div class="center row">
+      <div class="u-full-width column">
         <br>
-        <p> <b> collaboration of: </b></p>
-        <a href="https://decentralala.com/" target="_blank">
-          <img class="logo" src="../assets/dod.png" alt="DoD logo">
-        </a>
-
+        <h5> Organized by: </h5>
         <a href="https://www.paralelnipolis.cz/o-nas/en/" target="_blank">
-          <img class="logo" src="../assets/head.png" alt="HCF logo">
+          <img class="logo" src="../assets/Institute_of_Cryptoanarchy_logo.png" alt="HCF logo">
         </a>
 
-        <br>
-        <p> follow us</p>
+        <h5> Follow us</h5>
         <a href="https://twitter.com/EthPrague">
           <img class="social" src="../assets/tw.png" alt="Twitter">
         </a>
+        <br>
 
+        <h5> Get in touch</h5>
+        <a href="mailto:contact@ethprague.com">
+          contact@ethprague.com
+        </a>
+        <br>
+        <a href="mailto:sponsor@ethprague.com">
+          sponsor@ethprague.com
+        </a>
       </div>
-
     </div>
   </div>
 </template>
@@ -66,12 +66,24 @@ export default {
     text-align: center;
   }
 
+  .content {
+    background-color: rgba(29, 92, 71, 0.93);
+    padding: 40px;
+    border-radius: 45px;
+  }
+
+  p {
+    text-align: justify;
+    font-weight: lighter;
+    padding: 0 40px;
+  }
+
   .logo {
     filter: grayscale(100%);
-    width: 150px;
-    height: 150px;
+    max-width: 350px;
     display: inline;
-    margin: 20px 20px
+    margin: 0px 20px 60px 20px;
+    filter: invert(30);
   }
 
   .logo:hover {
@@ -82,6 +94,12 @@ export default {
     width: 40px;
     display: inline-block;
     margin-bottom: 40px;
+    /*filter: grayscale(100%);*/
+    filter: invert(1);
+  }
+
+  .social:hover {
+    filter: invert(0);
   }
 
   #tagline {
@@ -90,10 +108,36 @@ export default {
 
   h1 {
     font-weight: bold;
-    font-size: 54px;
+    font-size: 72px;
+    margin-top: 40px;
   }
+
   h5 {
     font-weight: bold;
     line-height: 10px;
+    margin-bottom: 40px;
+  }
+
+  a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #000000;
+  }
+
+  @media (max-width: 680px) {
+    .logo {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 2em;
+    }
+
+    p {
+      padding: 0px;
+    }
   }
 </style>
