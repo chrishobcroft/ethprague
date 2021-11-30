@@ -1,7 +1,7 @@
 <template>
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container content" style="margin-top: 5%">
+  <div class="container content">
     <div class="center row">
       <div class=" u-full-width column">
         <h1> ETHPrague </h1>
@@ -69,7 +69,8 @@ export default {
   .content {
     background-color: rgba(29, 92, 71, 0.93);
     padding: 40px;
-    border-radius: 45px;
+    box-shadow: 3px 3px rgba(29, 92, 71, 0.73), 3px 3px 3px rgba(29, 92, 50, 0.83);
+    /*border-radius: 45px;*/
   }
 
   p {
