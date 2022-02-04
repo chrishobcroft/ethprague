@@ -1,49 +1,66 @@
 <template>
-  <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <div class="container content">
-    <div class="center row">
-      <div class=" u-full-width column">
-        <h1> ETHPrague </h1>
-        <sub id="tagline"> hackathon </sub>
+  <div class="main-page-container">
+      <div class="main-page-content">
+        <img src="../assets/ETH_header.jpg" alt="eth Prague" width="1000" class="section"/>
 
-<!--        <h5> 1<sup>st</sup>-2<sup>nd</sup> July 2020</h5>-->
-        <h5> 10<sup>th</sup> - 12<sup>th</sup> of June, 2022 </h5>
-        <h5> Prague, CZ  </h5>
-        <p>
-          ETHPrague isn't looking for the next get rich quickly scheme or a groundbreaking DeFi app, instead it aims
-          at the future of society. We want to tackle challenges yet arise in the next decades and we
-          believe Ethereum will play a major role in solving these. The future is in your hands. You decide if we end up
-          living in an authoritarian dystopia or a bright solarpunk utopia.
-        </p>
+        <div class="section description">
+          <div class="buttons">
+            <button>Apply to speak</button>
+            <button>Apply to hack</button>
+          </div>
+          ETHPrague isn’t looking for the next get rich quickly scheme or a groundbreaking DeFi app, instead it aims at the future of society. We want to tackle challenges yet arise in the next decades and we believe Ethereum will play a major role in solving these. The future is in your hands. You decide if we end up living in an authoritarian dystopia or a bright solarpunk utopia.
+        </div>
+        <div class="section footer">
+
+          <div>
+            <div class="footer-block-title">
+              connect
+            </div>
+            
+            <div class="social-links">
+              <a href="https://twitter.com/EthPrague" class="soc-link" target="_blank">
+                <div class="soc-link-icon-container">
+                  <img src="../assets/telegram.svg" alt="telegram" class="soc-link-icon"/>
+                </div >
+              </a>
+
+              <a href="https://twitter.com/EthPrague" class="soc-link" target="_blank">
+                <div class="soc-link-icon-container">
+                  <img src="../assets/tweet.svg" alt="twitter" class="soc-link-icon"/>
+                </div >
+              </a>
+            </div>
+
+          </div>
+
+          <div>
+            <div class="footer-block-title">
+              organized by
+            </div>
+             <a href="https://www.paralelnipolis.cz/o-nas/en/" target="_blank">
+              <img class="logo" width="235" src="../assets/paralelniPolis.svg" alt="HCF logo">
+            </a>
+          </div>
+
+          <div>
+            <div class="footer-block-title">
+              get in touch
+            </div>
+            <div class="footer-emails">
+              <a href="mailto:contact@ethprague.com">
+                contact@ethprague.com
+              </a>
+              <br>
+              <a href="mailto:sponsor@ethprague.com">
+                sponsor@ethprague.com
+              </a>
+            </div>
+          </div>
+
+        </div>
       </div>
+
     </div>
-
-    <div class="center row">
-      <div class="u-full-width column">
-        <br>
-        <h5> Organized by: </h5>
-        <a href="https://www.paralelnipolis.cz/o-nas/en/" target="_blank">
-          <img class="logo" src="../assets/Institute_of_Cryptoanarchy_logo.png" alt="HCF logo">
-        </a>
-
-        <h5> Follow us</h5>
-        <a href="https://twitter.com/EthPrague">
-          <img class="social" src="../assets/tw.png" alt="Twitter">
-        </a>
-        <br>
-
-        <h5> Get in touch</h5>
-        <a href="mailto:contact@ethprague.com">
-          contact@ethprague.com
-        </a>
-        <br>
-        <a href="mailto:sponsor@ethprague.com">
-          sponsor@ethprague.com
-        </a>
-      </div>
-    </div>
-  </div>
 </template>
 
 <script>
@@ -61,76 +78,131 @@ export default {
 </script>
 
 <style scoped>
+  .main-page-container {
+    min-height: 100vh;
+    justify-content: center;
+    display: flex;
+    background-color: lightgray;
+    font-size: 20px;
+    line-height: 31px;
+  }
 
-  .center {
+  .main-page-content {
+    width: 1000px;
+    margin: 30px 50px 0 50px;
+  }
+
+  .section {
+    display: block;
+    border-radius: 12px;
+    background-color: white;
+    width: 100%;
+  }
+
+  .description {
+    margin-top: 15px;
+    padding: 35px 50px 50px;
+    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15); 
+    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15);
+  }
+
+  .footer {
+    margin-top: 5px;
+    padding: 35px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 30px;
+    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15); 
+    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15);
+  }
+
+  .footer-block-title {
+    font-size: 15px;
+    margin-bottom: 25px;
     text-align: center;
+    text-transform: uppercase;
   }
 
-  .content {
-    background-color: rgba(29, 92, 71, 0.93);
-    padding: 40px;
-    box-shadow: 3px 3px rgba(29, 92, 71, 0.73), 3px 3px 3px rgba(29, 92, 50, 0.83);
-    /*border-radius: 45px;*/
+  .footer-emails {
+    font-size: 18px;
   }
 
-  p {
-    text-align: justify;
-    font-weight: lighter;
-    padding: 0 40px;
+  .social-links {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
   }
 
-  .logo {
-    filter: grayscale(100%);
-    max-width: 350px;
-    display: inline;
-    margin: 0px 20px 60px 20px;
-    filter: invert(30);
+  .soc-link-icon-container {
+    cursor: pointer;
+    border-radius: 100%;
+    border: solid 2px var(--col-primary-action);
+    display: flex;
   }
 
-  .logo:hover {
-    filter: grayscale(0%);
+  .soc-link-icon-container:hover {
+    background-color: var(--col-primary-action);
   }
 
-  .social {
-    width: 40px;
-    display: inline-block;
-    margin-bottom: 40px;
-    /*filter: grayscale(100%);*/
-    filter: invert(1);
+  .soc-link-icon:hover {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(0%) hue-rotate(310deg) brightness(107%) contrast(102%);
   }
 
-  .social:hover {
-    filter: invert(0);
+  .buttons {
+    margin-bottom: 35px;
+    width: 100%;
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
   }
 
-  #tagline {
-    top: -35px;
+  button {
+    font-weight: 300;
+    margin: 0;
+    letter-spacing: 0px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-family: "Archivo SemiExpanded", Verdana, sans-serif;
+    border-radius: 300px;
+    padding: 39px;
+    font-size: 20px;
+    line-height: 31px;
+    width: 100%;
+    border: solid 2px var(--col-primary-action);
+    background-color: white;
+    color: var(--col-primary-action);
   }
 
-  h1 {
-    font-weight: bold;
-    font-size: 72px;
-    margin-top: 40px;
-  }
-
-  h5 {
-    font-weight: bold;
-    line-height: 10px;
-    margin-bottom: 40px;
+  button:hover {
+    background-color: var(--col-primary-action);
+    border: solid 2px var(--col-primary-action);
+    color: white;
   }
 
   a {
-    color: #ffffff;
+    color: #000000;
     text-decoration: none;
   }
 
   a:hover {
-    color: #000000;
+    color: var(--col-primary-action);
   }
 
   @media (max-width: 680px) {
-    .logo {
-      width: 80%;
+    .buttons {
+      flex-wrap: wrap;
+    }
+
+    .description {
+      padding: 25px 30px 30px;
+    }
+
+    .main-page-content {
+      margin: 30px 25px 0 25px;
     }
 
     h1 {
@@ -139,6 +211,16 @@ export default {
 
     p {
       padding: 0px;
+    }
+  }
+
+  @media (max-width: 410px) {
+    .main-page-content {
+      margin: 30px 10px 0 10px;
+    }
+
+    .description {
+      padding: 25px 15px 25px 15px;
     }
   }
 </style>
