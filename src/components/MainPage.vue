@@ -5,8 +5,12 @@
 
         <div class="section description">
           <div class="buttons">
-            <button>Apply to speak</button>
-            <button>Apply to hack</button>
+            <a href="https://cfp.paralelnipolis.cz/ethprague-2022/" target="_blank" class="buttons-link">
+              <button>Apply to speak</button>
+            </a>
+            <a href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T" target="_blank" class="buttons-link">
+              <button>Apply to hack</button>
+            </a>
           </div>
           ETHPrague isn’t looking for the next get rich quickly scheme or a groundbreaking DeFi app, instead it aims at the future of society. We want to tackle challenges yet arise in the next decades and we believe Ethereum will play a major role in solving these. The future is in your hands. You decide if we end up living in an authoritarian dystopia or a bright solarpunk utopia.
         </div>
@@ -18,7 +22,7 @@
             </div>
             
             <div class="social-links">
-              <a href="https://twitter.com/EthPrague" class="soc-link" target="_blank">
+              <a href="https://t.me/ethprague" class="soc-link" target="_blank">
                 <div class="soc-link-icon-container">
                   <img src="../assets/telegram.svg" alt="telegram" class="soc-link-icon"/>
                 </div >
@@ -157,6 +161,10 @@ export default {
     justify-content: space-between;
   }
 
+  .buttons-link {
+    width: 100%;
+  }
+
   button {
     font-weight: 300;
     margin: 0;
@@ -204,6 +212,10 @@ export default {
     .main-page-content {
       margin: 30px 25px 0 25px;
     }
+
+    .footer {
+      gap: 65px;
+    }    
 
     h1 {
       font-size: 2em;
