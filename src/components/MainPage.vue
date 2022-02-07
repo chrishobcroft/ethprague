@@ -97,7 +97,7 @@ export default {
 
   .main-page-content {
     width: 1000px;
-    margin: 30px 50px 0 50px;
+    margin: 30px 50px 30px 50px;
   }
 
   .section {
@@ -214,7 +214,7 @@ export default {
     }
 
     .main-page-content {
-      margin: 30px 25px 0 25px;
+      margin: 30px 25px 30px 25px;
     }
 
     .footer {
@@ -232,7 +232,7 @@ export default {
 
   @media (max-width: 410px) {
     .main-page-content {
-      margin: 30px 10px 0 10px;
+      margin: 30px 10px 30px 10px;
     }
 
     .description {
