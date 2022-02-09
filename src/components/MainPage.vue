@@ -46,7 +46,7 @@
               organized by
             </div>
              <a href="https://www.paralelnipolis.cz/o-nas/en/" target="_blank">
-              <img class="logo" width="235" src="../assets/Institute_of_Cryptoanarchy_logo.png" alt="IoC logo">
+              <img class="logo" width="235" src="../assets/InstitutCrypto.svg" alt="IoC logo">
             </a>
           </div>
 
@@ -90,14 +90,14 @@ export default {
     min-height: 100vh;
     justify-content: center;
     display: flex;
-    background-color: lightgray;
+    background-color: #ebebeb;
     font-size: 20px;
     line-height: 31px;
   }
 
   .main-page-content {
     width: 1000px;
-    margin: 30px 50px 30px 50px;
+    margin: 30px 50px 40px 50px;
   }
 
   .section {
@@ -110,8 +110,8 @@ export default {
   .description {
     margin-top: 15px;
     padding: 35px 50px 50px;
-    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15); 
-    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.1); 
+    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.1);
   }
 
   .footer {
@@ -121,8 +121,8 @@ export default {
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 30px;
-    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15); 
-    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.15);
+    -webkit-box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.1); 
+    box-shadow: -5px 7px 15px 0px rgba(0,0,0,0.1);
   }
 
   .footer-block-title {
