@@ -20,6 +20,7 @@
   width: 100%;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .hero__image {
@@ -29,7 +30,6 @@
 .hero__event-date {
   height: 150px;
   background-color: var(--col-primary-accent);
-  overflow: hidden;
   display: flex;
   align-items: center;
 

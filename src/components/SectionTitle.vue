@@ -18,9 +18,11 @@ const { title } = toRefs(props)
 
 .section-title {
   background-color: var(--col-primary-accent);
-  color: var(--col-primary-action);
+  padding: 8px 20px;
 
-  font-family: 'Archivo';
+  color: var(--col-primary-action);
+  text-transform: uppercase;
+  font-family: "Archivo SemiExpanded", Verdana, sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
