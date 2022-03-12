@@ -1,7 +1,7 @@
 <template>
   <Header />
   <Hero />
-  <!-- <Manifesto /> -->
+  <Manifesto />
   <div class="main-page-container">
       <div class="main-page-content">
       
@@ -57,10 +57,10 @@
 
     </div>
 </template>
-<script setup >
-import Header from '@/components/Header.vue'
-import Hero from '@/components/Hero.vue'
-// import Manifesto from '@/components/Manifesto.vue';
+<script setup lang="ts">
+  import Header from '@/components/Header.vue'
+  import Hero from '@/components/Hero.vue'
+  import Manifesto from '@/components/Manifesto.vue'
 </script>
 
 <style scoped>
