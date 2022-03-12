@@ -4,17 +4,10 @@
   </div>
 </template>
 
-<script>
+<script setup>
 
-import MainPage from "./components/MainPage";
-export default {
-  name: 'app',
-  components: {MainPage},
-  methods: {
-  },
-  mounted () {
-  }
-}
+import MainPage from "@/pages/MainPage";
+
 </script>
 
 <style lang="css">
@@ -28,6 +21,7 @@ export default {
   :root {
     /* colors */
     --col-primary-action: #5400ff;
+    --col-primary-accent: #FFFF00;
   }
 
   html, body {

@@ -1,23 +1,10 @@
 <template>
+  <Header />
+  <Hero />
+  <!-- <Manifesto /> -->
   <div class="main-page-container">
       <div class="main-page-content">
-        <img src="../assets/ETH_header.jpg" alt="eth Prague" width="1000" class="section"/>
-
-        <div class="section description">
-          <div class="buttons">
-            <a href="https://cfp.paralelnipolis.cz/ethprague-2022/" target="_blank" class="buttons-link">
-              <button>Apply to speak</button>
-            </a>
-            <a href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T" target="_blank" class="buttons-link">
-              <button>Apply to hack</button>
-            </a>
-          </div>
-          ETHPrague isn’t looking for the next get rich quickly scheme or groundbreaking DeFi apps, instead it's an
-          event focusing on the future potential of Ethereum and concepts or applications which don't yet exist.
-          We want to tackle challenges which will or might arise in the next decade and we believe Ethereum will
-          play a major role in solving these. The future is in your hands, anon!
-          You decide whether we end up living in an dark authoritarian dystopia or a bright solarpunk utopia.
-        </div>
+      
         <div class="section footer">
 
           <div>
@@ -70,19 +57,10 @@
 
     </div>
 </template>
-
-<script>
-export default {
-  name: 'MainPage',
-  data () {
-    return {
-    }
-  },
-  methods: {
-  },
-  mounted() {
-  }
-}
+<script setup >
+import Header from '@/components/Header.vue'
+import Hero from '@/components/Hero.vue'
+// import Manifesto from '@/components/Manifesto.vue';
 </script>
 
 <style scoped>
@@ -167,32 +145,6 @@ export default {
 
   .buttons-link {
     width: 100%;
-  }
-
-  button {
-    font-weight: 300;
-    margin: 0;
-    letter-spacing: 0px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-    font-family: "Archivo SemiExpanded", Verdana, sans-serif;
-    border-radius: 300px;
-    padding: 39px;
-    font-size: 20px;
-    line-height: 31px;
-    width: 100%;
-    border: solid 2px var(--col-primary-action);
-    background-color: white;
-    color: var(--col-primary-action);
-  }
-
-  button:hover {
-    background-color: var(--col-primary-action);
-    border: solid 2px var(--col-primary-action);
-    color: white;
   }
 
   a {
