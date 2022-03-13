@@ -12,7 +12,6 @@
       <div class="header__social-links">
         <a
           href="https://t.me/ethprague"
-          class="header__social-link"
           target="_blank"
         >
           <img src="../assets/telegram.svg" alt="telegram" />
@@ -20,7 +19,6 @@
 
         <a
           href="https://twitter.com/EthPrague"
-          class="header__social-link"
           target="_blank"
         >
           <img src="../assets/twitter.svg" alt="twitter" />
@@ -42,6 +40,8 @@ const localLinks = [
 
 <style scoped>
 .header {
+  position: sticky;
+  top: 0;
   height: 80px;
   width: 100%;
   display: flex;
@@ -77,7 +77,6 @@ const localLinks = [
 
 .header__local-links {
   padding: 0 20px;
-
 }
 
 .header__social-links {

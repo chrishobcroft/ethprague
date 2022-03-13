@@ -1,13 +1,11 @@
 <template>
   <div id="app">
-    <MainPage/>
+    <MainPage />
   </div>
 </template>
 
-<script setup>
-
-import MainPage from "@/pages/MainPage";
-
+<script setup lang="ts">
+  import MainPage from "@/pages/MainPage.vue";
 </script>
 
 <style lang="css">
@@ -29,6 +27,7 @@ import MainPage from "@/pages/MainPage";
     letter-spacing: 0px;
     /* color: #ffffff; */
     /* background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed; */
+    scroll-behavior: smooth;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;

@@ -2,6 +2,8 @@
   <Header />
   <Hero />
   <Manifesto />
+  <HackathonAwards />
+  <People />
   <div class="main-page-container">
       <div class="main-page-content">
       
@@ -58,9 +60,11 @@
     </div>
 </template>
 <script setup lang="ts">
-  import Header from '@/components/Header.vue'
-  import Hero from '@/components/Hero.vue'
-  import Manifesto from '@/components/Manifesto.vue'
+import Header from '@/components/Header.vue'
+import Hero from '@/components/Hero.vue'
+import Manifesto from '@/components/Manifesto.vue'
+import HackathonAwards from '@/components/HackathonAwards.vue';
+import People from '@/components/People.vue';
 </script>
 
 <style scoped>

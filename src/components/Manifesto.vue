@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    <div class="manifesto__text-container">
+    <div id='Manifesto' class="manifesto__text-container">
       <SectionTitle title="manifesto" />
       <div class="manifesto__text-content">
         ETHPrague isn’t looking for the next get rich quickly scheme or groundbreaking DeFi apps, instead it’s an event focusing on the future potential of Ethereum and concepts or applications which don’t yet exist. We want to tackle challenges which will or might arise in the next decade and we believe Ethereum will play a major role in solving these. The future is in your hands, anon! You decide whether we end up living in an dark authoritarian dystopia or a bright solarpunk utopia. 
@@ -67,7 +67,6 @@ import SectionTitle from "@/components/SectionTitle.vue";
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 100px;
 }
 .manifesto__button {
   margin: 0;
@@ -110,6 +109,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
 }
 
 .manifesto__text-container {
+  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -117,7 +117,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
 
 .manifesto__text-content {
   width: 1100px;
-  margin-top: 30px;
+  margin-top: 40px;
 
   color: var(--col-primary-action);
   font-family: "Archivo SemiExpanded", Verdana, sans-serif;

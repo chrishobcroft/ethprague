@@ -5,7 +5,7 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs, defineProps } from 'vue'
+import { toRefs } from 'vue'
 
 const props = defineProps<{
   title: string
@@ -18,7 +18,7 @@ const { title } = toRefs(props)
 
 .section-title {
   background-color: var(--col-primary-accent);
-  padding: 8px 20px;
+  padding: 10px 20px 6px;
 
   color: var(--col-primary-action);
   text-transform: uppercase;
