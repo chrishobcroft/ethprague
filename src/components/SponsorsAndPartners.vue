@@ -1,0 +1,97 @@
+<template>
+  <div class="sponsors-and-partners" id="Sponsors%20&%20Partners">
+
+    <div class="sponsors-and-partners__block">
+      <SectionTitle title="sponsors & partners" />
+      <div class="sponsors-and-partners__small-title sponsors-and-partners__looks-rare">
+        Looks rare
+      </div>
+      <div class="sponsors-and-partners__looks-rare-icons">
+        <img v-for="image in looksRare" :key="image" :src="getSponsorsOrPartnersImage(image)" :alt="image" class="sponsors-and-partners__looks-rare-icon"/>
+      </div>
+    </div>
+
+    <div class="sponsors-and-partners__separation-line" />
+
+    <div class="sponsors-and-partners__block">
+      <div class="sponsors-and-partners__small-title sponsors-and-partners__title-few">
+        Few
+      </div>
+      <div class="sponsors-and-partners__few-icons">
+        <img v-for="image in few" :key="image" :src="getSponsorsOrPartnersImage(image)" :alt="image" class="sponsors-and-partners__few-icon"/>
+      </div>
+    </div>
+
+  </div>
+</template>
+
+<script setup lang="ts">
+import SectionTitle from "@/components/SectionTitle.vue";
+
+const looksRare = ['pwn','unicorn', 'moralis']
+const few = ['wallet-connect', 'eth-foundation', 'livepeer']
+
+const getSponsorsOrPartnersImage = (imageName: string) => {
+  return require(`../assets/sponsors-and-partners/${imageName}.svg`)
+}
+
+</script>
+
+<style scoped>
+
+.sponsors-and-partners {
+  background-color: var(--col-light-gray-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 100px 0;
+}
+
+.sponsors-and-partners__block {
+  margin: 0 25px;
+  max-width: 1100px;
+  display: flex;
+  flex: 1;
+  width: 100%;
+  flex-direction: column;
+}
+
+.sponsors-and-partners__small-title {
+  align-self: flex-start;
+  font-size: 15px;
+}
+
+.sponsors-and-partners__looks-rare-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 120px;
+  margin-bottom: 90px;
+}
+
+.sponsors-and-partners__few-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 110px;
+}
+
+.sponsors-and-partners__separation-line {
+  background: white;
+  height: 3px;
+  width: 100%;
+  margin: 0;
+}
+
+.sponsors-and-partners__looks-rare {
+  margin: 25px 0 20px;
+}
+
+.sponsors-and-partners__title-few {
+  margin: 20px 0 45px;
+
+}
+
+</style>

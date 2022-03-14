@@ -1,34 +1,34 @@
 <template>
   <div id="Speakers" class="people">
 
-  <div class="people__header">
-    <SectionTitle title="people" />
-    <div class='people__header-menu'>
-      <button @click="showPeopleWithRole = Roles.ALL" :class="headerMenuButtonClasses(Roles.ALL)">all</button>
-      <button @click="showPeopleWithRole = Roles.SPEAKER"
-      :class="headerMenuButtonClasses(Roles.SPEAKER)">speakers</button>
-      <button @click="showPeopleWithRole = Roles.JUDGE"
-      :class="headerMenuButtonClasses(Roles.JUDGE)">judges</button>
-      <button @click="showPeopleWithRole = Roles.MENTOR"
-      :class="headerMenuButtonClasses(Roles.MENTOR)">mentors</button> 
-    </div>
-  </div>
-
-  <div class="people__list">
-    <div class="people__person" v-for="person in selectedPeople" :key="person.name">
-      <img class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
-
-      <div class="people__person-name">
-        {{ person.name }}
+    <div class="people__header">
+      <SectionTitle title="people" />
+      <div class='people__header-menu'>
+        <button @click="showPeopleWithRole = Roles.ALL" :class="headerMenuButtonClasses(Roles.ALL)">all</button>
+        <button @click="showPeopleWithRole = Roles.SPEAKER"
+        :class="headerMenuButtonClasses(Roles.SPEAKER)">speakers</button>
+        <button @click="showPeopleWithRole = Roles.JUDGE"
+        :class="headerMenuButtonClasses(Roles.JUDGE)">judges</button>
+        <button @click="showPeopleWithRole = Roles.MENTOR"
+        :class="headerMenuButtonClasses(Roles.MENTOR)">mentors</button> 
       </div>
-
-      <div class="people__person-roles">
-        <div class="people__person-role" v-for="role in person.roles" :key="role">
-          {{ role }}
-        </div>
-      </div> 
     </div>
-  </div>
+
+    <div class="people__list">
+      <div class="people__person" v-for="person in selectedPeople" :key="person.name">
+        <img class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
+
+        <div class="people__person-name">
+          {{ person.name }}
+        </div>
+
+        <div class="people__person-roles">
+          <div class="people__person-role" v-for="role in person.roles" :key="role">
+            {{ role }}
+          </div>
+        </div> 
+      </div>
+    </div>
 
   </div>
 </template>

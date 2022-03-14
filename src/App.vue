@@ -20,6 +20,7 @@
     /* colors */
     --col-primary-action: #5400ff;
     --col-primary-accent: #FFFF00;
+    --col-light-gray-bg: rgba(0, 0, 0, 0.08);
   }
 
   html, body {
@@ -32,6 +33,16 @@
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
+  }
+
+  ::selection {
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
   }
 
   @font-face {

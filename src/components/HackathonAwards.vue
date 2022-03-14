@@ -57,7 +57,7 @@ const awards = [
 <style scoped>
 
 .hackathon {
-  background-color: rgba(0, 0, 0, 0.08);
+  background-color: var(--col-light-gray-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;

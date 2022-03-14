@@ -19,6 +19,7 @@ const { title } = toRefs(props)
 .section-title {
   background-color: var(--col-primary-accent);
   padding: 10px 20px 6px;
+  max-width: fit-content;
 
   color: var(--col-primary-action);
   text-transform: uppercase;

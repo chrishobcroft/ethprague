@@ -48,6 +48,7 @@ const localLinks = [
   justify-content: center;
   align-items: center;
   background-color: var(--col-primary-action);
+  z-index: 100;
 }
 
 .header__content {
