@@ -21,6 +21,8 @@
     --col-primary-action: #5400ff;
     --col-primary-accent: #FFFF00;
     --col-light-gray-bg: rgba(0, 0, 0, 0.08);
+
+    --mobile-breakpoint: 1120px;
   }
 
   html, body {

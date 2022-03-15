@@ -7,14 +7,14 @@
         target="_blank"
         class="manifesto__button-link"
       >
-        <button class="manifesto__button">Apply to speak ></button>
+        <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
       </a>
       <a
         href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
         target="_blank"
         class="manifesto__button-link"
       >
-        <button class="manifesto__button">Apply to hack ></button>
+        <button class="manifesto__button">Apply to hack <span class="manifesto__headless-arrow"/></button>
       </a>
       </div>
       <div class="manifesto__buttons-row">
@@ -23,14 +23,14 @@
         target="_blank"
         class="manifesto__button-link"
       >
-        <button class="manifesto__button">Apply as general admission ></button>
+        <button class="manifesto__button">Apply as general admission <span class="manifesto__headless-arrow"/></button>
       </a>
       <a
         href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
         target="_blank"
         class="manifesto__button-link"
       >
-        <button class="manifesto__button">Apply for scholarships ></button>
+        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>
       </a>
       </div>
     </div>
@@ -91,16 +91,43 @@ import SectionTitle from "@/components/SectionTitle.vue";
   background-color: white;
 }
 
+@media (max-width: 1120px) {
+  .manifesto__button { 
+    font-size: 20px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 600px) {
+  .manifesto__button { 
+    font-size: 15px;
+    height: 120px;
+    white-space: break-spaces;
+  }
+}
+
 .manifesto__buttons-row {
   display: flex;
   column-gap: 30px;
   width: 100%;
 }
 
+@media (max-width: 1120px) {
+  .manifesto__buttons-row {
+    flex-wrap: wrap;
+    gap:30px
+  }
+}
+
 .manifesto__button:hover {
   background-color: var(--col-primary-action);
   border: solid 2px var(--col-primary-action);
   color: white;
+}
+
+.manifesto__button:hover .manifesto__headless-arrow {
+  border-left: solid 2px white;
+  border-bottom: solid 2px white;
 }
 
 .manifesto__button-link {
@@ -113,15 +140,40 @@ import SectionTitle from "@/components/SectionTitle.vue";
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  max-width: 100%;
 }
 
 .manifesto__text-content {
   width: 1100px;
+  max-width: 100%;
   margin-top: 40px;
 
   color: var(--col-primary-action);
   font-family: "Archivo SemiExpanded", Verdana, sans-serif;
   font-size: 40px;
   line-height: 51px;
+}
+
+@media (max-width: 1120px) {
+  .manifesto__text-content { 
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .manifesto__text-content { 
+    font-size: 23px;
+    line-height: 35px;
+  }
+}
+
+.manifesto__headless-arrow {
+  border-left: solid 2px var(--col-primary-action);
+  border-bottom: solid 2px var(--col-primary-action);
+  transform: rotate(-135deg) skew(5deg, 5deg) translate(1px, -1px);
+  width: 12px;
+  height: 12px;
+  margin: 0 12px 2px;
 }
 </style>

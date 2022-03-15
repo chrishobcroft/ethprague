@@ -1,11 +1,15 @@
 <template>
   <div class="hero">
     <div class="hero__image">
-      <img src="../assets/hero.png" alt="hero"/>
+      <picture>
+        <source media="(min-width: 1120px)" srcset="../assets/hero.webp">
+        <img class="hero__image-mobile" src="../assets/hero-mobile.webp" alt="hero">
+      </picture>
     </div>
+
     <div class="hero__event-date">
-      <span>
-        10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.
+      <span class="hero__event-date-text">
+        ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.  ETH Prague 10. 6. — 12. 6.  ETH Prague  10. 6. — 12. 6.
       </span>
     </div>
   </div>
@@ -24,7 +28,12 @@
 }
 
 .hero__image {
-  height: 700px;
+  margin-bottom: -10px;
+}
+
+.hero__image-mobile {
+  max-width: 100%;
+  padding: 15px;
 }
 
 .hero__event-date {
@@ -40,7 +49,19 @@
   line-height: 47px;
   letter-spacing: 0em;
   text-align: center;
+}
 
+@media (max-width: 1120px) { 
+  .hero__event-date {
+    height: 110px;
+    font-size: 27px;
+    line-height: 37px;
+    white-space: normal;
+  }
+  .hero__event-date-text {
+    max-height: 35px;
+    overflow: hidden;
+  }
 }
 
 </style>
