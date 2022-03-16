@@ -76,11 +76,12 @@ const blocks = [
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 100px 0;
+  padding: 100px var(--app-padding);
 }
 
 .faq__wrap-title {
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   margin-bottom: 30px;
 }
 
@@ -88,15 +89,12 @@ const blocks = [
   transition: all 0.3s;
   max-width: 1600px;
   width: 100%;
-  padding: 0 30px;
 }
 
 .faq__block {
   transition: all 0.3s;
   margin-bottom: 15px;
 }
-
-
 
 .faq__block-toggle {
   cursor: pointer;
@@ -108,47 +106,103 @@ const blocks = [
   border-radius: 270px;
   position: relative;
   background-color: yellow;
-  height: 160px;
+  height: 145px;
 }
+
+@media (min-width: 970px) {
+  .faq__block-toggle {
+    height: 160px;
+  }
+}
+
 
 .faq__block:hover {
   filter: drop-shadow(-8px 8px 8px rgba(0, 0, 0, 0.15));
 }
 
 .faq__block-title {
-  font-size: 25px;
+
+  font-size: 17px;
   color: var(--col-primary-action);
   text-transform: uppercase;
+  padding: 0 70px;
+  text-align: center;
+}
+
+@media (min-width: 500px) {
+  .faq__block-title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 970px) {
+  .faq__block-title {
+    font-size: 25px;
+  }
 }
 
 .faq__block-content-container {
   background: #ffff004f;
-  padding: 135px 200px 50px;
+  padding: 120px 25px 50px;
   margin-top: -85px;
   border-bottom-right-radius: 85px;
   border-bottom-left-radius: 85px;
 }
 
+@media (min-width: 500px) {
+  .faq__block-content-container {
+    padding: 120px 70px 60px;
+  }
+}
+
+@media (min-width: 970px) {
+  .faq__block-content-container {
+    padding: 135px 200px 50px;
+  }
+}
+
 .faq__block-content-text {
   max-width: 1100px;
   margin: auto;
-  font-size: 20px;
+  font-size: 17px;
+}
+
+@media (min-width: 970px) { 
+  .faq__block-content-text { 
+    font-size: 20px;
+  }
 }
 
 .faq__block-toggle-icon-wrap {
-  position: absolute;
+  position: initial;
 }
 
 .faq__block-toggle-icon {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 41px;
-  height: 41px;
+  width: 37px;
+  height: 37px;
   border-radius: 35px;
   border: solid 2px var(--col-primary-action);
-  position: relative;
-  left: 300px;
+  position: absolute;
+  right: 30px;
+  top: 55px;
+}
+
+@media (min-width: 970px) {
+
+  .faq__block-toggle-icon-wrap {
+    position: absolute;
+  }
+  .faq__block-toggle-icon  {
+    width: 41px;
+    height: 41px;
+    left: 300px;
+    position: relative;
+    right: unset;
+    top: unset;
+  }
 }
 
 .faq__block-toggle-icon--upside-down {

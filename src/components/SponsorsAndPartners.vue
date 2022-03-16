@@ -50,7 +50,7 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 }
 
 .sponsors-and-partners__block {
-  margin: 0 25px;
+  padding: 0 var(--app-padding);
   max-width: 1100px;
   display: flex;
   flex: 1;
@@ -67,15 +67,21 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 120px;
+  gap: 105px;
   margin-bottom: 90px;
+  max-width: 100%;
 }
 
+.sponsors-and-partners__looks-rare-icon, 
+.sponsors-and-partners__few-icon {
+  max-width: 100%;
+}
 .sponsors-and-partners__few-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 110px;
+  max-width: 100%;
 }
 
 .sponsors-and-partners__separation-line {

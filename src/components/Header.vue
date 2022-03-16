@@ -48,7 +48,7 @@
     </div>
 
     <Transition name="fade">
-      <div v-if="isHamMenuOpen" class="header-mobile__local-links">
+      <div v-show="isHamMenuOpen" class="header-mobile__local-links">
         <a
           @click="isHamMenuOpen = false"
           class="header-mobile__local-link"
@@ -199,20 +199,13 @@ const localLinks = [
   letter-spacing: 0em;
   text-align: center;
 }
-
-/*/ Animation /*/
+/* Animation */
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.3s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
-  opacity: 0;
-}
-
-.fadeIn-enter-active {
-  transition: opacity 1s;
-}
-.fadeIn-enter, .fadeIn-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter-from,
+.fade-leave-to {
   opacity: 0;
 }
 

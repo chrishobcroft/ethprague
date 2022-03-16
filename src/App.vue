@@ -23,6 +23,7 @@
     --col-light-gray-bg: rgba(0, 0, 0, 0.08);
 
     --mobile-breakpoint: 1120px;
+    --app-padding: 15px;
   }
 
   html, body {

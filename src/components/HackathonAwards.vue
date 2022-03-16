@@ -34,7 +34,7 @@ const awards = [
     name: "urbanism award",
     price: "2500 EUR",
   },
-   { 
+  { 
     name: "urbanism award",
     price: "2500 EUR",
   },
@@ -63,6 +63,7 @@ const awards = [
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 var(--app-padding);
 }
 
 .hackathon__text-container {
@@ -73,7 +74,7 @@ const awards = [
 }
 
 .hackathon__text-content {
-  width: 1100px;
+  max-width: 1100px;
   margin-top: 50px;
 
   color: black;
@@ -84,11 +85,11 @@ const awards = [
 
 .hackathon__awards-list {
   margin: 100px 0;
-  width: 1100px;
+  max-width: 1100px;
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-
+  justify-content: center;
 }
 
 .hackathon__awards-item {
@@ -100,8 +101,9 @@ const awards = [
   flex-direction: column;
   justify-content: space-between;
   
-  width: 353px;
+  max-width: 353px;
   height: 214px;
+  width: 100%;
 }
 
 .hackathon__awards-item:hover {
@@ -116,7 +118,7 @@ const awards = [
 }
 
 .hackathon__awards-item-name {
-  font-size: 25px;
+  font-size: 20px;
   line-height: 35px;
   color: var(--col-primary-action);
   text-transform: uppercase;
@@ -128,12 +130,22 @@ const awards = [
   border-radius: 12px;
   text-transform: uppercase;
 
-  font-size: 25px;
+  font-size: 20px;
   line-height: 35px;
   color: black;
 
   padding: 13px 15px 11px 15px;
 
+}
+
+@media (min-width: 970px) {
+  .hackathon__awards-item-name {
+    font-size: 25px;
+  }
+
+  .hackathon__awards-item-price {
+    font-size: 25px;
+  }
 }
 
 </style>

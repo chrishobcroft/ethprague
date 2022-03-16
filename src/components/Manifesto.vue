@@ -51,7 +51,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
 <style scoped>
 .manifesto {
   margin: 50px 0 150px;
-  padding: 0 15px;
+  padding: 0 var(--app-padding);
   display: flex;
   flex-direction: column;
   justify-content: center;

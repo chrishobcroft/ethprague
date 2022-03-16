@@ -113,16 +113,26 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding: 0 var(--app-padding);
 }
 
 .people__header {
   margin-top: 100px;
   display: flex;
   align-items: center;
-  width: 1100px;
+  max-width: 1100px;
+  width: 100%;
   justify-content: space-between;
+  flex-direction: column;
+  gap: 30px;
+  align-self: flex-start;
 }
 
+@media only screen and (min-width: 1120px) {
+  .people__header {
+    flex-direction: row;
+  }
+}
 .people__header-menu-button {
   border-radius: 18px;
   border: 1px solid #000000;
