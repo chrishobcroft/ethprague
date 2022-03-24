@@ -28,7 +28,13 @@
 
   <div class="header-mobile">
     <div class="header-mobile__content">
-      <button class="header__button">tickets</button>
+      <img
+        v-show="isAfterScroll"
+        src="../assets/ETH.svg"
+        alt="tickets"
+      />
+      <button v-show="!isAfterScroll" class="header__button">tickets</button>
+
         <img
           class="header-mobile__hamburger-menu"
           src="../assets/hamburger-menu.svg"
@@ -64,8 +70,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 const isHamMenuOpen = ref(false);
+const isAfterScroll = ref(false);
+console.log('isAfterScroll: ', isAfterScroll);
 const localLinks = [
   "Manifesto",
   "Hackathon",
@@ -73,6 +81,21 @@ const localLinks = [
   "FAQ",
   "Sponsors & Partners",
 ];
+
+const updateScroll = () => {
+  if (1 < window.scrollY) {
+    isAfterScroll.value = true;
+  } else {
+    isAfterScroll.value = false;
+  }
+}
+
+onMounted(() => {
+  window.addEventListener("scroll", updateScroll);
+})
+
+onUnmounted(() => window.removeEventListener("scroll", updateScroll))
+
 </script>
 
 <style scoped>
