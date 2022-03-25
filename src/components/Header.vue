@@ -78,7 +78,6 @@
 import { ref, onMounted, onUnmounted } from "vue";
 const isHamMenuOpen = ref(false);
 const isAfterScroll = ref(false);
-console.log('isAfterScroll: ', isAfterScroll);
 const localLinks = [
   "Manifesto",
   "Hackathon",
