@@ -123,7 +123,7 @@
 
 @media (min-width: 1120px) {
   .hero__image-desktop {
-    display: block
+    display: block;
   }
 
   .hero__image-mobile {

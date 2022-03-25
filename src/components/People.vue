@@ -172,7 +172,6 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
 }
 .people__list {
   margin: 100px 0;
-  /* max-width: 1600px; */
   justify-content: center;
   display: flex;
   gap: 20px;

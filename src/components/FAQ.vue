@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div :class="['faq__block-content-container', ]" :style="getBlockContentStyle(block)">
+        <div class="faq__block-content-container" :style="getBlockContentStyle(block)">
           <div class="faq__block-content-text">
             {{block.text}}
           </div>
@@ -34,11 +34,11 @@ import { ref } from 'vue';
 import SectionTitle from "@/components/SectionTitle.vue";
 
 type Block = {
-  title: string
-  toggleBgColor: string
-  contentBgColor: string
-  text: string
-  blockHeight: string
+  title: string;
+  toggleBgColor: string;
+  contentBgColor: string;
+  text: string;
+  blockHeight: string;
 }
 
 const openBlocks = ref(['']);
