@@ -19,7 +19,7 @@
             </div>
         </div>
 
-        <div v-show="openBlocks.includes(block.title)" class="faq__block-content-container" :style="{background: block.contentBgColor}">
+        <div :class="['faq__block-content-container', ]" :style="getBlockContentStyle(block)">
           <div class="faq__block-content-text">
             {{block.text}}
           </div>
@@ -33,6 +33,14 @@
 import { ref } from 'vue';
 import SectionTitle from "@/components/SectionTitle.vue";
 
+type Block = {
+  title: string
+  toggleBgColor: string
+  contentBgColor: string
+  text: string
+  blockHeight: string
+}
+
 const openBlocks = ref(['']);
 
 const toggleBlock = (blockTitle: string) => {
@@ -43,24 +51,30 @@ const toggleBlock = (blockTitle: string) => {
   }
 }
 
+const getBlockContentStyle = (block: Block) => ({background: block.contentBgColor, transform: openBlocks.value.includes(block.title) ? 'scaleY(1)' : 'scaleY(0)', maxHeight: openBlocks.value.includes(block.title) ? '700px' : '0', marginBottom: openBlocks.value.includes(block.title) ? '10px' : '-120px'})
+
+
 const blocks = [
   {
     title: 'what to expect on-site',
     toggleBgColor: '#01ffe5',
     contentBgColor: '#9efff5',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at'
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at',
+    blockHeight: '300px'
   },
    {
     title: 'location',
     toggleBgColor: '#81ff70',
     contentBgColor: '#c1feb8',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at, fugit excepturi ducimus omnis ab amet nisi quod dignissimos. Nemo, modi quasi? Aliquid blanditiis temporibus minus enim nulla omnis iste, quidem ipsum incidunt. Illo modi nihil cumque et, tempore qui consectetur alias veniam optio doloremque quibusdam.'
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at, fugit excepturi ducimus omnis ab amet nisi quod dignissimos. Nemo, modi quasi? Aliquid blanditiis temporibus minus enim nulla omnis iste, quidem ipsum incidunt. Illo modi nihil cumque et, tempore qui consectetur alias veniam optio doloremque quibusdam.',
+    blockHeight: '450px'
   },
   {
     title: 'sleep & rest',
     toggleBgColor: '#ffff01',
     contentBgColor: '#ffffb2',
-    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at, fugit excepturi ducimus omnis ab amet nisi quod dignissimos. Nemo, modi quasi? Aliquid blanditiis temporibus minus enim nulla omnis iste, quidem ipsum incidunt. Illo modi nihil cumque et, tempore qui consectetur alias veniam optio doloremque quibusdam.'
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam libero alias rerum placeat ut temporibus vitae minima voluptas nostrum. Eaque ex nulla modi ducimus? Aut perspiciatis magni delectus voluptatem iste beatae, numquam, fugiat at, fugit excepturi ducimus omnis ab amet nisi quod dignissimos. Nemo, modi quasi? Aliquid blanditiis temporibus minus enim nulla omnis iste, quidem ipsum incidunt. Illo modi nihil cumque et, tempore qui consectetur alias veniam optio doloremque quibusdam.',
+    blockHeight: '500px'
   },
  
   
@@ -107,6 +121,7 @@ const blocks = [
   position: relative;
   background-color: yellow;
   height: 145px;
+  z-index: 1;
 }
 
 @media (min-width: 970px) {
@@ -142,22 +157,25 @@ const blocks = [
 }
 
 .faq__block-content-container {
+  transition: all 0.3s;
   background: #ffff004f;
-  padding: 120px 25px 50px;
+  padding: 120px 25px 85px;
   margin-top: -85px;
   border-bottom-right-radius: 85px;
   border-bottom-left-radius: 85px;
+  overflow: hidden;
+  transform-origin: top;
 }
 
 @media (min-width: 500px) {
   .faq__block-content-container {
-    padding: 120px 70px 60px;
+    padding: 120px 70px 85px;
   }
 }
 
 @media (min-width: 970px) {
   .faq__block-content-container {
-    padding: 135px 200px 50px;
+    padding: 135px 200px 70px;
   }
 }
 

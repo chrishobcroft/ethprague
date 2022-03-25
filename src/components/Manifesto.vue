@@ -69,6 +69,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
   align-items: center;
 }
 .manifesto__button {
+  transition: all 0.3s;
   margin: 0;
   cursor: pointer;
   display: flex;

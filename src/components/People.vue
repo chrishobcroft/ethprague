@@ -16,6 +16,7 @@
 
     <div class="people__list">
       <div class="people__person" v-for="person in selectedPeople" :key="person.name">
+        <a v-if="person.twitterLink" :class="{'people__person-image-twitter-link': person.twitterLink}" href="https://twitter.com/EthPrague" target="_blank"/>
         <img class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
 
         <div class="people__person-name">
@@ -23,6 +24,9 @@
         </div>
 
         <div class="people__person-roles">
+          <div class="people__person-company">
+              {{ person.company }}
+          </div>
           <div class="people__person-role" v-for="role in person.roles" :key="role">
             {{ role }}
           </div>
@@ -48,42 +52,58 @@ const people = [
   { 
     name: "Molly Millions",
     image: "p1.png",
-    roles: [Roles.SPEAKER, Roles.JUDGE]
+    roles: [Roles.SPEAKER, Roles.JUDGE],
+    company: 'company name',
+    twitterLink: ''
   },
   { 
     name: "Amanda Palmer",
     image: "p2.png",
-    roles: [Roles.SPEAKER]
+    roles: [Roles.SPEAKER],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
    { 
     name: "Ivan Hrozny",
     image: "p3.png",
-    roles: [Roles.SPEAKER]
+    roles: [Roles.SPEAKER],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
   { 
     name: "Petr Pavel",
     image: "p4.png",
-    roles: [Roles.MENTOR]
+    roles: [Roles.MENTOR],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
   { 
     name: "Pavel Petr",
     image: "p5.png",
-    roles: [Roles.JUDGE]
+    roles: [Roles.JUDGE],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
   { 
     name: "Jan Prochazka",
     image: "p6.png",
-    roles: [Roles.SPEAKER]
+    roles: [Roles.SPEAKER],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
   { 
     name: "Karolina Vesela",
     image: "p7.png",
-    roles: [Roles.SPEAKER]
+    roles: [Roles.SPEAKER],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
    { 
     name: "Anezka Novo",
     image: "p1.png",
-    roles: [Roles.MENTOR]
+    roles: [Roles.MENTOR],
+    company: 'company name',
+    twitterLink: 'twitter'
   },
 ]
 
@@ -119,13 +139,12 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
 .people__header {
   margin-top: 100px;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   max-width: 1100px;
   width: 100%;
   justify-content: space-between;
-  flex-direction: column;
   gap: 30px;
-  align-self: flex-start;
 }
 
 @media only screen and (min-width: 1120px) {
@@ -153,7 +172,7 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
 }
 .people__list {
   margin: 100px 0;
-  max-width: 1600px;
+  /* max-width: 1600px; */
   justify-content: center;
   display: flex;
   gap: 20px;
@@ -175,11 +194,18 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   width: 230px;
 }
 
+.people__person-company {
+  font-size: 15px;
+  line-height: 25px;
+  color: black;
+}
+
 .people__person-roles {
   margin-top: 15px;
   width: 230px;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .people__person-role {
@@ -195,6 +221,21 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   height: 230px;
   border-radius: 250px;
   margin-bottom: 30px;
+}
+
+.people__person-image-twitter-link {
+  height: 230px;
+  width: 230px;
+  position: absolute;
+  transition: all 0.35s;
+  border-radius: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.people__person-image-twitter-link:hover {
+  background-image: url('~@/assets/twitter_white.svg');
+  background-color: #5500ff99;
+  cursor: pointer;
 }
 
 </style>

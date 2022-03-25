@@ -29,7 +29,9 @@
   <div class="header-mobile">
     <div class="header-mobile__content">
       <img
+        class="header__logo-eth"
         v-show="isAfterScroll"
+        @click="scrollToTop"
         src="../assets/ETH.svg"
         alt="tickets"
       />
@@ -51,6 +53,8 @@
           <img src="../assets/twitter.svg" alt="twitter" />
         </a>
       </div>
+
+      
     </div>
 
     <Transition name="fade">
@@ -64,6 +68,7 @@
         >
           {{ localLink }}
         </a>
+        <button class="header__button header__button-mobile-menu">tickets</button>
       </div>
     </Transition>
   </div>
@@ -95,6 +100,10 @@ onMounted(() => {
 })
 
 onUnmounted(() => window.removeEventListener("scroll", updateScroll))
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
 </script>
 
@@ -140,6 +149,15 @@ onUnmounted(() => window.removeEventListener("scroll", updateScroll))
   line-height: 22px;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.header__button-mobile-menu {
+  margin-top: 30px;
+}
+
+.header__button:hover {
+  background-color: white;
+  color: var(--col-primary-action);
 }
 
 .header__local-links {
@@ -192,6 +210,7 @@ onUnmounted(() => window.removeEventListener("scroll", updateScroll))
   align-items: center;
   width: 100%;
   padding: 20px;
+  
 }
 
 .header-mobile__hamburger-menu {
@@ -199,17 +218,17 @@ onUnmounted(() => window.removeEventListener("scroll", updateScroll))
 }
 
 .header-mobile__local-links {
-  display: flex;
-  width: 100%;
-  padding: 50px;
-  position: fixed;
-  top:80px;
   align-items: center;
   background-color: var(--col-primary-action);
-  z-index: 100;
+  display: flex;
   flex-direction: column;
-  padding: 110px 30px 50px 50px;
+  font-size: 25px;
   min-height: 100vh;
+  padding: 110px 30px 50px 50px;
+  position: fixed;
+  top:80px;
+  width: 100%;
+  z-index: 100;
 }
 
 .header-mobile__local-link {
@@ -217,10 +236,14 @@ onUnmounted(() => window.removeEventListener("scroll", updateScroll))
   color: white;
   padding: 23px 10px;
   font-family: "Archivo SemiExpanded", Verdana, sans-serif;
-  font-size: 20px;
+  font-size: 25px;
   line-height: 23px;
   letter-spacing: 0em;
   text-align: center;
+}
+
+.header__logo-eth {
+  cursor: pointer;
 }
 /* Animation */
 .fade-enter-active,
