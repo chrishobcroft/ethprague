@@ -50,15 +50,15 @@ enum Roles {
 
 const people = [
   { 
-    name: "Molly Millions",
-    image: "p1.png",
+    name: "ETH Prague person",
+    image: "ETHPraguePeople.jpg",
     roles: [Roles.SPEAKER, Roles.JUDGE],
     company: 'company name',
     twitterLink: ''
   },
   { 
-    name: "Amanda Palmer",
-    image: "p2.png",
+    name: "ETH Prague person 2",
+    image: "ETHPraguePeople_2.jpg",
     roles: [Roles.SPEAKER],
     company: 'company name',
     twitterLink: 'twitter'
@@ -160,7 +160,7 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
 
   font-weight: 300;
   text-transform: uppercase;
-  font-size: 20px;
+  font-size: 15px;
   line-height: 22px;
 }
 

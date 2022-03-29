@@ -1,4 +1,5 @@
 <template>
+  <div  id="manifesto-buttons" />
   <div class="manifesto">
     <div class="manifesto__buttons">
       <div class="manifesto__buttons-row">
@@ -90,6 +91,8 @@ import SectionTitle from "@/components/SectionTitle.vue";
   height: 170px;
   border: solid 2px var(--col-primary-action);
   background-color: white;
+
+  position: relative;
 }
 
 @media (max-width: 1120px) {
@@ -120,10 +123,10 @@ import SectionTitle from "@/components/SectionTitle.vue";
   }
 }
 
-.manifesto__button:hover {
-  background-color: var(--col-primary-action);
+.manifesto__button:hover, .manifesto__button:focus {
   border: solid 2px var(--col-primary-action);
   color: white;
+  box-shadow: inset 30px -8em 0 0 var(--col-primary-action);
 }
 
 .manifesto__button:hover .manifesto__headless-arrow {
@@ -176,5 +179,12 @@ import SectionTitle from "@/components/SectionTitle.vue";
   width: 12px;
   height: 12px;
   margin: 0 12px 2px;
+}
+
+#manifesto-buttons {
+  display: block;
+  position: relative;
+  top: -80px; 
+  visibility: hidden;
 }
 </style>

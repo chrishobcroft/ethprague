@@ -123,7 +123,7 @@
   }
 
   a:hover {
-    color: var(--col-primary-accent);
+    color: white;
     text-decoration: underline;
   }
 

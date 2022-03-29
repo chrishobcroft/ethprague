@@ -1,7 +1,13 @@
 <template>
   <div class="header">
     <div class="header__content">
-      <button class="header__button">tickets</button>
+      <a href="#manifesto-buttons">
+         <img
+          class="header__logo-eth"
+          src="../assets/ETH.svg"
+          alt="tickets"
+        />
+      </a>
 
       <div class="header__local-links">
         <a
@@ -28,14 +34,13 @@
 
   <div class="header-mobile">
     <div class="header-mobile__content">
+      <a href="#manifesto-buttons">
       <img
         class="header__logo-eth"
-        v-show="isAfterScroll"
-        @click="scrollToTop"
         src="../assets/ETH.svg"
         alt="tickets"
       />
-      <button v-show="!isAfterScroll" class="header__button">tickets</button>
+      </a>
 
         <img
           class="header-mobile__hamburger-menu"
@@ -75,9 +80,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted } from "vue";
+import { ref } from "vue";
 const isHamMenuOpen = ref(false);
-const isAfterScroll = ref(false);
 const localLinks = [
   "Manifesto",
   "Hackathon",
@@ -85,24 +89,6 @@ const localLinks = [
   "FAQ",
   "Sponsors & Partners",
 ];
-
-const updateScroll = () => {
-  if (1 < window.scrollY) {
-    isAfterScroll.value = true;
-  } else {
-    isAfterScroll.value = false;
-  }
-}
-
-onMounted(() => {
-  window.addEventListener("scroll", updateScroll);
-})
-
-onUnmounted(() => window.removeEventListener("scroll", updateScroll))
-
-const scrollToTop = () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
 
 </script>
 

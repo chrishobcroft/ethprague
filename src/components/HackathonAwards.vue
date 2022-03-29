@@ -9,7 +9,7 @@
   </div>
 
   <div class="hackathon__awards-list">
-    <div class="hackathon__awards-item" v-for="award in awards" :key="award.name">
+    <div v-for="award in awards" :class="['hackathon__awards-item', {'hackathon__awards-item-pointer': award.description}]" :key="award.name" @click="showModal(award)">
       <div class="hackathon__awards-item-name">
         {{ award.name }}
       </div>
@@ -19,16 +19,52 @@
     </div>
   </div>
 
+    <Transition name="fade">
+      <div  v-if="modalContent" class="hackathon__modal-dropdown" @click="modalContent = null">
+        <div  class="hackathon__modal" @click.stop >
+
+          <div class="hackathon__modal-title">
+            {{ modalContent.name }}
+          </div>
+          <div class="hackathon__modal-award-price">
+            {{ modalContent.price }}
+          </div>
+
+          <div v-if="modalContent.description" class="hackathon__modal-description">
+            {{ modalContent.description }}
+          </div>
+
+        </div>
+      </div>
+    </Transition>
+
   </div>
 </template>
 
 <script setup lang="ts">
 import SectionTitle from "@/components/SectionTitle.vue";
+import { ref } from "vue";
+type Award = {
+  name: string,
+  price: string,
+  description?: string,
+}
+const modalContent = ref<Award | null>(null);
+
+
+const showModal = (award: Award) => {
+  if (award.description) {
+    modalContent.value = award;
+  } else {
+    modalContent.value = null;
+  }
+}
 
 const awards = [
   { 
     name: "sustainability award",
     price: "2500 EUR",
+    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium magni odio corporis quisquam quaerat, possimus ea iusto assumenda sed illum dicta nostrum labore vero ab adipisci minima fuga animi. Iure."
   },
   { 
     name: "urbanism award",
@@ -66,6 +102,51 @@ const awards = [
   padding: 0 var(--app-padding);
 }
 
+.hackathon__modal-dropdown {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hackathon__modal {
+  background-color: white;
+  border-radius: 10px;
+  padding: 25px;
+  max-width: 1100px;
+  display: flex;
+  margin: 0 auto;
+  top: 150px;
+  position: relative;
+  flex: 1;
+  width: 93%;
+  flex-direction: column;
+}
+
+@media (min-width: 970px) { 
+  .hackathon__modal {
+    width: 80%;
+    padding: 50px;
+  }
+}
+
+.hackathon__modal-award-price {
+  font-size: 20px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.hackathon__modal-description {
+  font-size: 15px;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+
+.hackathon__awards-item-pointer {
+  cursor: pointer;
+}
 .hackathon__text-container {
   margin-top: 100px;
   display: flex;
@@ -117,7 +198,7 @@ const awards = [
   color: white;
 }
 
-.hackathon__awards-item-name {
+.hackathon__awards-item-name, .hackathon__modal-title {
   font-size: 20px;
   line-height: 35px;
   color: var(--col-primary-action);
@@ -139,13 +220,23 @@ const awards = [
 }
 
 @media (min-width: 970px) {
-  .hackathon__awards-item-name {
+  .hackathon__awards-item-name, .hackathon__modal-title  {
     font-size: 25px;
   }
 
   .hackathon__awards-item-price {
     font-size: 25px;
   }
+}
+
+/* Animation */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 
 </style>
