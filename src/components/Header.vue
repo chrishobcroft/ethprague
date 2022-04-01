@@ -73,7 +73,7 @@
         >
           {{ localLink }}
         </a>
-        <button class="header__button header__button-mobile-menu">tickets</button>
+        <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
       </div>
     </Transition>
   </div>
@@ -84,9 +84,9 @@ import { ref } from "vue";
 const isHamMenuOpen = ref(false);
 const localLinks = [
   "Manifesto",
-  "Hackathon",
-  "Speakers",
-  "FAQ",
+  // "Hackathon",
+  // "Speakers",
+  // "FAQ",
   "Sponsors & Partners",
 ];
 
