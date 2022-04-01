@@ -21,15 +21,29 @@ export default {
   @import 'styles/normalize.css';
   @import "styles/skeleton.css";
 
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* colors */
+    --col-primary-action: #5400ff;
+  }
+
   html, body {
-    font-family: "Helvetica Neue";
-    letter-spacing: 3px;
-    color: #ffffff;
-    background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed;
+    font-family: "Archivo SemiExpanded", Verdana, sans-serif;
+    letter-spacing: 0px;
+    /* color: #ffffff; */
+    /* background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed; */
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  @font-face {
+    font-family: "Archivo SemiExpanded"; /*a name to be used later*/
+    src: url("assets/font/Archivo_SemiExpanded-Medium.ttf"); /*URL to font*/
   }
 
   @font-face {
