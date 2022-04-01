@@ -1,20 +1,11 @@
 <template>
   <div id="app">
-    <MainPage/>
+    <MainPage />
   </div>
 </template>
 
-<script>
-
-import MainPage from "./components/MainPage";
-export default {
-  name: 'app',
-  components: {MainPage},
-  methods: {
-  },
-  mounted () {
-  }
-}
+<script setup lang="ts">
+  import MainPage from "@/pages/MainPage.vue";
 </script>
 
 <style lang="css">
@@ -28,6 +19,11 @@ export default {
   :root {
     /* colors */
     --col-primary-action: #5400ff;
+    --col-primary-accent: #FFFF00;
+    --col-light-gray-bg: rgba(0, 0, 0, 0.08);
+
+    --mobile-breakpoint: 1120px;
+    --app-padding: 15px;
   }
 
   html, body {
@@ -35,10 +31,21 @@ export default {
     letter-spacing: 0px;
     /* color: #ffffff; */
     /* background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed; */
+    scroll-behavior: smooth;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
+  }
+
+  ::selection {
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
   }
 
   @font-face {
