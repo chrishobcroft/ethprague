@@ -18,22 +18,22 @@
         <button class="manifesto__button">Apply to hack <span class="manifesto__headless-arrow"/></button>
       </a>
       </div>
-      <div class="manifesto__buttons-row">
-      <a
-        href="https://cfp.paralelnipolis.cz/ethprague-2022/"
-        target="_blank"
-        class="manifesto__button-link"
-      >
-        <button class="manifesto__button">Apply as general admission <span class="manifesto__headless-arrow"/></button>
-      </a>
-      <a
-        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
-        target="_blank"
-        class="manifesto__button-link"
-      >
-        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>
-      </a>
-      </div>
+<!--      <div class="manifesto__buttons-row">-->
+<!--      <a-->
+<!--        href="https://cfp.paralelnipolis.cz/ethprague-2022/"-->
+<!--        target="_blank"-->
+<!--        class="manifesto__button-link"-->
+<!--      >-->
+<!--        <button class="manifesto__button">Apply as general admission <span class="manifesto__headless-arrow"/></button>-->
+<!--      </a>-->
+<!--      <a-->
+<!--        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"-->
+<!--        target="_blank"-->
+<!--        class="manifesto__button-link"-->
+<!--      >-->
+<!--        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>-->
+<!--      </a>-->
+<!--      </div>-->
     </div>
 
     <div id='Manifesto' class="manifesto__text-container">
@@ -59,6 +59,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
   align-items: center;
   width: 100%;
   background-color: white;
+  text-align: justify;
 }
 .manifesto__buttons {
   max-width: 1600px;

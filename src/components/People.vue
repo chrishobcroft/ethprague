@@ -52,14 +52,14 @@ enum Roles {
 
 const people = [
   { 
-    name: "ETH Prague person",
+    name: "Austin Griffith",
     image: "ETHPraguePeople.jpg",
     roles: [Roles.SPEAKER, Roles.JUDGE],
-    company: 'company name',
+    company: 'Ethereum Foundation',
     twitterLink: ''
   },
   { 
-    name: "ETH Prague person 2",
+    name: "Sunny Aggarwal",
     image: "ETHPraguePeople_2.jpg",
     roles: [Roles.SPEAKER],
     company: 'company name',

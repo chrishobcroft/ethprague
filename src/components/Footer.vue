@@ -30,9 +30,9 @@
       <div>
         <img class="footer__image-institute-of-crypto" width="235" src="../assets/InstitutCrypto.svg" alt="IoC logo">
       </div>
-      <div>
-        <img class="footer__image-paralelni-polis" width="235" src="../assets/paralelni-polis.svg" alt="Paralelni Polis logo">
-      </div>
+<!--      <div>-->
+<!--        <img class="footer__image-paralelni-polis" width="235" src="../assets/paralelni-polis.svg" alt="Paralelni Polis logo">-->
+<!--      </div>-->
       </a>
     </div>
 
