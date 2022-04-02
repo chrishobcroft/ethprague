@@ -2,11 +2,7 @@
   <div class="header">
     <div class="header__content">
       <a href="#manifesto-buttons">
-         <img
-          class="header__logo-eth"
-          src="../assets/ETH.svg"
-          alt="tickets"
-        />
+        <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
       </a>
 
       <div class="header__local-links">
@@ -15,9 +11,7 @@
           v-for="localLink in localLinks"
           :key="localLink"
           :href="`#${localLink}`"
-        >
-          {{ localLink }}
-        </a>
+        >{{ localLink }}</a>
       </div>
 
       <div class="header__social-links">
@@ -35,19 +29,15 @@
   <div class="header-mobile">
     <div class="header-mobile__content">
       <a href="#manifesto-buttons">
-      <img
-        class="header__logo-eth"
-        src="../assets/ETH.svg"
-        alt="tickets"
-      />
+        <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
       </a>
 
-        <img
-          class="header-mobile__hamburger-menu"
-          src="../assets/hamburger-menu.svg"
-          alt="menu"
-          @click="isHamMenuOpen = !isHamMenuOpen"
-        />
+      <img
+        class="header-mobile__hamburger-menu"
+        src="../assets/hamburger-menu.svg"
+        alt="menu"
+        @click="isHamMenuOpen = !isHamMenuOpen"
+      />
 
       <div class="header__social-links">
         <a href="https://t.me/ethprague" target="_blank">
@@ -58,8 +48,6 @@
           <img src="../assets/twitter.svg" alt="twitter" />
         </a>
       </div>
-
-      
     </div>
 
     <Transition name="fade">
@@ -70,9 +58,7 @@
           v-for="localLink in localLinks"
           :key="localLink"
           :href="`#${localLink}`"
-        >
-          {{ localLink }}
-        </a>
+        >{{ localLink }}</a>
         <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
       </div>
     </Transition>
@@ -84,9 +70,9 @@ import { ref } from "vue";
 const isHamMenuOpen = ref(false);
 const localLinks = [
   "Manifesto",
-  // "Hackathon",
-  // "Speakers",
-  // "FAQ",
+  "Hackathon",
+  "Speakers",
+  "FAQ",
   "Sponsors & Partners",
 ];
 
@@ -195,7 +181,6 @@ const localLinks = [
   align-items: center;
   width: 100%;
   padding: 20px;
-  
 }
 
 .header-mobile__hamburger-menu {
@@ -211,7 +196,7 @@ const localLinks = [
   min-height: 100vh;
   padding: 110px 30px 50px 50px;
   position: fixed;
-  top:80px;
+  top: 80px;
   width: 100%;
   z-index: 100;
 }
@@ -239,5 +224,4 @@ const localLinks = [
 .fade-leave-to {
   opacity: 0;
 }
-
 </style>

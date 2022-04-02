@@ -68,7 +68,7 @@ const people = [
     image: "Sunny Aggarwal.jpg",
     roles: [Roles.SPEAKER],
     company: '',
-    twitterLink: ''
+    twitterLink: 'test'
   },
   {
     name: "",
