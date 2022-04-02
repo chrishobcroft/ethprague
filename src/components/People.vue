@@ -1,46 +1,51 @@
 <template>
   <div id="Speakers" class="people">
-
     <div class="people__header">
       <SectionTitle title="people" />
-      <div class='people__header-menu'>
-        <button @click="showPeopleWithRole = Roles.ALL" :class="headerMenuButtonClasses(Roles.ALL)">all</button>
-        <button @click="showPeopleWithRole = Roles.SPEAKER"
-        :class="headerMenuButtonClasses(Roles.SPEAKER)">speakers</button>
-        <button @click="showPeopleWithRole = Roles.JUDGE"
-        :class="headerMenuButtonClasses(Roles.JUDGE)">judges</button>
-        <button @click="showPeopleWithRole = Roles.MENTOR"
-        :class="headerMenuButtonClasses(Roles.MENTOR)">mentors</button> 
+      <div class="people__header-menu">
+        <button
+          @click="showPeopleWithRole = Roles.ALL"
+          :class="headerMenuButtonClasses(Roles.ALL)"
+        >all</button>
+        <button
+          @click="showPeopleWithRole = Roles.SPEAKER"
+          :class="headerMenuButtonClasses(Roles.SPEAKER)"
+        >speakers</button>
+        <button
+          @click="showPeopleWithRole = Roles.JUDGE"
+          :class="headerMenuButtonClasses(Roles.JUDGE)"
+        >judges</button>
+        <button
+          @click="showPeopleWithRole = Roles.MENTOR"
+          :class="headerMenuButtonClasses(Roles.MENTOR)"
+        >mentors</button>
       </div>
     </div>
 
     <div class="people__list">
       <div class="people__person" v-for="person in selectedPeople" :key="person.name">
-        <a v-if="person.twitterLink" :class="{'people__person-image-twitter-link': person.twitterLink}" href="https://twitter.com/EthPrague" target="_blank"/>
+        <a
+          v-if="person.twitterLink"
+          :class="{ 'people__person-image-twitter-link': person.twitterLink }"
+          :href="person.twitterLink"
+          target="_blank"
+        />
         <img class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
 
-        <div class="people__person-name">
-          {{ person.name }}
-        </div>
+        <div class="people__person-name">{{ person.name }}</div>
 
-        <div class="people__person-company">
-          {{ person.company }}
-        </div>
+        <div class="people__person-company">{{ person.company }}</div>
 
         <div class="people__person-roles">
-
-          <div class="people__person-role" v-for="role in person.roles" :key="role">
-            {{ role }}
-          </div>
-        </div> 
+          <div class="people__person-role" v-for="role in person.roles" :key="role">{{ role }}</div>
+        </div>
       </div>
     </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
-import {ref, computed} from 'vue'
+import { ref, computed } from 'vue'
 import SectionTitle from "@/components/SectionTitle.vue";
 
 enum Roles {
@@ -51,61 +56,47 @@ enum Roles {
 }
 
 const people = [
-  { 
+  {
     name: "Austin Griffith",
-    image: "ETHPraguePeople.jpg",
+    image: "Austin_Griffith.jpg",
     roles: [Roles.SPEAKER, Roles.JUDGE],
     company: 'Ethereum Foundation',
     twitterLink: ''
   },
-  { 
+  {
     name: "Sunny Aggarwal",
-    image: "ETHPraguePeople_2.jpg",
+    image: "Sunny Aggarwal.jpg",
     roles: [Roles.SPEAKER],
-    company: 'company name',
-    twitterLink: 'twitter'
+    company: '',
+    twitterLink: ''
   },
-   { 
-    name: "Ivan Hrozny",
-    image: "p3.png",
-    roles: [Roles.SPEAKER],
-    company: 'company name',
-    twitterLink: 'twitter'
+  {
+    name: "",
+    image: "p3.jpg",
+    roles: "",
+    company: '',
+    twitterLink: ''
   },
-  { 
-    name: "Petr Pavel",
-    image: "p4.png",
-    roles: [Roles.MENTOR],
-    company: 'company name',
-    twitterLink: 'twitter'
+  {
+    name: "",
+    image: "p4.jpg",
+    roles: "",
+    company: '',
+    twitterLink: ''
   },
-  { 
-    name: "Pavel Petr",
-    image: "p5.png",
-    roles: [Roles.JUDGE],
-    company: 'company name',
-    twitterLink: 'twitter'
+  {
+    name: "",
+    image: "p5.jpg",
+    roles: "",
+    company: '',
+    twitterLink: ''
   },
-  { 
-    name: "Jan Prochazka",
-    image: "p6.png",
-    roles: [Roles.SPEAKER],
-    company: 'company name',
-    twitterLink: 'twitter'
-  },
-  { 
-    name: "Karolina Vesela",
-    image: "p7.png",
-    roles: [Roles.SPEAKER],
-    company: 'company name',
-    twitterLink: 'twitter'
-  },
-   { 
-    name: "Anezka Novo",
-    image: "p1.png",
-    roles: [Roles.MENTOR],
-    company: 'company name',
-    twitterLink: 'twitter'
+  {
+    name: "",
+    image: "p6.jpg",
+    roles: "",
+    company: '',
+    twitterLink: ''
   },
 ]
 
@@ -113,7 +104,7 @@ const showPeopleWithRole = ref(Roles.ALL)
 
 const selectedPeople = computed(() => {
   if (showPeopleWithRole.value === Roles.ALL) {
-    return people 
+    return people
   }
   return people.filter(person => person.roles.includes(showPeopleWithRole.value))
 })
@@ -127,7 +118,6 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
 </script>
 
 <style scoped>
-
 .people {
   background-color: white;
   display: flex;
@@ -178,13 +168,11 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
-
 }
 
 .people__person {
   width: 230px;
   height: 395px;
-
 }
 
 .people__person-name {
@@ -235,9 +223,8 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   background-position: center;
 }
 .people__person-image-twitter-link:hover {
-  background-image: url('~@/assets/twitter_white.svg');
+  background-image: url("~@/assets/twitter_white.svg");
   background-color: #5500ff99;
   cursor: pointer;
 }
-
 </style>

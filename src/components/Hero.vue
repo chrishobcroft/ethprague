@@ -1,29 +1,43 @@
 <template>
   <div class="hero">
     <div class="hero__image-desktop">
-      <img class="hero__image-eth" src="../assets/hero_eth.svg" />
-      <img class="hero__image-polis" src="../assets/hero_polis.svg" />
-      <img class="hero__image-text" src="../assets/hero_text.svg" />
-      <img class="hero__image-prague" src="../assets/hero_prague.svg" />
-      <img class="hero__image-main-image" src="../assets/hero_img1.png" />
+      <img class="hero__image-eth" src="../assets/hero/hero_eth.svg" />
+      <img class="hero__image-polis" src="../assets/hero/hero_polis.svg" />
+      <img class="hero__image-text" src="../assets/hero/hero_text.svg" />
+      <img class="hero__image-prague" src="../assets/hero/hero_prague.svg" />
+      <img class="hero__image-main-image" :src="getHeroImage(DeviceType.DESKTOP)" />
     </div>
-    <img class="hero__image-mobile" src="../assets/hero_mobile1.png" alt="hero">
+    <img class="hero__image-mobile" :src="getHeroImage(DeviceType.MOBIL)" alt="hero" />
   </div>
   <div class="hero__event-date">
-
     <div class="hero__event-date-text">
-      <span >
-        ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.
-      </span>
+      <span>ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.</span>
     </div>
 
     <div class="hero__event-date-text hero__event-date-text2">
-      <span >
-        ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6 — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.
-      </span>
+      <span>ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6 — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.</span>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+
+enum DeviceType {
+  MOBIL = 'mobile',
+  DESKTOP = 'desktop',
+}
+
+const getHeroImage = (forDevice: string) => {
+  const randomHeroNum = Math.floor(Math.random() * 3) + 1;
+  switch (forDevice) {
+    case DeviceType.MOBIL:
+      return require(`../assets/hero/hero_mobile_${randomHeroNum}.webp`)
+    case DeviceType.DESKTOP:
+      return require(`../assets/hero/hero_${randomHeroNum}.webp`)
+  }
+}
+
+</script>
 
 <style scoped>
 .hero {
@@ -91,8 +105,9 @@
 }
 .hero__image-main-image {
   position: absolute;
-  bottom: 0;
+  bottom: -150px;
   right: 250px;
+  width: 605px;
 }
 
 .hero__event-date-text {
