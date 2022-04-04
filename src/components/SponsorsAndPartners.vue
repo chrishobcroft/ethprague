@@ -61,6 +61,7 @@ const few = [
   { name: "wallet-connect", link: "https://walletconnect.com/" },
   { name: "eth-foundation", link: "https://ethereum.org/en/foundation/" },
   { name: "livepeer", link: "https://livepeer.org/" },
+  { name: "ledger", link: "https://www.ledger.com/" },
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
@@ -107,13 +108,15 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 .sponsors-and-partners__few-icon {
   max-width: 100%;
   cursor: pointer;
+  width: 100%;
 }
 .sponsors-and-partners__few-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 110px;
+  column-gap: 110px;
+  row-gap: 80px;
   max-width: 100%;
 }
 
