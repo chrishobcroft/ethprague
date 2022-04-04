@@ -56,48 +56,90 @@ enum Roles {
 }
 
 const people = [
+  // {
+  //   name: "Sunny Aggarwal",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'Osmosis Labs',
+  //   twitterLink: ''
+  // },
   {
-    name: "Austin Griffith",
+    name: "Harsh	Rajat",
+    image: "",
+    roles: [Roles.SPEAKER],
+    company: 'Ethereum Push Notification Service',
+    twitterLink: ''
+  },
+  {
+    name: "Julien	Bouteloup",
+    image: "Julien_Bouteloup.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'StakeDAO',
+    twitterLink: ''
+  },
+  // {
+  //   name: "Guillaume	Ballet",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'Ethereum Foundation',
+  //   twitterLink: ''
+  // },
+  {
+    name: "Franziska Heintel",
+    image: "Franziska_Heintel.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'Ethereum Foundation',
+    twitterLink: ''
+  },
+  // {
+  //   name: "Avihu	Levy",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'StarkWare',
+  //   twitterLink: ''
+  // },
+  {
+    name: "Austin	Griffith",
     image: "Austin_Griffith.jpg",
-    roles: [Roles.SPEAKER, Roles.JUDGE],
+    roles: [Roles.SPEAKER],
     company: 'Ethereum Foundation',
     twitterLink: ''
   },
   {
-    name: "Sunny Aggarwal",
-    image: "Sunny Aggarwal.jpg",
+    name: "Afri	Schoedon",
+    image: "Afri_Schoedon.jpg",
+    roles: [Roles.JUDGE],
+    company: 'ChainSafe Systems',
+    twitterLink: ''
+  },
+  {
+    name: "Jayen	Harrill",
+    image: "Jayen_Harrill.jpg",
     roles: [Roles.SPEAKER],
-    company: '',
-    twitterLink: 'test'
-  },
-  {
-    name: "",
-    image: "p3.jpg",
-    roles: "",
-    company: '',
+    company: '', // TBA
     twitterLink: ''
   },
-  {
-    name: "",
-    image: "p4.jpg",
-    roles: "",
-    company: '',
-    twitterLink: ''
-  },
-  {
-    name: "",
-    image: "p5.jpg",
-    roles: "",
-    company: '',
-    twitterLink: ''
-  },
-  {
-    name: "",
-    image: "p6.jpg",
-    roles: "",
-    company: '',
-    twitterLink: ''
-  },
+  // {
+  //   name: "Clément	Leseage",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'Kleros',
+  //   twitterLink: ''
+  // },
+  // {
+  //   name: "Steven	Waterhouse",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'Orchid Labs',
+  //   twitterLink: ''
+  // },
+  // {
+  //   name: "Zaki	Manian",
+  //   image: "",
+  //   roles: [Roles.SPEAKER],
+  //   company: 'Sommelier',
+  //   twitterLink: ''
+  // },
 ]
 
 const showPeopleWithRole = ref(Roles.ALL)
