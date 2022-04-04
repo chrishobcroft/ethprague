@@ -11,11 +11,11 @@
   </div>
   <div class="hero__event-date">
     <div class="hero__event-date-text">
-      <span>ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th</span>
+      <span>ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp;</span>
     </div>
 
     <div class="hero__event-date-text hero__event-date-text2">
-      <span>ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th</span>
+      <span>ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp;</span>
     </div>
   </div>
 </template>
