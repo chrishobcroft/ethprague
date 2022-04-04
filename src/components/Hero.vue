@@ -11,11 +11,11 @@
   </div>
   <div class="hero__event-date">
     <div class="hero__event-date-text">
-      <span>ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.</span>
+      <span>ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th</span>
     </div>
 
     <div class="hero__event-date-text hero__event-date-text2">
-      <span>ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6 — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6.ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6. — 12. 6. ETH Prague 10. 6.</span>
+      <span>ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th ETH Prague June 10th — 12th</span>
     </div>
   </div>
 </template>
