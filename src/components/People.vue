@@ -30,7 +30,7 @@
           :href="person.twitterLink"
           target="_blank"
         />
-        <img class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
+        <img  v-if="person.image" class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
 
         <div class="people__person-name">{{ person.name }}</div>
 
@@ -56,16 +56,16 @@ enum Roles {
 }
 
 const people = [
-  // {
-  //   name: "Sunny Aggarwal",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'Osmosis Labs',
-  //   twitterLink: ''
-  // },
   {
-    name: "Harsh	Rajat",
-    image: "",
+    name: "Sunny Aggarwal",
+    image: "Sunny_Aggarwal.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'Osmosis Labs',
+    twitterLink: ''
+  },
+  {
+    name: "Harsh Rajat",
+    image: "Harsh_Rajat.jpg",
     roles: [Roles.SPEAKER],
     company: 'Ethereum Push Notification Service',
     twitterLink: ''
@@ -91,13 +91,13 @@ const people = [
     company: 'Ethereum Foundation',
     twitterLink: ''
   },
-  // {
-  //   name: "Avihu	Levy",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'StarkWare',
-  //   twitterLink: ''
-  // },
+  {
+    name: "Avihu Levy",
+    image: "Avihu_Levy.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'StarkWare',
+    twitterLink: ''
+  },
   {
     name: "Austin	Griffith",
     image: "Austin_Griffith.jpg",
@@ -119,27 +119,27 @@ const people = [
     company: '', // TBA
     twitterLink: ''
   },
-  // {
-  //   name: "Clément	Leseage",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'Kleros',
-  //   twitterLink: ''
-  // },
-  // {
-  //   name: "Steven	Waterhouse",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'Orchid Labs',
-  //   twitterLink: ''
-  // },
-  // {
-  //   name: "Zaki	Manian",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'Sommelier',
-  //   twitterLink: ''
-  // },
+  {
+    name: "Clément Leseage",
+    image: "Clement_Lesaege.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'Kleros',
+    twitterLink: ''
+  },
+  {
+    name: "Steven	Waterhouse",
+    image: "Steven_Waterhouse.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'Orchid Labs',
+    twitterLink: ''
+  },
+  {
+    name: "Zaki	Manian",
+    image: "Zaki_Manian.jpg",
+    roles: [Roles.SPEAKER],
+    company: 'Sommelier',
+    twitterLink: ''
+  },
 ]
 
 const showPeopleWithRole = ref(Roles.ALL)
