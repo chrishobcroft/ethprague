@@ -1,35 +1,56 @@
 <template>
   <div id="app">
-    <MainPage/>
+    <MainPage />
   </div>
 </template>
 
-<script>
-
-import MainPage from "./components/MainPage";
-export default {
-  name: 'app',
-  components: {MainPage},
-  methods: {
-  },
-  mounted () {
-  }
-}
+<script setup lang="ts">
+  import MainPage from "@/pages/MainPage.vue";
 </script>
 
 <style lang="css">
   @import 'styles/normalize.css';
   @import "styles/skeleton.css";
 
+  * {
+    box-sizing: border-box;
+  }
+
+  :root {
+    /* colors */
+    --col-primary-action: #5400ff;
+    --col-primary-accent: #FFFF00;
+    --col-light-gray-bg: rgba(0, 0, 0, 0.08);
+
+    --mobile-breakpoint: 1120px;
+    --app-padding: 15px;
+  }
+
   html, body {
-    font-family: "Helvetica Neue";
-    letter-spacing: 3px;
-    color: #ffffff;
-    background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed;
+    font-family: "Archivo SemiExpanded", Verdana, sans-serif;
+    letter-spacing: 0px;
+    /* color: #ffffff; */
+    /* background: url('./assets/placeholderpunk.jpeg') no-repeat center center fixed; */
+    scroll-behavior: smooth;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  ::-moz-selection { /* Code for Firefox */
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
+  }
+
+  ::selection {
+    color: var(--col-primary-action);
+    background: var(--col-primary-accent);
+  }
+
+  @font-face {
+    font-family: "Archivo SemiExpanded"; /*a name to be used later*/
+    src: url("assets/font/Archivo_SemiExpanded-Medium.ttf"); /*URL to font*/
   }
 
   @font-face {
