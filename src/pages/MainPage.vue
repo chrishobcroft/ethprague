@@ -2,7 +2,7 @@
   <Header />
   <Hero />
   <Manifesto />
-  <HackathonAwards />
+<!--  <HackathonAwards />-->
   <People />
   <SponsorsAndPartners />
   <FAQ />
