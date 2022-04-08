@@ -60,13 +60,13 @@ const blocks = [
     contentBgColor: '#9efff5',
     html:
         '<p> The event is primarily a hackathon BUT since the venue enables us to also host talks, we would be crazy not to have those! </p> ' +
-        '<p> Not only there are going to be vaiours types of workspaces available, but also there is going to be:  </p> ' +
+        '<p> Not only there are going to be various types of workspaces available, but also there is going to be:  </p> ' +
         '<ul> ' +
         '<li> 1 track of informative Solapunk related and technical talks </li>' +
         '<li> 1 track of hands-on workshops </li>' +
         '<li> 1 track of panels & fire-side chats </li>' +
         '</ul>' +
-        '<p> Also, we have cookies! There is going to be free full-day catering provided for all participants!</p>',
+        '<p> Also, we have cookies! There is going to be free all-day catering provided for all participants!</p>',
     blockHeight: '300px'
   },
    {
