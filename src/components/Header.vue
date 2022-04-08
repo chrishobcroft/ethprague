@@ -70,7 +70,7 @@ import { ref } from "vue";
 const isHamMenuOpen = ref(false);
 const localLinks = [
   "Manifesto",
-  "Hackathon",
+  // "Hackathon",
   "Speakers",
   "FAQ",
   "Sponsors & Partners",
