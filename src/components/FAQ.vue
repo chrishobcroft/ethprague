@@ -36,7 +36,7 @@ type Block = {
   title: string;
   toggleBgColor: string;
   contentBgColor: string;
-  text: string;
+  text?: string;
   blockHeight: string;
 }
 
