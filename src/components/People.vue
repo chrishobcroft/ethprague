@@ -51,6 +51,7 @@ import csvtojson from 'csvtojson'
 import { Roles, peopleFallback } from "@/components/people"
 const peopleData = ref<Person[]>();
 const axios = require("axios").default;
+const isGoogleDataCorrupted = ref(false)
 
 const url =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZOamB2pcc0qXdDX-qINL-cGHj66r7Ep-0Wc_DhGaG9gOZ3v3oUJfan0eRB89VHzJSx6slUkHyl6fo/pub?output=csv";
@@ -65,16 +66,27 @@ type Person = {
   image?: string;
   roles: string[];
   twitterLink: string;
+}
 
+type PersonRaw = {
+  name: string;
+  ['last name']: string;
+  company: string;
+  twitter?: string;
+  role: string;
 }
 
 onMounted( async () => {
   const imagesDataCsv = await axios.get(imagesNamesAndIds)
   const imagesDataJson = await csvtojson().fromString(imagesDataCsv.data)
 
+  const getImageIdByPersonName = (person: PersonRaw) => {
+    const nameVariantA = `${person['name']}_${person['last name']}`
+    const nameVariantB = `${person['name']} ${person['last name']}`
 
-  const getImageIdByPersonName = (personName: string) => {
-    const imageId = imagesDataJson.find(image => image.name === personName);
+    const imageId = imagesDataJson.find(image =>
+      image.name.toLowerCase().includes(nameVariantA.toLowerCase()) ||
+      image.name.toLowerCase().includes(nameVariantB.toLowerCase()));
     if (imageId) {
       return imageId.fileId;
     }
@@ -83,17 +95,29 @@ onMounted( async () => {
 
   const peopleDataCsv = await axios.get(url)
   const peopleDataJson = await csvtojson().fromString(peopleDataCsv.data)
+  const arrayOfMustHaveKeys = ['name', 'last name', 'company', 'role']
 
-  peopleData.value = (peopleDataJson || []).map(person => {
+  const isDataCorrupted = peopleDataJson.some(person => {
+    const keys = Object.keys(person)
+    return !arrayOfMustHaveKeys.every(key => keys.includes(key))
+  })
+
+  if (isDataCorrupted) isGoogleDataCorrupted.value = true
+
+  const filteredEmptyObjects = peopleDataJson.filter(person => {
+    if (person.name === '' || person['last name'] === '') return false
+    return true
+  })
+
+  peopleData.value = (filteredEmptyObjects || []).map(person => {
     return {
-      name: `${person['jméno']} ${person['příjmení']}`,
-      company: person.firma,
-      imageId: getImageIdByPersonName(`${person['jméno']}_${person['příjmení']}.jpg`),
-      roles: person.role.split(" "),
+      name: `${person.name} ${person['last name']}`,
+      company: person.company,
+      imageId: getImageIdByPersonName(person),
+      roles: person.role.includes(',') ? person.role.split(",") : person.role.split(" "),
       twitterLink: person.twitter,
     }
   }) as Person[];
-  
 })
 
 
@@ -102,7 +126,7 @@ const showPeopleWithRole = ref(Roles.ALL)
 
 const selectedPeople = computed(() => {
 
-  if(!peopleData.value) {
+  if(!peopleData.value || isGoogleDataCorrupted.value) {
     if (showPeopleWithRole.value === Roles.ALL) {
       return peopleFallback;
     }
@@ -116,7 +140,7 @@ const selectedPeople = computed(() => {
 });
 
 const getPersonImage = (person: Person) => {
-  if (!peopleData.value) {
+  if (!peopleData.value || isGoogleDataCorrupted.value) {
     try {
       return require('../assets/people/' + person.image)
     } catch (err) {

@@ -7,8 +7,8 @@ export enum Roles {
 
 export const peopleFallback = [
   {
-    name: "Sunny Aggarwal",
-    image: "Sunny_Aggarwal.jpg",
+    name: "Sunny Agarwal",
+    image: "Sunny_Agarwal.jpg",
     roles: [Roles.SPEAKER],
     company: 'Osmosis Labs',
     twitterLink: ''
@@ -71,7 +71,7 @@ export const peopleFallback = [
   },
   {
     name: "Clément Leseage",
-    image: "Clement_Lesaege.jpg",
+    image: "Clément_Lesaege.jpg",
     roles: [Roles.SPEAKER],
     company: 'Kleros',
     twitterLink: ''
