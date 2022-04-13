@@ -4,6 +4,7 @@ module.exports = {
   env: {
     node: true,
   },
+
   rules: {
     "no-console": process.env.NODE_ENV === "production" ? "error" : 1,
     "no-debugger": process.env.NODE_ENV === "production" ? "error" : "off",
@@ -12,6 +13,7 @@ module.exports = {
 
   parserOptions: {
     parser: "@typescript-eslint/parser",
+    extraFileExtensions: [".vue"],
   },
 
   extends: [

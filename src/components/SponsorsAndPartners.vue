@@ -106,7 +106,7 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 
 .sponsors-and-partners__looks-rare-icon,
 .sponsors-and-partners__few-icon {
-  max-width: 100%;
+  max-width: 275px;
   cursor: pointer;
   width: 100%;
 }
