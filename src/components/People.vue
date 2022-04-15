@@ -113,10 +113,10 @@ const people = [
     twitterLink: ''
   },
   {
-    name: "Jayen	Harrill",
-    image: "Jayen_Harrill.jpg",
+    name: "Jaye	Harrill",
+    image: "Jaye_Harrill.jpg",
     roles: [Roles.SPEAKER],
-    company: '', // TBA
+    company: 'Quantstamp',
     twitterLink: ''
   },
   {
