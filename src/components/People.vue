@@ -22,15 +22,16 @@
       </div>
     </div>
 
-    <div class="people__list">
-      <div class="people__person" v-for="person in selectedPeople" :key="person.name">
+    <div class="people__list" v-if="selectedPeople">
+      <div class="people__person" v-for="person in selectedPeople" :key="person.name" >
         <a
           v-if="person.twitterLink"
           :class="{ 'people__person-image-twitter-link': person.twitterLink }"
           :href="person.twitterLink"
           target="_blank"
         />
-        <img  v-if="person.image" class="people__person-image" :alt="person.name" :src="getPersonImage(person.image)" />
+
+        <Image :cssClass="['people__person-image', {'people__person-image--purple-filter': !Boolean(person.isImageEdited)} ]" :src="getPersonImage({person})" :fallbackImageA="getPersonImage({person, isFallback: true})" :fallbackImageB="require('../assets/people/default.jpg')" />
 
         <div class="people__person-name">{{ person.name }}</div>
 
@@ -45,115 +46,145 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import SectionTitle from "@/components/SectionTitle.vue";
+import { ref, computed, onMounted } from 'vue'
+import SectionTitle from "@/components/SectionTitle.vue"
+import csvtojson from 'csvtojson'
+import { Roles, peopleFallback } from "@/components/people"
+import Image from "@/components/Image.vue"
+const peopleData = ref<Person[]>();
+const axios = require("axios").default;
+const isGoogleDataCorrupted = ref(false)
+const imagesDataJson = ref()
+const peopleDataJson = ref<PersonRaw[]>([])
 
-enum Roles {
-  SPEAKER = 'Speaker',
-  JUDGE = 'Judge',
-  MENTOR = 'Mentor',
-  ALL = 'all'
+const url =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZOamB2pcc0qXdDX-qINL-cGHj66r7Ep-0Wc_DhGaG9gOZ3v3oUJfan0eRB89VHzJSx6slUkHyl6fo/pub?output=csv";
+
+const imagesNamesAndIds = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT7sEWKHHYfflEwzDn_-W5m4tgA0zGS0h9WNhmLAGMp9-99o_iufjOLozYyb9BvcBIMOm8d70oMqD1/pub?output=csv"
+
+
+type Person = {
+  name: string;
+  company: string;
+  imageId?: string;
+  image?: string;
+  roles: string[];
+  twitterLink: string;
+  isImageEdited?: boolean;
+  imageFallback?: string;
 }
 
-const people = [
-  {
-    name: "Sunny Aggarwal",
-    image: "Sunny_Aggarwal.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Osmosis Labs',
-    twitterLink: ''
-  },
-  {
-    name: "Harsh Rajat",
-    image: "Harsh_Rajat.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Ethereum Push Notification Service',
-    twitterLink: ''
-  },
-  {
-    name: "Julien	Bouteloup",
-    image: "Julien_Bouteloup.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'StakeDAO',
-    twitterLink: ''
-  },
-  // {
-  //   name: "Guillaume	Ballet",
-  //   image: "",
-  //   roles: [Roles.SPEAKER],
-  //   company: 'Ethereum Foundation',
-  //   twitterLink: ''
-  // },
-  {
-    name: "Franziska Heintel",
-    image: "Franziska_Heintel.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Ethereum Foundation',
-    twitterLink: ''
-  },
-  {
-    name: "Avihu Levy",
-    image: "Avihu_Levy.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'StarkWare',
-    twitterLink: ''
-  },
-  {
-    name: "Austin	Griffith",
-    image: "Austin_Griffith.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Ethereum Foundation',
-    twitterLink: ''
-  },
-  {
-    name: "Afri	Schoedon",
-    image: "Afri_Schoedon.jpg",
-    roles: [Roles.JUDGE],
-    company: 'ChainSafe Systems',
-    twitterLink: ''
-  },
-  {
-    name: "Jaye	Harrill",
-    image: "Jaye_Harrill.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Quantstamp',
-    twitterLink: ''
-  },
-  {
-    name: "Clément Leseage",
-    image: "Clement_Lesaege.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Kleros',
-    twitterLink: ''
-  },
-  {
-    name: "Steven	Waterhouse",
-    image: "Steven_Waterhouse.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Orchid Labs',
-    twitterLink: ''
-  },
-  {
-    name: "Zaki	Manian",
-    image: "Zaki_Manian.jpg",
-    roles: [Roles.SPEAKER],
-    company: 'Sommelier',
-    twitterLink: ''
-  },
-]
+type PersonRaw = {
+  name: string;
+  ['last name']: string;
+  company: string;
+  twitter?: string;
+  role: string;
+  ['image edited']: string;
+}
+
+onMounted( async () => {
+
+  try {
+    const imagesDataCsv = await axios.get(imagesNamesAndIds)
+    imagesDataJson.value = await csvtojson().fromString(imagesDataCsv.data)
+  } catch (e) {
+    isGoogleDataCorrupted.value = true
+  }  
+
+  const getImageIdByPersonName = (person: PersonRaw) => {
+    const nameVariantA = `${person['name']}_${person['last name']}`
+    const nameVariantB = `${person['name']} ${person['last name']}`
+
+    const imageId = imagesDataJson.value.find((image: {name: string}) =>
+      image.name.toLowerCase().includes(nameVariantA.toLowerCase()) ||
+      image.name.toLowerCase().includes(nameVariantB.toLowerCase()));
+    if (imageId) {
+      return imageId.fileId;
+    }
+    return null;
+  }
+
+  const getImageFallback = (person: PersonRaw) => {
+    const personName = `${person['name']} ${person['last name']}`
+    const fallbackPerson = peopleFallback.find((person: Person) =>
+      person.name.toLowerCase().includes(personName.toLowerCase()))
+    if (fallbackPerson) {
+      return fallbackPerson.image;
+    }
+    return null;
+  }
+
+  try {
+    const peopleDataCsv = await axios.get(url)
+    peopleDataJson.value = await csvtojson().fromString(peopleDataCsv.data)
+  } catch (e) {
+    isGoogleDataCorrupted.value = true
+  } 
+  const arrayOfMustHaveKeys = ['name', 'last name', 'company', 'role']
+
+  const isDataCorrupted = peopleDataJson.value.some(person => {
+    const keys = Object.keys(person)
+    return !arrayOfMustHaveKeys.every(key => keys.includes(key))
+  })
+
+  if (isDataCorrupted) isGoogleDataCorrupted.value = true
+
+  const filteredEmptyObjects = peopleDataJson.value.filter(person => {
+    if (person.name === '' || person['last name'] === '') return false
+    return true
+  })
+
+  peopleData.value = (filteredEmptyObjects || []).map(person => {
+    return {
+      name: `${person.name} ${person['last name']}`,
+      company: person.company,
+      imageId: getImageIdByPersonName(person),
+      imageFallback: getImageFallback(person),
+      roles: person.role.includes(',') ? person.role.split(",") : person.role.split(" "),
+      twitterLink: person.twitter,
+      isImageEdited: person['image edited'] === "y"
+    }
+  }) as Person[];
+      
+})
 
 const showPeopleWithRole = ref(Roles.ALL)
 
 const selectedPeople = computed(() => {
-  if (showPeopleWithRole.value === Roles.ALL) {
-    return people
-  }
-  return people.filter(person => person.roles.includes(showPeopleWithRole.value))
-})
 
-const getPersonImage = (image: string) => {
-  return require('../assets/people/' + image)
+  if(!peopleData.value || isGoogleDataCorrupted.value) {
+    if (showPeopleWithRole.value === Roles.ALL) {
+      return peopleFallback;
+    }
+    return peopleFallback.filter(person => person.roles.includes(showPeopleWithRole.value));
+  }
+
+  if (showPeopleWithRole.value === Roles.ALL) {
+    return peopleData.value.filter(person => person.imageId)
+  }
+  return (peopleData.value).filter(person => person.roles.includes(showPeopleWithRole.value) && person.imageId)
+});
+
+const getPersonImage = ({person, isFallback}: {person: Person, isFallback?: boolean}) => {
+  if (!peopleData.value || isGoogleDataCorrupted.value) {
+    try {
+      return require(`../assets/people/${person.image}`)
+    } catch (err) {
+      return require('../assets/people/default.jpg')
+    }
+  }
+
+  if (isFallback) {
+    if (person.imageFallback) {
+      return require(`../assets/people/${person.imageFallback}`)
+    }
+    return require('../assets/people/default.jpg')
+  }
+
+  return `https://drive.google.com/uc?export=view&id=${person.imageId}`
 }
+
 const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${showPeopleWithRole.value === role ? 'people__header-menu-button-active' : ''}`
 
 
@@ -253,6 +284,7 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   height: 230px;
   border-radius: 250px;
   margin-bottom: 30px;
+  object-fit: cover;
 }
 
 .people__person-image-twitter-link {
@@ -268,5 +300,9 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   background-image: url("~@/assets/twitter_white.svg");
   background-color: #5500ff99;
   cursor: pointer;
+}
+
+.people__person-image--purple-filter {
+  filter: brightness(56%) invert(17%) sepia(100%) saturate(631%) hue-rotate(214deg) brightness(120%) contrast(131%)
 }
 </style>

@@ -8,8 +8,10 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "caniuse-lite": "^1.0.30001031",
     "core-js": "^2.6.11",
+    "csvtojson": "^2.0.10",
     "paper": "^0.12.4",
     "require-context": "^1.1.0",
     "vue": "^3.2.29",
