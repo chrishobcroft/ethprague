@@ -4,18 +4,18 @@
     <div class="manifesto__buttons">
       <div class="manifesto__buttons-row">
       <a
-        href="https://cfp.paralelnipolis.cz/ethprague-2022/"
-        target="_blank"
-        class="manifesto__button-link"
-      >
-        <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
-      </a>
-      <a
         href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
         target="_blank"
         class="manifesto__button-link"
       >
         <button class="manifesto__button">Apply to hack <span class="manifesto__headless-arrow"/></button>
+      </a>
+      <a
+        href="https://cfp.paralelnipolis.cz/ethprague-2022/"
+        target="_blank"
+        class="manifesto__button-link"
+      >
+        <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
       </a>
       </div>
 <!--      <div class="manifesto__buttons-row">-->
