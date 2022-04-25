@@ -31,7 +31,7 @@
           target="_blank"
         />
 
-        <Image :cssClass="['people__person-image', {'people__person-image--purple-filter': !Boolean(person.isImageEdited)} ]" :src="getPersonImage({person})" :fallbackImageA="getPersonImage({person, isFallback: true})" :fallbackImageB="require('../assets/people/default.jpg')" />
+        <Image :cssClass="['people__person-image', {'people__person-image--purple-filter': !Boolean(person.isImageEdited)} ]" :src="getPersonImage({person, peopleData })" :fallbackImageA="getPersonImage({person, isFallback: true})" :fallbackImageB="require('../assets/people/default.jpg')" />
 
         <div class="people__person-name">{{ person.name }}</div>
 
@@ -52,13 +52,17 @@ import csvtojson from 'csvtojson'
 import { Roles, peopleFallback } from "@/components/people"
 import Image from "@/components/Image.vue"
 const peopleData = ref<Person[]>();
+
 const axios = require("axios").default;
 const isGoogleDataCorrupted = ref(false)
+
 const imagesDataJson = ref()
 const peopleDataJson = ref<PersonRaw[]>([])
 
+
 const url =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSZOamB2pcc0qXdDX-qINL-cGHj66r7Ep-0Wc_DhGaG9gOZ3v3oUJfan0eRB89VHzJSx6slUkHyl6fo/pub?output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vSC5rnIGpiiT2tB7tp_0vd8hQba3-FD6K6vnuBTs5q2KIUuewXrEQBfrhit1jEH4Gl4qSZGbbC4ucrp/pub?output=csv";
+
 
 const imagesNamesAndIds = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT7sEWKHHYfflEwzDn_-W5m4tgA0zGS0h9WNhmLAGMp9-99o_iufjOLozYyb9BvcBIMOm8d70oMqD1/pub?output=csv"
 
@@ -80,7 +84,7 @@ type PersonRaw = {
   company: string;
   twitter?: string;
   role: string;
-  ['image edited']: string;
+  ['upraveno']: string;
 }
 
 onMounted( async () => {
@@ -143,9 +147,10 @@ onMounted( async () => {
       imageFallback: getImageFallback(person),
       roles: person.role.includes(',') ? person.role.split(",") : person.role.split(" "),
       twitterLink: person.twitter,
-      isImageEdited: person['image edited'] === "y"
+      isImageEdited: person['upraveno'] === "y"
     }
   }) as Person[];
+      
       
 })
 
@@ -167,8 +172,9 @@ const selectedPeople = computed(() => {
   return (peopleData.value).filter(person => person.roles.includes(showPeopleWithRole.value) && person.imageId)
 });
 
-const getPersonImage = ({person, isFallback}: {person: Person, isFallback?: boolean}) => {
-  if (!peopleData.value || isGoogleDataCorrupted.value) {
+const getPersonImage = ({person, isFallback, peopleData}: {person: Person, isFallback?: boolean, peopleData?: Person[]}) => {
+  
+  if (!peopleData || isGoogleDataCorrupted.value) {
     try {
       return require(`../assets/people/${person.image}`)
     } catch (err) {
@@ -187,6 +193,7 @@ const getPersonImage = ({person, isFallback}: {person: Person, isFallback?: bool
 }
 
 const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${showPeopleWithRole.value === role ? 'people__header-menu-button-active' : ''}`
+
 
 
 </script>
