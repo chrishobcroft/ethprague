@@ -154,7 +154,6 @@ onMounted( async () => {
       
 })
 
-
 const showPeopleWithRole = ref(Roles.ALL)
 
 const selectedPeople = computed(() => {
