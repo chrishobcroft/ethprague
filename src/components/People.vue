@@ -36,6 +36,7 @@
         <div class="people__person-name">{{ person.name }}</div>
 
         <div class="people__person-company">{{ person.company }}</div>
+        <div class="people__person-company">{{ person.twitterLink }}</div>
 
         <div class="people__person-roles">
           <div class="people__person-role" v-for="role in person.roles" :key="role">{{ role }}</div>
@@ -302,6 +303,7 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   border-radius: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 10;
 }
 .people__person-image-twitter-link:hover {
   background-image: url("~@/assets/twitter_white.svg");
