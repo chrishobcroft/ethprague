@@ -302,6 +302,7 @@ const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${
   border-radius: 100%;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: 10;
 }
 .people__person-image-twitter-link:hover {
   background-image: url("~@/assets/twitter_white.svg");
