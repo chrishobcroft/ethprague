@@ -36,7 +36,6 @@
         <div class="people__person-name">{{ person.name }}</div>
 
         <div class="people__person-company">{{ person.company }}</div>
-        <div class="people__person-company">{{ person.twitterLink }}</div>
 
         <div class="people__person-roles">
           <div class="people__person-role" v-for="role in person.roles" :key="role">{{ role }}</div>
