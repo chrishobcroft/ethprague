@@ -1,23 +1,23 @@
 <template>
   <div id="Hackathon" class="hackathon">
 
-  <div class="hackathon__text-container">
-    <SectionTitle title="hackathon awards" />
-    <div class="hackathon__text-content">
-      We are not doing sponsored tracks instead we want to evaluate the best project in their respective domain. 
+    <div class="hackathon__text-container">
+      <SectionTitle title="hackathon awards" />
+      <div class="hackathon__text-content">
+        We are not doing sponsored tracks instead we want to evaluate the best project in their respective domain.
+      </div>
     </div>
-  </div>
 
-  <div class="hackathon__awards-list">
-    <div v-for="award in awards" :class="['hackathon__awards-item', {'hackathon__awards-item-pointer': award.description}]" :key="award.name" @click="showModal(award)">
-      <div class="hackathon__awards-item-name">
-        {{ award.name }}
-      </div>
-      <div class="hackathon__awards-item-price">
-        {{ award.price }}
+    <div class="hackathon__awards-list">
+      <div v-for="award in awards" :class="['hackathon__awards-item', {'hackathon__awards-item-pointer': award.description}]" :key="award.name" @click="showModal(award)">
+        <div class="hackathon__awards-item-name">
+          {{ award.name }}
+        </div>
+        <div class="hackathon__awards-item-price">
+          {{ award.price }}
+        </div>
       </div>
     </div>
-  </div>
 
     <Transition name="fade">
       <div  v-if="modalContent" class="hackathon__modal-dropdown" @click="modalContent = null">
@@ -61,30 +61,35 @@ const showModal = (award: Award) => {
 }
 
 const awards = [
-  { 
-    name: "sustainability award",
+  {
+    name: "Sustainability award",
     price: "2500 EUR",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium magni odio corporis quisquam quaerat, possimus ea iusto assumenda sed illum dicta nostrum labore vero ab adipisci minima fuga animi. Iure."
+    description: "Create structures which are long lasting, which will survive generations. Inspire us by solving the puzzle of sustainable existence of humanity or an artificial system. Be an infinite game player!"
   },
-  { 
-    name: "urbanism award",
+  {
+    name: "Urbanism award",
     price: "2500 EUR",
+    description: "Chances are, you are a city creature. Help to solve some of the issues of municipality infrastructure we are facing today or are soon going to be facing."
   },
-  { 
-    name: "urbanism award",
+  {
+    name: "Cryptoeconomics award",
     price: "2500 EUR",
+    description: "Prove your genius by inventing new economic systems. Get circular, start a local UBI project or mess with an economy at scale."
   },
-  { 
-  name: "infrastructure award",
-  price: "2500 EUR",
-  },
-  { 
-    name: "user experience award",
+  {
+    name: "Design award",
     price: "2500 EUR",
+    description: "Make your dapp nice and smooth! Tech us about beauty and user experience, young padawan!"
   },
-  { 
-    name: "smart contract design award",
+  {
+    name: "Smart contract award",
     price: "2500 EUR",
+    description: "Make your contracts beautiful! Show us breathtaking structures of code which will orchestrate the symphony of your dapp. For that you shall be remembered and awarded!"
+  },
+  {
+    name: "Hacker's favorite",
+    price: "2500 EUR",
+    description: "The participating hackers should have their say as well! The project with the most votes from other competing hackers will be awarded the Hacker's favorite."
   },
 ]
 
@@ -125,7 +130,7 @@ const awards = [
   flex-direction: column;
 }
 
-@media (min-width: 970px) { 
+@media (min-width: 970px) {
   .hackathon__modal {
     width: 80%;
     padding: 50px;
@@ -181,7 +186,7 @@ const awards = [
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   max-width: 353px;
   height: 214px;
   width: 100%;
@@ -193,7 +198,7 @@ const awards = [
 }
 
 .hackathon__awards-item:hover .hackathon__awards-item-price {
-  
+
   background-color: var(--col-primary-action);
   color: white;
 }
