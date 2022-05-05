@@ -15,7 +15,7 @@
           target="_blank"
         >
           <img
-            :src="getSponsorsOrPartnersImage(company.name)"
+            :src="getSponsorsOrPartnersImage(company.image)"
             :alt="company.name"
             class="sponsors-and-partners__looks-rare-icon"
           />
@@ -39,9 +39,33 @@
           target="_blank"
         >
           <img
-            :src="getSponsorsOrPartnersImage(company.name)"
+            :src="getSponsorsOrPartnersImage(company.image)"
             :alt="company.name"
             class="sponsors-and-partners__few-icon"
+          />
+        </a>
+      </div>
+    </div>
+
+    <div class="sponsors-and-partners__separation-line" />
+
+    <div class="sponsors-and-partners__block">
+      <div
+        class="sponsors-and-partners__small-title sponsors-and-partners__title-few"
+      >
+        Friends
+      </div>
+      <div class="sponsors-and-partners__friends-icons">
+        <a
+          v-for="company in friends"
+          :key="company.name"
+          :href="company.link"
+          target="_blank"
+        >
+          <img
+            :src="getSponsorsOrPartnersImage(company.image)"
+            :alt="company.name"
+            class="sponsors-and-partners__friends-icon"
           />
         </a>
       </div>
@@ -53,19 +77,25 @@
 import SectionTitle from "@/components/SectionTitle.vue";
 
 const looksRare = [
-  { name: "pwn", link: "https://pwn.finance/" },
-  { name: "uniswap", link: "https://uniswap.org/" },
-  { name: "moralis", link: "https://moralis.io/" },
+  { name: "pwn", link: "https://pwn.finance/", image: "pwn.svg",},
+  { name: "uniswap", link: "https://uniswap.org/", image: "uniswap.svg",},
+  { name: "moralis", link: "https://moralis.io/", image: "moralis.svg",},
 ];
 const few = [
-  { name: "wallet-connect", link: "https://walletconnect.com/" },
-  { name: "eth-foundation", link: "https://ethereum.org/en/foundation/" },
-  { name: "livepeer", link: "https://livepeer.org/" },
-  { name: "ledger", link: "https://www.ledger.com/" },
+  { name: "wallet-connect", link: "https://walletconnect.com/", image: "wallet-connect.svg"},
+  { name: "eth-foundation", link: "https://ethereum.org/en/foundation/", image: "eth-foundation.svg"},
+  { name: "livepeer", link: "https://livepeer.org/", image: "livepeer.svg"},
+  { name: "ledger", link: "https://www.ledger.com/", image: "ledger.svg"},
+];
+
+const friends = [
+  { name: "boba-network", link: "https://simon@boba.network/", image: "boba-network.png" },
+  // { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.webp" },
+  { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
-  return require(`../assets/sponsors-and-partners/${imageName}.svg`);
+  return require(`../assets/sponsors-and-partners/${imageName}`);
 };
 </script>
 
@@ -94,13 +124,13 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
   font-size: 15px;
 }
 
-.sponsors-and-partners__looks-rare-icons {
+.sponsors-and-partners__looks-rare-icons,
+.sponsors-and-partners__friends-icons,
+.sponsors-and-partners__few-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 105px;
-  margin-bottom: 90px;
   max-width: 100%;
 }
 
@@ -110,25 +140,41 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
   cursor: pointer;
   width: 100%;
 }
-.sponsors-and-partners__few-icons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  column-gap: 110px;
-  row-gap: 80px;
+
+.sponsors-and-partners__looks-rare-icons {
+  gap: 105px;
+  margin-bottom: 90px;
   max-width: 100%;
 }
+
+.sponsors-and-partners__looks-rare {
+  margin: 25px 0 20px;
+}
+
+.sponsors-and-partners__few-icons {
+  column-gap: 110px;
+  row-gap: 80px;
+  margin-bottom: 90px;
+}
+
+.sponsors-and-partners__friends-icons {
+  column-gap: 120px;
+  row-gap: 90px;
+  filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%)
+}
+
+.sponsors-and-partners__friends-icon {
+  max-width: 185px;
+  cursor: pointer;
+  width: 100%;
+}
+
 
 .sponsors-and-partners__separation-line {
   background: white;
   height: 3px;
   width: 100%;
   margin: 0;
-}
-
-.sponsors-and-partners__looks-rare {
-  margin: 25px 0 20px;
 }
 
 .sponsors-and-partners__title-few {
