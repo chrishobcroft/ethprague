@@ -166,10 +166,13 @@ const selectedPeople = computed(() => {
   }
 
   if (showPeopleWithRole.value === Roles.ALL) {
-    return peopleData.value.filter(person => person.imageId)
+    return peopleData.value
   }
-  return (peopleData.value).filter(person => person.roles.includes(showPeopleWithRole.value) && person.imageId)
+  return (peopleData.value).filter(person => person.roles.includes(showPeopleWithRole.value))
 });
+
+
+
 
 const getPersonImage = ({person, isFallback, peopleData}: {person: Person, isFallback?: boolean, peopleData?: Person[]}) => {
   
