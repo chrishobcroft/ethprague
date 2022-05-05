@@ -188,7 +188,16 @@ const getPersonImage = ({person, isFallback, peopleData}: {person: Person, isFal
     return require('../assets/people/default.jpg')
   }
 
-  return `https://drive.google.com/uc?export=view&id=${person.imageId}`
+  try {
+    return require(`../assets/people/${person.name}.jpg`)
+  } catch (err) {
+    try {
+      return `https://drive.google.com/uc?export=view&id=${person.imageId}`
+    } catch (err) {
+      return require('../assets/people/default.jpg')
+    }
+  }
+
 }
 
 const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${showPeopleWithRole.value === role ? 'people__header-menu-button-active' : ''}`

@@ -8,7 +8,7 @@ export enum Roles {
 export const peopleFallback = [
   {
     name: "Sunny Aggarwal",
-    image: "Sunny_Aggarwal.jpg",
+    image: "Sunny Aggarwal.jpg",
     roles: [Roles.SPEAKER],
     company: 'Osmosis Labs',
     twitterLink: '',
@@ -16,7 +16,7 @@ export const peopleFallback = [
   },
   {
     name: "Harsh Rajat",
-    image: "Harsh_Rajat.jpg",
+    image: "Harsh Rajat.jpg",
     roles: [Roles.SPEAKER],
     company: 'Ethereum Push Notification Service',
     twitterLink: '',
@@ -24,7 +24,7 @@ export const peopleFallback = [
   },
   {
     name: "Julien Bouteloup",
-    image: "Julien_Bouteloup.jpg",
+    image: "Julien Bouteloup.jpg",
     roles: [Roles.SPEAKER],
     company: 'StakeDAO',
     twitterLink: '',
@@ -39,7 +39,7 @@ export const peopleFallback = [
   // isImageEdited: true  // 
   {
     name: "Franziska Heintel",
-    image: "Franziska_Heintel.jpg",
+    image: "Franziska Heintel.jpg",
     roles: [Roles.SPEAKER],
     company: 'Ethereum Foundation',
     twitterLink: '',
@@ -47,7 +47,7 @@ export const peopleFallback = [
   },
   {
     name: "Avihu Levy",
-    image: "Avihu_Levy.jpg",
+    image: "Avihu Levy.jpg",
     roles: [Roles.SPEAKER],
     company: 'StarkWare',
     twitterLink: '',
@@ -55,7 +55,7 @@ export const peopleFallback = [
   },
   {
     name: "Austin Griffith",
-    image: "Austin_Griffith.jpg",
+    image: "Austin Griffith.jpg",
     roles: [Roles.SPEAKER],
     company: 'Ethereum Foundation',
     twitterLink: '',
@@ -63,7 +63,7 @@ export const peopleFallback = [
   },
   {
     name: "Afri Schoedon",
-    image: "Afri_Schoedon.jpg",
+    image: "Afri Schoedon.jpg",
     roles: [Roles.JUDGE],
     company: 'ChainSafe Systems',
     twitterLink: '',
@@ -71,7 +71,7 @@ export const peopleFallback = [
   },
   {
     name: "Jaye Harrill",
-    image: "Jaye_Harrill.jpg",
+    image: "Jaye Harrill.jpg",
     roles: [Roles.SPEAKER],
     company: 'Quantstamp',
     twitterLink: '',
@@ -79,7 +79,7 @@ export const peopleFallback = [
   },
   {
     name: "Clément Lesaege",
-    image: "Clément_Lesaege.jpg",
+    image: "Clément Lesaege.jpg",
     roles: [Roles.SPEAKER],
     company: 'Kleros',
     twitterLink: '',
@@ -87,7 +87,7 @@ export const peopleFallback = [
   },
   {
     name: "Steven Waterhouse",
-    image: "Steven_Waterhouse.jpg",
+    image: "Steven Waterhouse.jpg",
     roles: [Roles.SPEAKER],
     company: 'Orchid Labs',
     twitterLink: '',
@@ -95,7 +95,7 @@ export const peopleFallback = [
   },
   {
     name: "Zaki Manian",
-    image: "Zaki_Manian.jpg",
+    image: "Zaki Manian.jpg",
     roles: [Roles.SPEAKER],
     company: 'Sommelier',
     twitterLink: '',
@@ -127,7 +127,7 @@ export const peopleFallback = [
   },
   {
     name: "Jarrad Hope",
-    image: "Jarrad Hope.png",
+    image: "Jarrad Hope.jpg",
     roles: [Roles.SPEAKER],
     company: 'Status',
     twitterLink: '',
@@ -135,7 +135,7 @@ export const peopleFallback = [
   },
   {
     name: "Josef Je",
-    image: "Josef Je.jpeg",
+    image: "Josef Je.jpg",
     roles: [Roles.MENTOR],
     company: 'PWN',
     twitterLink: '',
@@ -143,7 +143,7 @@ export const peopleFallback = [
   },
   {
     name: "Mario Havel",
-    image: "Mario Havel.png",
+    image: "Mario Havel.jpg",
     roles: [Roles.SPEAKER],
     company: 'Ethereum Foundation',
     twitterLink: '',
