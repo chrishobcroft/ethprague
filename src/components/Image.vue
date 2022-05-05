@@ -17,6 +17,7 @@ const { src, fallbackImageA, fallbackImageB, cssClass } = toRefs(props)
 
 const imageSrc = computed(() => {
   if (isError.value) {
+    console.log('isError.value: ', isError.value);
     try {
       if (fallbackImageA) {
         return fallbackImageA.value
