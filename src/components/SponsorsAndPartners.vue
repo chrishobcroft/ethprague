@@ -53,7 +53,7 @@
       <div
         class="sponsors-and-partners__small-title sponsors-and-partners__title-few"
       >
-        Friends
+        Frens
       </div>
       <div class="sponsors-and-partners__friends-icons">
         <a
