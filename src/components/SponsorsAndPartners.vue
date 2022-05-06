@@ -167,7 +167,7 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 
 .sponsors-and-partners__friends-icon {
   max-width: 200px;
-  max-height: 100px;
+  max-height: 95px;
   cursor: pointer;
   width: 100%;
 }
