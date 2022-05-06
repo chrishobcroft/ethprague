@@ -92,6 +92,8 @@ const friends = [
   { name: "boba-network", link: "https://simon@boba.network/", image: "boba-network.png" },
   // { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.webp" },
   { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
+  { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
+  // { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.webp" },
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
@@ -164,7 +166,8 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 }
 
 .sponsors-and-partners__friends-icon {
-  max-width: 185px;
+  max-width: 200px;
+  max-height: 100px;
   cursor: pointer;
   width: 100%;
 }
