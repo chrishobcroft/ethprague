@@ -86,6 +86,7 @@ const few = [
   { name: "eth-foundation", link: "https://ethereum.org/en/foundation/", image: "eth-foundation.svg"},
   { name: "livepeer", link: "https://livepeer.org/", image: "livepeer.svg"},
   { name: "ledger", link: "https://www.ledger.com/", image: "ledger.svg"},
+  { name: "element", link: "https://www.element.fi/", image: "element.png"},
 ];
 
 const friends = [
@@ -163,6 +164,10 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 .sponsors-and-partners__friends-icons {
   column-gap: 115px;
   row-gap: 90px;
+  filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%)
+}
+
+.sponsors-and-partners__black-white-filter {
   filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%)
 }
 
