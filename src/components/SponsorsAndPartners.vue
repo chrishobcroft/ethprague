@@ -91,7 +91,7 @@ const few = [
 
 const friends = [
   { name: "boba-network", link: "https://simon@boba.network/", image: "boba-network.png" },
-  // { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.webp" },
+  { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.svg" },
   { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
   { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },

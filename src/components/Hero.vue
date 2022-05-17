@@ -17,6 +17,7 @@
     <div class="hero__event-date-text hero__event-date-text2">
       <span>ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp;</span>
     </div>
+    <div class="hero__event-date-text-mobile">ETH Prague <br/> June 10th — 12th</div>
   </div>
 </template>
 
@@ -111,10 +112,16 @@ const getHeroImage = (forDevice: string) => {
 }
 
 .hero__event-date-text {
+  display: none;
   margin: 0 auto;
   white-space: nowrap;
   overflow: hidden;
   position: absolute;
+}
+
+.hero__event-date-text-mobile {
+  text-align: center;
+  width: 100%;
 }
 
 .hero__event-date-text span {
@@ -151,6 +158,16 @@ const getHeroImage = (forDevice: string) => {
     height: 110px;
     font-size: 27px;
     line-height: 37px;
+  }
+}
+
+@media (min-width: 600px) {
+  .hero__event-date-text {
+    display: block;
+  }
+
+  .hero__event-date-text-mobile {
+    display: none;
   }
 }
 </style>
