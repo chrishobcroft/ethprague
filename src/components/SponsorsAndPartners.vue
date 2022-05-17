@@ -93,6 +93,7 @@ const friends = [
   // { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.webp" },
   { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
+  { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },
   // { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.webp" },
 ];
 
@@ -160,7 +161,7 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 }
 
 .sponsors-and-partners__friends-icons {
-  column-gap: 120px;
+  column-gap: 115px;
   row-gap: 90px;
   filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%)
 }
