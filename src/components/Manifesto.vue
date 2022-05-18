@@ -18,14 +18,14 @@
         <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
       </a>
       </div>
-<!--      <div class="manifesto__buttons-row">-->
-<!--      <a-->
-<!--        href="https://cfp.paralelnipolis.cz/ethprague-2022/"-->
-<!--        target="_blank"-->
-<!--        class="manifesto__button-link"-->
-<!--      >-->
-<!--        <button class="manifesto__button">Apply as general admission <span class="manifesto__headless-arrow"/></button>-->
-<!--      </a>-->
+     <div class="manifesto__buttons-row-one-button">
+     <a
+       href="https://tickets.paralelnipolis.cz/dtp/ethprague2022/?"
+       target="_blank"
+       class="manifesto__button-link"
+     >
+       <button class="manifesto__button manifesto__button-one-button">Get a ticket<span class="manifesto__headless-arrow"/></button>
+     </a>
 <!--      <a-->
 <!--        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"-->
 <!--        target="_blank"-->
@@ -33,7 +33,7 @@
 <!--      >-->
 <!--        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>-->
 <!--      </a>-->
-<!--      </div>-->
+     </div>
     </div>
 
     <div id='Manifesto' class="manifesto__text-container">
@@ -61,14 +61,21 @@ import SectionTitle from "@/components/SectionTitle.vue";
   background-color: white;
   text-align: justify;
 }
-.manifesto__buttons {
+.manifesto__buttons, .manifesto__buttons-row-one-button {
   max-width: 1600px;
   display: flex;
   width: 100%;
   gap: 25px;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+}
+
+.manifesto__buttons {
+  justify-content: space-between;
+}
+
+.manifesto__buttons-row-one-button {
+  justify-content: center;
 }
 .manifesto__button {
   transition: all 0.3s;
@@ -96,6 +103,13 @@ import SectionTitle from "@/components/SectionTitle.vue";
   position: relative;
 }
 
+.manifesto__button-one-button {
+  max-width: 50%;
+  margin: auto;
+}
+
+
+
 @media (max-width: 1120px) {
   .manifesto__button { 
     font-size: 20px;
@@ -121,6 +135,9 @@ import SectionTitle from "@/components/SectionTitle.vue";
   .manifesto__buttons-row {
     flex-wrap: wrap;
     gap:30px
+  }
+  .manifesto__button-one-button {
+    max-width: 100%;
   }
 }
 
