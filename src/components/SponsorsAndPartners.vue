@@ -95,7 +95,12 @@ const friends = [
   { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
   { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },
-  // { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.webp" },
+  { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.svg" },
+  { name: "ethswarm", link: "https://ethswarm.org/", image:  "ethswarm.svg" },
+  { name: "connext", link: "https://connext.network/", image:  "connext.svg" },
+  
+
+
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
