@@ -83,7 +83,7 @@ const looksRare = [
 ];
 const few = [
   { name: "wallet-connect", link: "https://walletconnect.com/", image: "wallet-connect.svg"},
-  { name: "eth-foundation", link: "https://ethereum.org/en/foundation/", image: "eth-foundation.svg"},
+  { name: "eth-foundation", link: "https://ethereum.foundation", image: "eth-foundation.svg"},
   { name: "livepeer", link: "https://livepeer.org/", image: "livepeer.svg"},
   { name: "ledger", link: "https://www.ledger.com/", image: "ledger.svg"},
   { name: "element", link: "https://www.element.fi/", image: "element.png"},
