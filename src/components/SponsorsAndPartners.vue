@@ -87,6 +87,7 @@ const few = [
   { name: "livepeer", link: "https://livepeer.org/", image: "livepeer.svg"},
   { name: "ledger", link: "https://www.ledger.com/", image: "ledger.svg"},
   { name: "element", link: "https://www.element.fi/", image: "element.png"},
+  { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.svg" },
 ];
 
 const friends = [
@@ -95,12 +96,8 @@ const friends = [
   { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
   { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },
-  { name: "galaxis", link: "https://galaxis.xyz/#/", image: "galaxis.svg" },
   { name: "ethswarm", link: "https://ethswarm.org/", image:  "ethswarm.svg" },
   { name: "connext", link: "https://connext.network/", image:  "connext.svg" },
-  
-
-
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
