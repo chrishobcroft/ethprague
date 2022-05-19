@@ -10,6 +10,15 @@
       >
         <button class="manifesto__button">Apply to hack <span class="manifesto__headless-arrow"/></button>
       </a>
+
+     
+      <a
+        href="https://cf23uhv4kuq.typeform.com/to/lZwG0Eq3"
+        target="_blank"
+        class="manifesto__button-link"
+      >
+        <button class="manifesto__button">Apply to help <span class="manifesto__headless-arrow"/></button>
+      </a>
       <a
         href="https://cfp.paralelnipolis.cz/ethprague-2022/"
         target="_blank"
