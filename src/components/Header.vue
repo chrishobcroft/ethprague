@@ -28,7 +28,7 @@
 
   <div class="header-mobile">
     <div class="header-mobile__content">
-      <a href="#manifesto-buttons">
+      <a href="#manifesto-buttons" class="header__eth-logo-link">
         <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
       </a>
 
@@ -138,7 +138,13 @@ const localLinks = [
 .header__social-links {
   display: flex;
   flex-direction: row;
+  justify-content: flex-end;
   gap: 15px;
+  width: 15rem;
+}
+
+.header__eth-logo-link {
+  width: 15rem;
 }
 
 .header__local-link {
@@ -184,6 +190,7 @@ const localLinks = [
 }
 
 .header-mobile__hamburger-menu {
+  margin: 0 1rem;
   cursor: pointer;
 }
 
