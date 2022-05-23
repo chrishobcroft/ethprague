@@ -1,6 +1,7 @@
 <template> 
   <div class="footer">
 
+    <div class="footer__main-content">
     <div>
       <div class="footer__block-title">
         connect
@@ -50,7 +51,16 @@
         </a>
       </div>
     </div>
+    </div>
 
+
+    <a
+        href="http://www.martinpolacek.com/"
+        target="_blank"
+        class="footer__webdesign-link"
+      >
+        webdesign by Martin Poláček
+      </a>
   </div>
 </template>
 
@@ -64,9 +74,17 @@
     padding: 50px 0 100px;
     display: flex;
     justify-content: center;
+    gap: 70px;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--col-primary-action);
+  }
+
+  .footer__main-content {
+    display: flex;
+    justify-content: center;
     gap: 100px;
     flex-wrap: wrap;
-    background-color: var(--col-primary-action);
   }
 
   .footer__block-title {
@@ -83,8 +101,9 @@
   }
 
   .footer__social-links {
+    width: 235px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 12px;
     color: white;
   }
@@ -125,6 +144,17 @@
   a:hover {
     color: white;
     text-decoration: underline;
+  }
+
+  .footer__webdesign-link {
+    font-size: 12px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.4);
+
+    &:hover {
+      color: rgba(255, 255, 255, 1);
+      text-decoration: none;
+    }
   }
 
   @media (max-width: 680px) {

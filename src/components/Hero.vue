@@ -9,14 +9,46 @@
     </div>
     <img class="hero__image-mobile" :src="getHeroImage(DeviceType.MOBIL)" alt="hero" />
   </div>
-  <div class="hero__event-date">
-    <div class="hero__event-date-text">
-      <span>ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp;</span>
-    </div>
 
-    <div class="hero__event-date-text hero__event-date-text2">
-      <span>ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp; ETH Prague &nbsp; June 10th — 12th &nbsp;</span>
-    </div>
+    <div class="hero__event-date">
+		<div class="hero__event-date-marquee-block">
+			<div class="hero__event-date-marquee-inner to-right">
+				<span>
+					<div class="hero__event-date-marquee-item">
+					ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+					ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+					ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+					ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+					ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+				</span>
+				<span>
+					<div class="hero__event-date-marquee-item">
+						ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+						ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+						ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+						ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+					<div class="hero__event-date-marquee-item">
+						ETH Prague &nbsp;  June 10th — 12th &nbsp;
+					</div>
+				</span>
+		</div>
+	</div>
     <div class="hero__event-date-text-mobile">ETH Prague <br/> June 10th — 12th</div>
   </div>
 </template>
@@ -28,8 +60,10 @@ enum DeviceType {
   DESKTOP = 'desktop',
 }
 
+const stripe = 'ETH Prague \u00A0  June 10th — 12th \u00A0'.repeat(3)
+
 const getHeroImage = (forDevice: string) => {
-  const randomHeroNum = Math.floor(Math.random() * 3) + 1;
+  const randomHeroNum = Math.floor(Math.random() * 4) + 1;
   switch (forDevice) {
     case DeviceType.MOBIL:
       return require(`../assets/hero/hero_mobile_${randomHeroNum}.webp`)
@@ -66,23 +100,6 @@ const getHeroImage = (forDevice: string) => {
   padding: 15px;
 }
 
-.hero__event-date {
-  align-items: center;
-  background-color: var(--col-primary-accent);
-  color: var(--col-primary-action);
-  display: flex;
-  font-family: "Archivo SemiExpanded", Verdana, sans-serif;
-  font-size: 40px;
-  height: 150px;
-  letter-spacing: 0em;
-  line-height: 47px;
-  overflow: hidden;
-  position: relative;
-  text-align: center;
-  white-space: nowrap;
-  margin: 0 auto;
-}
-
 .hero__image-eth {
   position: absolute;
   top: 53px;
@@ -111,12 +128,49 @@ const getHeroImage = (forDevice: string) => {
   width: 605px;
 }
 
-.hero__event-date-text {
-  display: none;
-  margin: 0 auto;
-  white-space: nowrap;
+.hero__event-date {
+  --marquee-block-width--mobile: 470px;
+  --marquee-block-width--desktop: 680px;
   overflow: hidden;
+  background-color: var(--col-primary-accent);
+  font-family: "Archivo SemiExpanded", Verdana, sans-serif;
+  height: 110px;
+  font-size: 27px;
+  color: var(--col-primary-action);
+  display: flex;
+  align-items: center;
+}
+
+.hero__event-date-marquee-block {
+  --total-marquee-items: 5;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  display: none;
+  align-items: center;
+  width: calc((var(--marquee-block-width--mobile)) * (var(--total-marquee-items)));
+}
+.hero__event-date-marquee-inner {
+  width: 200%;
   position: absolute;
+}
+
+.hero__event-date-marquee-inner.to-right {
+  animation: marqueeRight 25s linear infinite;
+}
+.hero__event-date-marquee-item {
+  width: var(--marquee-block-width--mobile);
+  display: inline-block;
+  transition: all .2s ease-out;
+}
+
+@keyframes marqueeRight {
+  0% { 
+    left: -100%; 
+  }
+  100% {
+   left: 0; 
+  }
 }
 
 .hero__event-date-text-mobile {
@@ -124,50 +178,39 @@ const getHeroImage = (forDevice: string) => {
   width: 100%;
 }
 
-.hero__event-date-text span {
-  display: inline-block;
-  padding-left: 100%;
-  animation: marquee 70s linear infinite;
-}
-
-.hero__event-date-text2 span {
-  animation-delay: 35s;
-}
-
-@keyframes marquee {
-  0% {
-    transform: translate(-100%, 0);
-  }
-  100% {
-    transform: translate(0%, 0);
-  }
-}
-
 @media (min-width: 1120px) {
   .hero__image-desktop {
     display: block;
   }
 
+  .hero__event-date {
+    height: 150px;
+    font-size: 40px;
+  }
+  .hero__event-date-marquee-block {
+    display: flex;
+    width: calc((var(--marquee-block-width--desktop)) * (var(--total-marquee-items)));
+  }
+  .hero__event-date-marquee-item {
+    width: var(--marquee-block-width--desktop);
+  }
+  
   .hero__image-mobile {
     display: none;
   }
 }
 
-@media (max-width: 1120px) {
-  .hero__event-date {
-    height: 110px;
-    font-size: 27px;
-    line-height: 37px;
-  }
-}
-
 @media (min-width: 600px) {
-  .hero__event-date-text {
-    display: block;
+  .hero__event-date-marquee-block {
+    display: flex;
   }
 
   .hero__event-date-text-mobile {
     display: none;
+  }
+
+  .hero__event-date {
+    display: block;
   }
 }
 </style>
