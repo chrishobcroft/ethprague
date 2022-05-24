@@ -19,13 +19,13 @@
       >
         <button class="manifesto__button">Apply to help <span class="manifesto__headless-arrow"/></button>
       </a>
-      <a
+      <!-- <a
         href="https://cfp.paralelnipolis.cz/ethprague-2022/"
         target="_blank"
         class="manifesto__button-link"
       >
         <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
-      </a>
+      </a> -->
       </div>
      <div class="manifesto__buttons-row-one-button">
      <a
