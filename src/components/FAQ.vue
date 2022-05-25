@@ -50,7 +50,7 @@ const toggleBlock = (blockTitle: string) => {
   }
 }
 
-const getBlockContentStyle = (block: Block) => ({background: block.contentBgColor, transform: openBlocks.value.includes(block.title) ? 'scaleY(1)' : 'scaleY(0)', maxHeight: openBlocks.value.includes(block.title) ? '1000px' : '0', marginBottom: openBlocks.value.includes(block.title) ? '10px' : '-120px'})
+const getBlockContentStyle = (block: Block) => ({background: block.contentBgColor, transform: openBlocks.value.includes(block.title) ? 'scaleY(1)' : 'scaleY(0)', maxHeight: openBlocks.value.includes(block.title) ? '1200px' : '0', marginBottom: openBlocks.value.includes(block.title) ? '10px' : '-120px'})
 
 
 const blocks = [
@@ -87,7 +87,13 @@ const blocks = [
     html:
         '<span> There is a variety of affordable hotels around the venue. We have partnered with some! Alpha Soon<sup>TM</sup> </span>' +
         '</br></br><h3 style="text-align: center">Hotel Belvedere</h3>' + 
-        '<p> Discounted price for single and double rooms available via email: <a href="mailto:booking@hhotels.cz"> booking@hhotels.cz </a> </br><strong>pass</strong>: The Future Is Solarpunk</p> ' + 
+        '<ul> ' +
+        '<li> Discounted prices on single (76€/night) and double (81€/night) rooms</li>' +
+        '<li> Code name: <strong>The Future Is Solarpunk</strong> </li>' +
+        '<li> Any stay between 9-14 June </li>' +
+        '<li> Book through: <a href="mailto:booking@hhotels.cz"> booking@hhotels.cz </a> </li>' +
+        '<li> <a href="https://www.hotelbelvedereprague.cz/en" target="_blank"> www.hotelbelvedereprague.cz/en </a> </li>' +
+        '</ul>' +
         '<div style="text-align: center"> ' +
         '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d359.09155326514116!2d14.430525752119133!3d50.09913589200549!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94c66d210f35%3A0xf964b173cd95c149!2sHotel%20Belvedere%20Prague!5e0!3m2!1scs!2sca!4v1653489307417!5m2!1scs!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' +
         '</div>',
@@ -251,17 +257,5 @@ const blocks = [
   width: 11px;
   height: 11px;
 }
-
-iframe {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-/* @media (min-width: 970px) {
-  iframe { 
-    width: 600px;
-    height: 450px;
-  }
-} */
 
 </style>
