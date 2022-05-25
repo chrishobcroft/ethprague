@@ -103,7 +103,7 @@ const blocks = [
         '<li> Code name: <strong>Winding Tree</strong> </li>' +
         '<li> Any stay between 9-14 June </li>' +
         '<li> Book through: <a href="mailto:prague@mamashelter.com">prague@mamashelter.com</a>  / <a href="tel:+420 225 117 861" title="Mama Shelter">+420 225 117 861</a> </li>' +
-        '<li> <a href="https://www.mamashelter.com/prague/" target="_blank"> www.mamashelter.com </a> </li>' +
+        '<li> <a href="https://mamashelter.com/prague/" target="_blank"> mamashelter.com </a> </li>' +
         '<li> Thanks to our friends from Winding Tree </li>' +
         '</ul>' +
         '<div style="text-align: center"> ' +
