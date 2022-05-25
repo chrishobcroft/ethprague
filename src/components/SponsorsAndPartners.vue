@@ -98,6 +98,7 @@ const friends = [
   { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },
   { name: "ethswarm", link: "https://ethswarm.org/", image:  "ethswarm.svg" },
   { name: "connext", link: "https://connext.network/", image:  "connext.svg" },
+  { name: "openq", link: "https://www.openq.dev/", image:  "openq.png" },
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
