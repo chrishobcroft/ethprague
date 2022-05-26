@@ -31,7 +31,7 @@
           target="_blank"
         />
 
-        <Image :cssClass="['people__person-image', {'people__person-image--purple-filter': !Boolean(person.isImageEdited)} ]" :src="getPersonImage({person, peopleData })" :fallbackImageA="getPersonImage({person, isFallback: true})" :fallbackImageB="require('../assets/people/default.jpg')" />
+        <Image :cssClass="['people__person-image', {'people__person-image--purple-filter': !Boolean(person.isImageEdited)} ]" :src="getPersonImage({person, peopleData, isGoogleDataCorrupted })" :fallbackImageA="getPersonImage({person, isFallback: true, isGoogleDataCorrupted})" :fallbackImageB="require('../assets/people/default.jpg')" />
 
         <div class="people__person-name">{{ person.name }}</div>
 
@@ -51,13 +51,14 @@ import SectionTitle from "@/components/SectionTitle.vue"
 import csvtojson from 'csvtojson'
 import { Roles, peopleFallback } from "@/components/people"
 import Image from "@/components/Image.vue"
-const peopleData = ref<Person[]>();
+import {Person, peopleData, getPersonImage, isGoogleDataCorrupted} from '@/components/usePeople'
+
+
 
 const axios = require("axios").default;
-const isGoogleDataCorrupted = ref(false)
-
 const imagesDataJson = ref()
 const peopleDataJson = ref<PersonRaw[]>([])
+
 
 
 const url =
@@ -65,18 +66,6 @@ const url =
 
 
 const imagesNamesAndIds = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQT7sEWKHHYfflEwzDn_-W5m4tgA0zGS0h9WNhmLAGMp9-99o_iufjOLozYyb9BvcBIMOm8d70oMqD1/pub?output=csv"
-
-
-type Person = {
-  name: string;
-  company: string;
-  imageId?: string;
-  image?: string;
-  roles: string[];
-  twitterLink: string;
-  isImageEdited?: boolean;
-  imageFallback?: string;
-}
 
 type PersonRaw = {
   name: string;
@@ -170,38 +159,6 @@ const selectedPeople = computed(() => {
   }
   return (peopleData.value).filter(person => person.roles.includes(showPeopleWithRole.value))
 });
-
-
-
-
-const getPersonImage = ({person, isFallback, peopleData}: {person: Person, isFallback?: boolean, peopleData?: Person[]}) => {
-  
-  if (!peopleData || isGoogleDataCorrupted.value) {
-    try {
-      return require(`../assets/people/${person.image}`)
-    } catch (err) {
-      return require('../assets/people/default.jpg')
-    }
-  }
-
-  if (isFallback) {
-    if (person.imageFallback) {
-      return require(`../assets/people/${person.imageFallback}`)
-    }
-    return require('../assets/people/default.jpg')
-  }
-
-  try {
-    return require(`../assets/people/${person.name}.jpg`)
-  } catch (err) {
-    try {
-      return `https://drive.google.com/uc?export=view&id=${person.imageId}`
-    } catch (err) {
-      return require('../assets/people/default.jpg')
-    }
-  }
-
-}
 
 const headerMenuButtonClasses = (role: string) => `people__header-menu-button ${showPeopleWithRole.value === role ? 'people__header-menu-button-active' : ''}`
 

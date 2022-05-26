@@ -72,6 +72,7 @@ const localLinks = [
   "Manifesto",
   // "Hackathon",
   "Speakers",
+  "Schedule",
   "FAQ",
   "Sponsors & Partners",
 ];
@@ -221,6 +222,7 @@ const localLinks = [
 
 .header__logo-eth {
   cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(90%) sepia(70%) saturate(7500%) hue-rotate(355deg) brightness(104%) contrast(108%);
 }
 /* Animation */
 .fade-enter-active,

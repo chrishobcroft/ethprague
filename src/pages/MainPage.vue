@@ -5,6 +5,7 @@
   <HackathonAwards />
   <People />
   <SponsorsAndPartners />
+  <Schedule />
   <FAQ />
   <Footer />
 </template>
@@ -17,6 +18,7 @@ import People from '@/components/People.vue';
 import Footer from '@/components/Footer.vue';
 import SponsorsAndPartners from '@/components/SponsorsAndPartners.vue';
 import FAQ from '@/components/FAQ.vue';
+import Schedule from '@/components/Schedule.vue';
 </script>
 
 <style scoped>
