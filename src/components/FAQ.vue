@@ -52,7 +52,7 @@ const toggleBlock = (blockTitle: string) => {
   }
 }
 
-const getBlockContentStyle = (block: Block) => ({background: block.contentBgColor, transform: openBlocks.value.includes(block.title) ? 'scaleY(1)' : 'scaleY(0)', maxHeight: openBlocks.value.includes(block.title) ? '2000px' : '0', marginBottom: openBlocks.value.includes(block.title) ? '10px' : '-120px'})
+const getBlockContentStyle = (block: Block) => ({background: block.contentBgColor, transform: openBlocks.value.includes(block.title) ? 'scaleY(1)' : 'scaleY(0)', maxHeight: openBlocks.value.includes(block.title) ? '2300px' : '0', marginBottom: openBlocks.value.includes(block.title) ? '10px' : '-120px'})
 
 
 const blocks = [
