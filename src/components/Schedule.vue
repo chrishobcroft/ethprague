@@ -213,7 +213,7 @@ onMounted(async () => {
   display: flex;
   /* flex-wrap: wrap; */
   gap: 7px;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
 }
 
 @media (min-width: 650px) {
@@ -245,7 +245,7 @@ onMounted(async () => {
   font-size: 25px;
   margin: 5rem 0 2rem 0;
   color: var(--col-primary-action);
-  scroll-margin-top: 160px;
+  scroll-margin-top: 180px;
 }
 
 @media (min-width: 650px) {

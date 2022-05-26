@@ -170,7 +170,7 @@ const getEventTrackColor = (eventType: string) => {
   font-size: 14px;
   color: black;
   line-height: 19px;
-  margin-bottom: 2rem;
+  margin: 1.5rem 0 2.5rem;
 }
 
 @media (min-width: 650px) {
@@ -193,7 +193,6 @@ const getEventTrackColor = (eventType: string) => {
 }
 
 .schedule-event__box-track, .schedule-event__box-room {
-  /* font-size: 15px; */
   color: black;
 }
 .schedule-event__box-footer {
