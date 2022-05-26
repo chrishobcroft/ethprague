@@ -138,8 +138,6 @@ onMounted(async () => {
   } catch (e) {
     loadingData.value = false;
   }
-    console.log('scheduleJsonData.value: ', scheduleJsonData.value);
-
   friday.value = mergeEvents(scheduleJsonData.value[0].rooms);
   saturday.value = mergeEvents(scheduleJsonData.value[1].rooms);
   sunday.value = mergeEvents(scheduleJsonData.value[2].rooms);
