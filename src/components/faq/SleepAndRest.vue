@@ -48,7 +48,6 @@
     <img class="sleep-and-rest__hotel-image" width="600" src="../../assets/mama-shelter.jpg" />
     <!-- // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2559.1316515779886!2d14.431399584230874!3d50.102542730716934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470b94c8cf78bd83%3A0x5b2444d0a8ec298d!2sMama%20Shelter%20Praha!5e0!3m2!1scs!2sca!4v1653500007374!5m2!1scs!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>  -->
   </div>
-  ,
 </template>
 
 <script setup lang="ts"></script>
