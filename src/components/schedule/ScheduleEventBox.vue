@@ -114,7 +114,8 @@ const getEventTrackColor = (eventType: string) => {
 
 @media (min-width: 1120px) {
   .schedule-event__box {
-      margin: 0;
+    margin: 0;
+    height: 100%;
   }
 }
 
@@ -192,7 +193,7 @@ const getEventTrackColor = (eventType: string) => {
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-persons-name{
+  .schedule-event__box-persons-name {
     font-size: 25px;
     color: rgba(0, 0, 0, 0.5);
   }

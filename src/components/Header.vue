@@ -1,16 +1,19 @@
 <template>
   <div class="header">
     <div class="header__content">
-      <a href="#manifesto-buttons">
+      <router-link
+        class="header__local-link"
+        :to="{ path: '/', hash: '#manifesto-buttons' }"
+      >
         <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
-      </a>
+      </router-link>
 
       <div class="header__local-links">
-          <router-link
-            class="header__local-link"
-            v-for="localLink in localLinks"
-            :to="{ path: '/', hash: `#${localLink}` }"
-            :key="localLink"
+        <router-link
+          class="header__local-link"
+          v-for="localLink in localLinks"
+          :to="{ path: '/', hash: `#${localLink}` }"
+          :key="localLink"
           >{{ localLink }}
         </router-link>
         <router-link class="header__local-link" to="/schedule">
@@ -62,7 +65,8 @@
           v-for="localLink in localLinks"
           :key="localLink"
           :href="`#${localLink}`"
-        >{{ localLink }}</a>
+          >{{ localLink }}</a
+        >
         <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
       </div>
     </Transition>
@@ -79,7 +83,6 @@ const localLinks = [
   "FAQ",
   "SponsorsAndPartners",
 ];
-
 </script>
 
 <style scoped>
@@ -225,7 +228,8 @@ const localLinks = [
 
 .header__logo-eth {
   cursor: pointer;
-  filter: brightness(0) saturate(100%) invert(90%) sepia(70%) saturate(7500%) hue-rotate(355deg) brightness(104%) contrast(108%);
+  filter: brightness(0) saturate(100%) invert(90%) sepia(70%) saturate(7500%)
+    hue-rotate(355deg) brightness(104%) contrast(108%);
 }
 /* Animation */
 .fade-enter-active,

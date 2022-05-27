@@ -31,7 +31,7 @@
               FRIDAY 10. JUNE
             </button>
           </a>
-          <a :href="getLocalLinkForDates('#Saturday')" >
+          <a :href="getLocalLinkForDates('#Saturday')">
             <button
               @click="onDateClick(Dates.SATURDAY)"
               :class="headerDatesButtonClasses(Dates.SATURDAY)"
@@ -67,7 +67,9 @@
       v-if="scheduleJsonData && showSection === Sections.SCHEDULE"
     >
       <div class="schedule__content--mobile">
-        <div id="Friday-mobile" class="schedule__day-title">Friday 10. June</div>
+        <div id="Friday-mobile" class="schedule__day-title">
+          Friday 10. June
+        </div>
         <ScheduleEventBox
           v-for="event in friday"
           :key="event.id"
@@ -75,14 +77,18 @@
           :event="event"
         />
 
-        <div id="Saturday-mobile" class="schedule__day-title">Saturday 11. June</div>
+        <div id="Saturday-mobile" class="schedule__day-title">
+          Saturday 11. June
+        </div>
         <ScheduleEventBox
           v-for="event in saturday"
           :key="event.id"
           @click="setModalContent(event)"
           :event="event"
         />
-        <div id="Sunday-mobile" class="schedule__day-title">Sunday 12. June</div>
+        <div id="Sunday-mobile" class="schedule__day-title">
+          Sunday 12. June
+        </div>
         <ScheduleEventBox
           v-for="event in sunday"
           :key="event.id"
@@ -90,80 +96,111 @@
           :event="event"
         />
       </div>
-
+<!-- :rowspan="rowData.laFabrika ? rowData.laFabrika.rowSpan : 0" -->
       <div class="schedule__content--desktop">
-        
-        <div id="Friday-desktop" class="schedule__day-title">Friday 10. June</div>
+        <div id="Friday-desktop" class="schedule__day-title">
+          Friday 10. June
+        </div>
         <div class="schedule__content-desktop-columns">
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(Venues.LA_FABRIKA, friday)"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(
-                Venues.PARALELNI_POLIS,
-                friday
-              )"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
+          <table class="schedule__table">
+            <tbody>
+              <tr v-for="rowData in prepareDataForTable(friday)" :key="rowData.startTime">
+                <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.laFabrika"
+                    @click="setModalContent(rowData.laFabrika?.event)"
+                    :event="rowData.laFabrika.event"
+                  />
+                </td>
+                 <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.paralelniPolis"
+                    @click="setModalContent(rowData.paralelniPolis?.event)"
+                    :event="rowData.paralelniPolis?.event"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div id="Saturday-desktop" class="schedule__day-title">Saturday 11. June</div>
+        <div id="Saturday-desktop" class="schedule__day-title">
+          Saturday 11. June
+        </div>
         <div class="schedule__content-desktop-columns">
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(Venues.LA_FABRIKA, saturday)"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(
-                Venues.PARALELNI_POLIS,
-                saturday
-              )"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
+          <table class="schedule__table">
+            <tbody>
+              <tr v-for="rowData in prepareDataForTable(saturday)" :key="rowData.startTime">
+                <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.laFabrika"
+                    @click="setModalContent(rowData.laFabrika?.event)"
+                    :event="rowData.laFabrika.event"
+                  />
+                </td>
+                 <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.paralelniPolis"
+                    @click="setModalContent(rowData.paralelniPolis?.event)"
+                    :event="rowData.paralelniPolis?.event"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-        <div id="Sunday-desktop" class="schedule__day-title">Sunday 12. June</div>
+        <!-- <div id="Sunday-desktop" class="schedule__day-title">
+          Sunday 12. June
+        </div>
         <div class="schedule__content-desktop-columns">
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(Venues.LA_FABRIKA, sunday)"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
-          <div class="schedule__content-desktop-column">
-            <ScheduleEventBox
-              v-for="event in getEventsFromVenue(
-                Venues.PARALELNI_POLIS,
-                sunday
-              )"
-              :key="event.id"
-              @click="setModalContent(event)"
-              :event="event"
-            />
-          </div>
+          <table class="schedule__table">
+            <tbody>
+              <tr v-for="rowData in prepareDataForTable(sunday)" :key="rowData.startTime">
+                <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.laFabrika"
+                    @click="setModalContent(rowData.laFabrika?.event)"
+                    :event="rowData.laFabrika.event"
+                  />
+                </td>
+                 <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.paralelniPolis"
+                    @click="setModalContent(rowData.paralelniPolis?.event)"
+                    :event="rowData.paralelniPolis?.event"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div> -->
+        <div id="Sunday-desktop" class="schedule__day-title">
+          Sunday 12. June
+        </div>
+        <div class="schedule__content-desktop-columns">
+          <table class="schedule__table">
+            <tbody>
+              <tr v-for="rowData in prepareDataForTable(sunday)" :key="rowData.startTime">
+                <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.laFabrika"
+                    @click="setModalContent(rowData.laFabrika?.event)"
+                    :event="rowData.laFabrika.event"
+                  />
+                </td>
+                 <td class="schedule__table-cell">
+                  <ScheduleEventBox
+                    v-if="rowData.paralelniPolis"
+                    @click="setModalContent(rowData.paralelniPolis?.event)"
+                    :event="rowData.paralelniPolis?.event"
+                  />
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
 
-
-      
       </div>
     </div>
   </div>
@@ -219,7 +256,7 @@ const modalContent = ref<any | null>(null);
 const speakers = ref();
 const allEvents = ref();
 
-const MOBILE_BREAKPOINT = 1120
+const MOBILE_BREAKPOINT = 1120;
 // const isMobileWidth = computed(() => window.innerWidth < MOBILE_BREAKPOINT)
 
 const getEventsFromVenue = (venue: string, events: any) => {
@@ -265,20 +302,77 @@ const mergeEvents = (scheduleJsonData: any) => {
   });
 };
 
+const hoursToMinutes = (time: string) => {
+  const hours = parseInt(time.substr(0, 2));
+  const minutes = parseInt(time.substr(3, 2));
+  return hours * 60 + minutes;
+};
+
+const prepareDataForTable = (dayObjectWithEvents?: any) => {
+  
+  let startTimeInMinutes = 0;
+  let resultArray = [];
+
+  do {
+    let laFabrikaEvent = dayObjectWithEvents.find((event: any) => {
+      return (
+        event.room === Venues.LA_FABRIKA &&
+        hoursToMinutes(event.start) < startTimeInMinutes + 29 && hoursToMinutes(event.start) + 29 > startTimeInMinutes 
+      );
+    });
+    
+    let polisEvent = dayObjectWithEvents.find((event: any) => {
+      return (
+        event.room === Venues.PARALELNI_POLIS &&
+        hoursToMinutes(event.start) < startTimeInMinutes + 29 && hoursToMinutes(event.start) + 29 > startTimeInMinutes
+      );
+    });
+
+    const isPolisEventAlreadyInArray: any = resultArray.some((event) => event.paralelniPolis?.event.id === polisEvent?.id)
+    if (isPolisEventAlreadyInArray) {
+      polisEvent = undefined
+    }
+
+    const isLaFabrikaAlreadyInArray: any = resultArray.some((event) => event.laFabrika?.event.id === laFabrikaEvent?.id)
+    if (isLaFabrikaAlreadyInArray) {
+      laFabrikaEvent = undefined
+    }
+      
+    if (polisEvent || laFabrikaEvent) {
+      resultArray.push({
+        paralelniPolis: (polisEvent && !isPolisEventAlreadyInArray) ? {
+          event: polisEvent,
+          duration: hoursToMinutes(polisEvent.duration),
+          rowSpan: Math.floor(hoursToMinutes(polisEvent.duration) / 30),
+        } : undefined,
+        laFabrika: (laFabrikaEvent && !isLaFabrikaAlreadyInArray) ? {
+          event: laFabrikaEvent,
+          duration: hoursToMinutes(laFabrikaEvent.duration),
+          rowSpan: Math.floor(hoursToMinutes(laFabrikaEvent.duration) / 30),
+        } : undefined,
+        startTime: startTimeInMinutes,
+      });
+    }
+
+    startTimeInMinutes += 30;
+  } while (startTimeInMinutes < hoursToMinutes("23:59"));
+
+  return resultArray;
+};
+
 const setModalContent = (event: any) => {
   modalContent.value = event;
 };
 
-const getLocalLinkForDates = (day: string) => `${day}-${window.innerWidth < MOBILE_BREAKPOINT ? 'mobile' : 'desktop'}`
-
+const getLocalLinkForDates = (day: string) =>
+  `${day}-${window.innerWidth < MOBILE_BREAKPOINT ? "mobile" : "desktop"}`;
 
 const updateScroll = () => {
   if (showSection.value !== Sections.SCHEDULE) return;
-  
-  
-  let fridayYPosition
-  let saturdayYPosition
-  let sundayYPosition
+
+  let fridayYPosition;
+  let saturdayYPosition;
+  let sundayYPosition;
 
   if (window.innerWidth < MOBILE_BREAKPOINT) {
     fridayYPosition = fridayMobileTitleElement.value.getBoundingClientRect().y;
@@ -291,7 +385,6 @@ const updateScroll = () => {
       saturdayDesktopTitleElement.value.getBoundingClientRect().y;
     sundayYPosition = sundayDesktopTitleElement.value.getBoundingClientRect().y;
   }
-  
 
   if (isOnDateClick.value) return;
 
@@ -333,9 +426,13 @@ onMounted(async () => {
   } catch (e) {
     loadingData.value = false;
   }
+    console.log('scheduleJsonData.value: ', scheduleJsonData.value);
   friday.value = mergeEvents(scheduleJsonData.value[0].rooms);
   saturday.value = mergeEvents(scheduleJsonData.value[1].rooms);
   sunday.value = mergeEvents(scheduleJsonData.value[2].rooms);
+
+  const res = prepareDataForTable(friday.value);
+  console.log('res: ', res);
 
   allEvents.value = [...friday.value, ...saturday.value, ...sunday.value];
   speakers.value = getSpeakersFromEvents(allEvents.value);
@@ -344,13 +441,19 @@ onMounted(async () => {
 });
 
 onUpdated(() => {
-  fridayMobileTitleElement.value = window.document.getElementById("Friday-mobile");
-  saturdayMobileTitleElement.value = window.document.getElementById("Saturday-mobile");
-  sundayMobileTitleElement.value = window.document.getElementById("Sunday-mobile");
+  fridayMobileTitleElement.value =
+    window.document.getElementById("Friday-mobile");
+  saturdayMobileTitleElement.value =
+    window.document.getElementById("Saturday-mobile");
+  sundayMobileTitleElement.value =
+    window.document.getElementById("Sunday-mobile");
 
-  fridayDesktopTitleElement.value = window.document.getElementById("Friday-desktop");
-  saturdayDesktopTitleElement.value = window.document.getElementById("Saturday-desktop");
-  sundayDesktopTitleElement.value = window.document.getElementById("Sunday-desktop");
+  fridayDesktopTitleElement.value =
+    window.document.getElementById("Friday-desktop");
+  saturdayDesktopTitleElement.value =
+    window.document.getElementById("Saturday-desktop");
+  sundayDesktopTitleElement.value =
+    window.document.getElementById("Sunday-desktop");
 });
 
 onUnmounted(() => {
@@ -541,5 +644,14 @@ onUnmounted(() => {
   }
 }
 
-    
+.schedule__table {
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule__table-cell {
+  width: 50%;
+  border: none;
+}
 </style>

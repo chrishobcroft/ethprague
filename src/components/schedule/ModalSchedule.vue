@@ -44,9 +44,9 @@
               <div class="modal__person-bio-name">
                 {{ person.public_name }}
               </div>
-              <div class="modal__person-bio-detail">
-                {{ person.biography }}
-              </div>
+              <div v-html="person.biography" class="modal__person-bio-detail" />
+                <!-- {{ person.biography }} -->
+              <!-- </div> -->
             </div>
           </div>
         </div>
@@ -166,6 +166,7 @@ const modalContent = computed({
   font-size: 14px;
   margin-bottom: 3.5rem;
   color: black;
+  white-space: pre-line;
 }
 
 @media (min-width: 970px) {
@@ -179,6 +180,7 @@ const modalContent = computed({
   font-size: 15px;
   font-weight: normal;
   margin-bottom: 20px;
+  white-space: pre-line;
 }
 
 .text-content {
@@ -263,9 +265,11 @@ const modalContent = computed({
 @media (min-width: 1120px) {
   .modal__title, .modal__date-duration-place, .modal__person-bio-name {
     font-size: 25px;
+    line-height: 29px;
   }
   .modal__date-duration-place {
     font-size: 25px;
+    line-height: 29px;
   }
 
   .modal__description, .modal__abstract, .modal__description-text, .modal__person-bio-detail  {
