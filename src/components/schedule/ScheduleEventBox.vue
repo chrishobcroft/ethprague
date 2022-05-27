@@ -48,9 +48,9 @@ const props = defineProps<{
 }>()
 
 const hoursToMinutes = (time: string) => {
-  const hours = parseInt(time.substr(0, 2));
-  const minutes = parseInt(time.substr(3, 2));
-  return hours * 60 + minutes;
+  const hours = parseInt(time.substr(0, 2))
+  const minutes = parseInt(time.substr(3, 2))
+  return hours * 60 + minutes
 };
 
 const getEventTrackColor = (eventType: string) => {

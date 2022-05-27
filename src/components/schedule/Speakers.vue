@@ -30,29 +30,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import {
   Person,
   peopleData,
   getPersonImage,
   isGoogleDataCorrupted,
   findPersonByName,
-} from "@/components/usePeople";
-import Image from "@/components/Image.vue";
+} from "@/components/usePeople"
+import Image from "@/components/Image.vue"
 
 const props = defineProps<{
-  speakers?: any;
-  allEvents?: any;
-}>();
+  speakers?: any
+  allEvents?: any
+}>()
 
 const getPersonEventName = (personName: string) => {
   const foundPersonEvent = props.allEvents.find(
     (event: any) => {
       return event.persons.find((person: any) => person.public_name === personName)
       }
-  );
-  return foundPersonEvent ? foundPersonEvent.title : "";
-};
+  )
+  return foundPersonEvent ? foundPersonEvent.title : ""
+}
 
 </script>
 

@@ -59,14 +59,25 @@
 
     <Transition name="fade">
       <div v-show="isHamMenuOpen" class="header-mobile__local-links">
-        <a
+        <!-- <a
           @click="isHamMenuOpen = false"
           class="header-mobile__local-link"
           v-for="localLink in localLinks"
           :key="localLink"
           :href="`#${localLink}`"
           >{{ localLink }}</a
-        >
+        > -->
+        <router-link
+          @click="isHamMenuOpen = false"
+          class="header-mobile__local-link"
+          v-for="localLink in localLinks"
+          :to="{ path: '/', hash: `#${localLink}` }"
+          :key="localLink"
+          >{{ localLink }}
+        </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" to="/schedule">
+          Schedule
+        </router-link>
         <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
       </div>
     </Transition>

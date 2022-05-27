@@ -15,8 +15,7 @@ let routes = [
 ]
 
 export default createRouter({
-  scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
+  scrollBehavior(to) {
     if (to.hash) {
       return {
         el: to.hash,
@@ -26,4 +25,4 @@ export default createRouter({
   },
   history: createWebHistory(),
   routes,
-});
+})

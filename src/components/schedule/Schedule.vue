@@ -231,7 +231,6 @@ const speakers = ref();
 const allEvents = ref();
 
 const MOBILE_BREAKPOINT = 1120;
-// const isMobileWidth = computed(() => window.innerWidth < MOBILE_BREAKPOINT)
 
 const getEventsFromVenue = (venue: string, events: any) => {
   switch (venue) {
