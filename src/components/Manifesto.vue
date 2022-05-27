@@ -58,13 +58,7 @@
     <div id="Manifesto" class="manifesto__text-container">
       <SectionTitle title="manifesto" />
       <div class="manifesto__text-content">
-        ETHPrague isn’t looking for the next get rich quickly scheme or
-        groundbreaking DeFi apps, instead it’s an event focusing on the future
-        potential of Ethereum and concepts or applications which don’t yet
-        exist. We want to tackle challenges which will or might arise in the
-        next decade and we believe Ethereum will play a major role in solving
-        these. The future is in your hands, anon! You decide whether we end up
-        living in a dark authoritarian dystopia or a bright solarpunk utopia.
+        ETHPrague isn’t looking for the next get rich quickly scheme or groundbreaking DeFi apps, instead it’s an event focusing on the future potential of Ethereum and concepts or applications which don’t yet exist. We want to tackle challenges which will or might arise in the next decade and we believe Ethereum will play a major role in solving these. The future is in your hands, anon! You decide whether we end up living in a dark authoritarian dystopia or a bright solarpunk utopia.
       </div>
     </div>
   </div>

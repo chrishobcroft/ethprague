@@ -96,7 +96,6 @@
           :event="event"
         />
       </div>
-<!-- :rowspan="rowData.laFabrika ? rowData.laFabrika.rowSpan : 0" -->
       <div class="schedule__content--desktop">
         <div id="Friday-desktop" class="schedule__day-title">
           Friday 10. June
@@ -178,9 +177,6 @@
       </div>
     </div>
   </div>
-
-  <!-- </div> -->
-
   <ModalSchedule v-model="modalContent" />
 </template>
 
