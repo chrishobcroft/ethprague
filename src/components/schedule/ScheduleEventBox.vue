@@ -140,7 +140,6 @@ const getEventTrackColor = (eventType: string) => {
   }
 }
 
-
 .schedule-event__box-time-duration {
   font-size: 12px;
 }

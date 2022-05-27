@@ -249,14 +249,12 @@ const modalContent = computed({
 
 .modal__person-bio-name {
   font-size: 15px;
-  /* line-height: 22px; */
   color: var(--col-primary-action);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 .modal__person-bio-detail {
   font-size: 14px;
-  /* line-height: 22px; */
   color: black;
   margin-bottom: 2rem;
 }

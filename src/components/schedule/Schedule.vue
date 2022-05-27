@@ -108,15 +108,15 @@
                 <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika?.event)"
+                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
                     :event="rowData.laFabrika.event"
                   />
                 </td>
                  <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis?.event)"
-                    :event="rowData.paralelniPolis?.event"
+                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
+                    :event="rowData.paralelniPolis.event"
                   />
                 </td>
               </tr>
@@ -134,47 +134,21 @@
                 <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika?.event)"
+                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
                     :event="rowData.laFabrika.event"
                   />
                 </td>
                  <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis?.event)"
-                    :event="rowData.paralelniPolis?.event"
+                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
+                    :event="rowData.paralelniPolis.event"
                   />
                 </td>
               </tr>
             </tbody>
           </table>
         </div>
-
-        <!-- <div id="Sunday-desktop" class="schedule__day-title">
-          Sunday 12. June
-        </div>
-        <div class="schedule__content-desktop-columns">
-          <table class="schedule__table">
-            <tbody>
-              <tr v-for="rowData in prepareDataForTable(sunday)" :key="rowData.startTime">
-                <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika?.event)"
-                    :event="rowData.laFabrika.event"
-                  />
-                </td>
-                 <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis?.event)"
-                    :event="rowData.paralelniPolis?.event"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div> -->
         <div id="Sunday-desktop" class="schedule__day-title">
           Sunday 12. June
         </div>
@@ -185,15 +159,15 @@
                 <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika?.event)"
+                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
                     :event="rowData.laFabrika.event"
                   />
                 </td>
                  <td class="schedule__table-cell">
                   <ScheduleEventBox
                     v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis?.event)"
-                    :event="rowData.paralelniPolis?.event"
+                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
+                    :event="rowData.paralelniPolis.event"
                   />
                 </td>
               </tr>
@@ -328,12 +302,17 @@ const prepareDataForTable = (dayObjectWithEvents?: any) => {
       );
     });
 
-    const isPolisEventAlreadyInArray: any = resultArray.some((event) => event.paralelniPolis?.event.id === polisEvent?.id)
+    const isPolisEventAlreadyInArray: any = resultArray.some((event) => {
+      if (event.paralelniPolis && event.paralelniPolis.event && polisEvent) return event.paralelniPolis.event.id === polisEvent.id
+    })
     if (isPolisEventAlreadyInArray) {
       polisEvent = undefined
     }
 
-    const isLaFabrikaAlreadyInArray: any = resultArray.some((event) => event.laFabrika?.event.id === laFabrikaEvent?.id)
+    const isLaFabrikaAlreadyInArray: any = resultArray.some((event) => 
+    {
+      if (event.laFabrika && event.laFabrika.event && laFabrikaEvent) return event.laFabrika.event.id === laFabrikaEvent.id
+    })
     if (isLaFabrikaAlreadyInArray) {
       laFabrikaEvent = undefined
     }
