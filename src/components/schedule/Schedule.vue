@@ -426,13 +426,10 @@ onMounted(async () => {
   } catch (e) {
     loadingData.value = false;
   }
-    console.log('scheduleJsonData.value: ', scheduleJsonData.value);
   friday.value = mergeEvents(scheduleJsonData.value[0].rooms);
   saturday.value = mergeEvents(scheduleJsonData.value[1].rooms);
   sunday.value = mergeEvents(scheduleJsonData.value[2].rooms);
-
   const res = prepareDataForTable(friday.value);
-  console.log('res: ', res);
 
   allEvents.value = [...friday.value, ...saturday.value, ...sunday.value];
   speakers.value = getSpeakersFromEvents(allEvents.value);
