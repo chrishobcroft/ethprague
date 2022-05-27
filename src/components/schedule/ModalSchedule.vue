@@ -31,7 +31,7 @@
             :key="person.public_name"
             class="modal__person"
           >
-            <div v-if="findPersonByName(person)">
+            <div>
               <Image
                 :cssClass="['modal__person-image', {'modal__person-image--purple-filter': !Boolean(findPersonByName(person) ? (findPersonByName(person) as Person).isImageEdited : undefined)} ]"
                 :src="getPersonImage({person: findPersonByName(person) as Person, peopleData, isGoogleDataCorrupted })"
@@ -66,7 +66,6 @@ import {
 } from "@/components/usePeople";
 import Image from "@/components/Image.vue";
 
-// 
 const props = defineProps<{
   modelValue?: any;
 }>();
@@ -193,7 +192,7 @@ const modalContent = computed({
 
 .modal__title {
   font-size: 15px;
-  line-height: 22px;
+  /* line-height: 22px; */
   color: var(--col-primary-action);
   text-transform: uppercase;
   margin-top: 3.5rem;
@@ -201,7 +200,7 @@ const modalContent = computed({
 
 .modal__date-duration-place {
   font-size: 15px;
-  line-height: 22px;
+  /* line-height: 22px; */
   color: grey;
   text-transform: uppercase;
   margin-bottom: 2rem;
@@ -212,6 +211,8 @@ const modalContent = computed({
     font-size: 17px;
   }
 }
+
+
 
 .modal__person {
   display: flex;
@@ -247,16 +248,30 @@ const modalContent = computed({
 
 .modal__person-bio-name {
   font-size: 15px;
-  line-height: 22px;
+  /* line-height: 22px; */
   color: var(--col-primary-action);
   text-transform: uppercase;
   margin-bottom: 1rem;
 }
 .modal__person-bio-detail {
   font-size: 14px;
-  line-height: 22px;
+  /* line-height: 22px; */
   color: black;
   margin-bottom: 2rem;
+}
+
+@media (min-width: 1120px) {
+  .modal__title, .modal__date-duration-place, .modal__person-bio-name {
+    font-size: 25px;
+  }
+  .modal__date-duration-place {
+    font-size: 25px;
+  }
+
+  .modal__description, .modal__abstract, .modal__description-text, .modal__person-bio-detail  {
+    font-size: 17px;
+  }
+
 }
 
 /* Animation */

@@ -96,7 +96,7 @@ const getEventTrackColor = (eventType: string) => {
 .schedule-event__box {
   max-width: 1100px;
   width: 100%;
-  margin: 1.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
   background-color: white;
   border-radius: 18px;
@@ -109,6 +109,12 @@ const getEventTrackColor = (eventType: string) => {
 @media (min-width: 650px) {
   .schedule-event__box {
     flex-direction: row;
+  }
+}
+
+@media (min-width: 1120px) {
+  .schedule-event__box {
+      margin: 0;
   }
 }
 
@@ -206,6 +212,17 @@ const getEventTrackColor = (eventType: string) => {
 @media (min-width: 650px) {
   .schedule-event__box-footer {
     flex-direction: row;
+  }
+}
+
+
+@media (min-width: 1120px) {
+  .schedule-event__box-abstract-text {
+    display: none;
+  }
+
+  .schedule-event__box-room {
+    display: none;
   }
 }
 

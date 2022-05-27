@@ -76,7 +76,6 @@ const localLinks = [
   "Manifesto",
   // "Hackathon",
   "Speakers",
-  // "Schedule",
   "FAQ",
   "SponsorsAndPartners",
 ];
