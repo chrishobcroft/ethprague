@@ -215,7 +215,6 @@ const getEventTrackColor = (eventType: string) => {
   }
 }
 
-
 @media (min-width: 1120px) {
   .schedule-event__box-abstract-text {
     display: none;
@@ -225,5 +224,4 @@ const getEventTrackColor = (eventType: string) => {
     display: none;
   }
 }
-
 </style>
