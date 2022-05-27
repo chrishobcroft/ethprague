@@ -16,7 +16,8 @@
     "require-context": "^1.1.0",
     "vue": "^3.2.29",
     "vue-class-component": "^8.0.0-0",
-    "vue-router": "^4.0.14"
+    "vue-router": "^4.0.15",
+    "vue-scrollto": "^2.20.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.19.0",

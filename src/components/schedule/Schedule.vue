@@ -1,6 +1,6 @@
 <template>
   <div id="Schedule" class="schedule">
-    <div class="schedule__header">
+    <div :class="['schedule__header', {'schedule__header-speakers': showSection === Sections.SPEAKERS}]">
       <div class="schedule__section-buttons">
         <button
           @click="showSection = Sections.SCHEDULE"
@@ -8,19 +8,19 @@
         >
           schedule
         </button>
-        <!-- <button
+        <button
           @click="showSection = Sections.SPEAKERS"
           :class="headerSectionsButtonClasses(Sections.SPEAKERS)"
         >
           speakers
-        </button> -->
+        </button>
       </div>
 
-      <div class="schedule__dates-buttons">
+      <div v-if="showSection === Sections.SCHEDULE" class="schedule__dates-buttons">
         <a href="#Friday">
           
           <button
-          @click="showDate = Dates.FRIDAY"
+          @click="onDateClick(Dates.FRIDAY)"
           :class="headerDatesButtonClasses(Dates.FRIDAY)"
         >
           FRIDAY 10. JUNE
@@ -28,7 +28,7 @@
         </a>
         <a href="#Saturday">
           <button
-            @click="showDate = Dates.SATURDAY"
+            @click="onDateClick(Dates.SATURDAY)"
             :class="headerDatesButtonClasses(Dates.SATURDAY)"
           >
             SATURDAY 11. JUNE
@@ -37,7 +37,7 @@
         </a>
         <a href="#Sunday">
           <button
-            @click="showDate = Dates.SUNDAY"
+            @click="onDateClick(Dates.SUNDAY)"
             :class="headerDatesButtonClasses(Dates.SUNDAY)"
           >
             SUNDAY 12. JUNE
@@ -46,7 +46,9 @@
       </div>
     </div>
 
-    <div v-if="scheduleJsonData" class="schedule__content">
+    <Speakers v-if="showSection === Sections.SPEAKERS" :speakers="speakers" :allEvents="allEvents"/>
+    
+    <div v-if="scheduleJsonData && showSection === Sections.SCHEDULE" class="schedule__content">
       <div id="Friday" class="schedule__day-title">
         Friday 10. June
       </div>
@@ -70,9 +72,10 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs, computed, ref, onMounted } from "vue";
+import { toRefs, computed, ref, onMounted, onUpdated, onActivated, onUnmounted } from "vue";
 import ModalSchedule from "./ModalSchedule.vue";
 import ScheduleEventBox from "./ScheduleEventBox.vue";
+import Speakers from "./Speakers.vue";
 
 const axios = require("axios").default;
 
@@ -91,11 +94,18 @@ const showSection = ref(Sections.SCHEDULE);
 const showDate = ref(Dates.FRIDAY);
 const scheduleJsonData = ref();
 const loadingData = ref(true);
+
 const friday = ref();
 const saturday = ref();
 const sunday = ref();
+const fridayTitleElement = ref()
+const saturdayTitleElement = ref()
+const sundayTitleElement = ref()
 
+const isOnDateClick = ref()
 const modalContent = ref<any | null>(null);
+const speakers = ref()
+const allEvents = ref()
 
 const headerSectionsButtonClasses = (section: string) =>
   `schedule__header-sections-button ${
@@ -103,6 +113,14 @@ const headerSectionsButtonClasses = (section: string) =>
       ? "schedule__header-sections-button-active"
       : ""
   }`;
+
+const onDateClick = (date: Dates) => {
+  showDate.value = date
+  isOnDateClick.value = true
+  setTimeout(() => {
+    isOnDateClick.value = false
+  }, 1000);
+}
 
 const headerDatesButtonClasses = (date: string) =>
   `schedule__header-dates-button ${
@@ -123,8 +141,37 @@ const mergeEvents = (scheduleJsonData: any) => {
 
 const setModalContent = (event: any) => {
   modalContent.value = event
-  
 }
+
+const updateScroll = () => {
+  if (showSection.value !== Sections.SCHEDULE) return
+  
+  const fridayYPosition = fridayTitleElement.value.getBoundingClientRect().y
+  const saturdayYPosition = saturdayTitleElement.value.getBoundingClientRect().y
+  const sundayYPosition = sundayTitleElement.value.getBoundingClientRect().y
+  if (isOnDateClick.value) return
+
+  if (fridayYPosition - 185 < 0 && saturdayYPosition - 185 > 0 && sundayYPosition > 0) {
+    showDate.value = Dates.FRIDAY
+  } else if (saturdayYPosition - 185 < 0 && sundayYPosition - 185 > 0) {
+    showDate.value = Dates.SATURDAY
+  } else if (sundayYPosition - 185 < 0) {
+    showDate.value = Dates.SUNDAY
+  }
+}
+
+const getSpeakersFromEvents = (allEvents: any) =>{
+  const speakers = []
+  for (const event of allEvents) {
+    for (const person of event.persons) {
+      if (person.biography) {
+          speakers.push(person)
+        }
+      }
+    }
+  return speakers
+}
+
 
 onMounted(async () => {
   try {
@@ -133,7 +180,6 @@ onMounted(async () => {
       "https://cfp.paralelnipolis.cz/ethprague-2022/schedule/export/schedule.json"
     );
     scheduleJsonData.value = jsonDataFetch.data.schedule.conference.days;
-    
     loadingData.value = false;
   } catch (e) {
     loadingData.value = false;
@@ -141,8 +187,23 @@ onMounted(async () => {
   friday.value = mergeEvents(scheduleJsonData.value[0].rooms);
   saturday.value = mergeEvents(scheduleJsonData.value[1].rooms);
   sunday.value = mergeEvents(scheduleJsonData.value[2].rooms);
-  
+
+  allEvents.value = [...friday.value, ...saturday.value, ...sunday.value]
+  speakers.value = getSpeakersFromEvents(allEvents.value);
+
+  window.addEventListener("scroll", updateScroll, { passive: true });
 });
+
+onUpdated(() => {
+  fridayTitleElement.value = window.document.getElementById("Friday");
+  saturdayTitleElement.value = window.document.getElementById("Saturday");
+  sundayTitleElement.value = window.document.getElementById("Sunday");
+})
+
+onUnmounted(() => {
+  window.removeEventListener("scroll", updateScroll);
+});
+
 </script>
 
 <style scoped>
@@ -175,6 +236,11 @@ onMounted(async () => {
   overflow: auto;
 }
 
+.schedule__header-speakers {
+  position: relative;
+  top: 0;
+}
+
 @media (min-width: 650px) {
   .schedule__header {
     padding: 100px var(--app-padding) 0;
@@ -184,15 +250,16 @@ onMounted(async () => {
 .schedule__section-buttons {
   width: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
-  gap: 7px;
+  gap: 12px;
   margin-bottom: 5rem;
 }
+
 .schedule__header-sections-button {
   border-radius: 0;
   border: 1px solid #000000;
   padding: 9px 22px;
   margin-left: 10px;
+  margin: 0;
 
   font-weight: 300;
   text-transform: uppercase;
@@ -211,9 +278,12 @@ onMounted(async () => {
 .schedule__dates-buttons {
   width: 100%;
   display: flex;
-  /* flex-wrap: wrap; */
-  gap: 7px;
+  gap: 12px;
   margin-bottom: 1.5rem;
+}
+
+..schedule__dates-buttons:last-child {
+  margin-bottom: var(--app-padding);
 }
 
 @media (min-width: 650px) {
@@ -233,7 +303,6 @@ onMounted(async () => {
   font-size: 15px;
   line-height: 22px;
 }
-
 .schedule__header-dates-button-active {
   border: 1px solid var(--col-primary-action);
   background-color: var(--col-primary-action);

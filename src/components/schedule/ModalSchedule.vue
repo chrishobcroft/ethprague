@@ -36,7 +36,7 @@
                 :cssClass="['modal__person-image', {'modal__person-image--purple-filter': !Boolean(findPersonByName(person) ? (findPersonByName(person) as Person).isImageEdited : undefined)} ]"
                 :src="getPersonImage({person: findPersonByName(person) as Person, peopleData, isGoogleDataCorrupted })"
                 :fallbackImageA="getPersonImage({person: findPersonByName(person) as Person, isFallback: true, isGoogleDataCorrupted})"
-                :fallbackImageB="require('../assets/people/default.jpg')"
+                :fallbackImageB="require('../../assets/people/default.jpg')"
               />
             </div>
 
@@ -62,6 +62,7 @@ import {
   peopleData,
   getPersonImage,
   isGoogleDataCorrupted,
+  findPersonByName,
 } from "@/components/usePeople";
 import Image from "@/components/Image.vue";
 
@@ -69,17 +70,6 @@ import Image from "@/components/Image.vue";
 const props = defineProps<{
   modelValue?: any;
 }>();
-
-const findPersonByName = (personToFind: any) => {
-  
-  if (!peopleData.value) return undefined;
-  const foundPerson = peopleData.value.find(
-    (person) => person.name === personToFind.public_name
-  );
-  
-  if (foundPerson) return foundPerson;
-  return undefined;
-};
 
 const formatDate = (dateString: string) => {
   const date = new Date(dateString);
@@ -147,21 +137,7 @@ const modalContent = computed({
   width: 93%;
   flex-direction: column;
   overflow: auto;
-  max-height: 79vh;
-}
-
-.modal__person {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  gap: 20px;
-}
-
-@media (min-width: 600px) {
-  .modal__person {
-    flex-direction: row;
-
-  }
+  max-height: 75vh;
 }
 
 .modal__close {
@@ -234,6 +210,20 @@ const modalContent = computed({
 @media (min-width: 970px) {
   .modal__title {
     font-size: 17px;
+  }
+}
+
+.modal__person {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+@media (min-width: 600px) {
+  .modal__person {
+    flex-direction: row;
+
   }
 }
 

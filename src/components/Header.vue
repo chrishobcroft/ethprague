@@ -6,12 +6,16 @@
       </a>
 
       <div class="header__local-links">
-        <a
-          class="header__local-link"
-          v-for="localLink in localLinks"
-          :key="localLink"
-          :href="`#${localLink}`"
-        >{{ localLink }}</a>
+          <router-link
+            class="header__local-link"
+            v-for="localLink in localLinks"
+            :to="{ path: '/', hash: `#${localLink}` }"
+            :key="localLink"
+          >{{ localLink }}
+        </router-link>
+        <router-link class="header__local-link" to="/schedule">
+          Schedule
+        </router-link>
       </div>
 
       <div class="header__social-links">
@@ -72,9 +76,9 @@ const localLinks = [
   "Manifesto",
   // "Hackathon",
   "Speakers",
-  "Schedule",
+  // "Schedule",
   "FAQ",
-  "Sponsors & Partners",
+  "SponsorsAndPartners",
 ];
 
 </script>

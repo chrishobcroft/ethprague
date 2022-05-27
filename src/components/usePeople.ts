@@ -40,3 +40,14 @@ export const getPersonImage = ({person, isFallback, peopleData, isGoogleDataCorr
     }
   }
 }
+
+export const findPersonByName = (personToFind: any) => {
+  
+  if (!peopleData.value) return undefined;
+  const foundPerson = peopleData.value.find(
+    (person) => person.name === personToFind.public_name
+  );
+  
+  if (foundPerson) return foundPerson;
+  return undefined;
+};
