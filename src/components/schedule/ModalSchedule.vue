@@ -180,7 +180,6 @@ const modalContent = computed({
   font-size: 15px;
   font-weight: normal;
   margin-bottom: 20px;
-  white-space: pre-line;
 }
 
 .text-content {
@@ -262,12 +261,12 @@ const modalContent = computed({
   margin-bottom: 2rem;
 }
 
+.modal__description, .modal__abstract, .modal__description-text, .modal__person-bio-detail, .modal__person-bio-name, .modal__date-duration-place,   {
+    white-space: pre-line;
+  }
+
 @media (min-width: 1120px) {
   .modal__title, .modal__date-duration-place, .modal__person-bio-name {
-    font-size: 25px;
-    line-height: 29px;
-  }
-  .modal__date-duration-place {
     font-size: 25px;
     line-height: 29px;
   }
