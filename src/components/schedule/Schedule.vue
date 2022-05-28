@@ -478,7 +478,7 @@ onUnmounted(() => {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 50px var(--app-padding);
+  padding: 50px var(--app-padding) 20rem;
   margin-top: -20rem;
 }
 
