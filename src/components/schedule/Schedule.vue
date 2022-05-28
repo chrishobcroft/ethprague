@@ -97,82 +97,11 @@
         />
       </div>
       <div class="schedule__content--desktop">
-        <div id="Friday-desktop" class="schedule__day-title">
-          Friday 10. June
-        </div>
-        <div class="schedule__content-desktop-columns">
-          <table class="schedule__table">
-            <tbody>
-              <tr v-for="rowData in prepareDataForTable(friday)" :key="rowData.startTime">
-                <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
-                    :event="rowData.laFabrika.event"
-                  />
-                </td>
-                 <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
-                    :event="rowData.paralelniPolis.event"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <DayBlock :dayData="friday" @set-modal-content="setModalContent" title="Friday 10. June" dayName="Friday"/>
+        
+        <DayBlock :dayData="saturday" @set-modal-content="setModalContent" title="Saturday 11. June" dayName="Saturday"/>
 
-        <div id="Saturday-desktop" class="schedule__day-title">
-          Saturday 11. June
-        </div>
-        <div class="schedule__content-desktop-columns">
-          <table class="schedule__table">
-            <tbody>
-              <tr v-for="rowData in prepareDataForTable(saturday)" :key="rowData.startTime">
-                <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
-                    :event="rowData.laFabrika.event"
-                  />
-                </td>
-                 <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
-                    :event="rowData.paralelniPolis.event"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div id="Sunday-desktop" class="schedule__day-title">
-          Sunday 12. June
-        </div>
-        <div class="schedule__content-desktop-columns">
-          <table class="schedule__table">
-            <tbody>
-              <tr v-for="rowData in prepareDataForTable(sunday)" :key="rowData.startTime">
-                <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.laFabrika"
-                    @click="setModalContent(rowData.laFabrika ? rowData.laFabrika.event : '')"
-                    :event="rowData.laFabrika.event"
-                  />
-                </td>
-                 <td class="schedule__table-cell">
-                  <ScheduleEventBox
-                    v-if="rowData.paralelniPolis"
-                    @click="setModalContent(rowData.paralelniPolis ? rowData.paralelniPolis.event : '')"
-                    :event="rowData.paralelniPolis.event"
-                  />
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+        <DayBlock :dayData="sunday" @set-modal-content="setModalContent" title="Sunday 12. June" dayName="Sunday"/>
 
       </div>
     </div>
@@ -186,13 +115,9 @@ import ModalSchedule from "./ModalSchedule.vue";
 import ScheduleEventBox from "./ScheduleEventBox.vue";
 import Speakers from "./Speakers.vue";
 import { peopleData, fetchPeopleData } from "@/components/usePeople";
-
+import {Venues} from "@/components/schedule/useSchedule";
+import DayBlock from "./DayBlock.vue";
 const axios = require("axios").default;
-
-enum Venues {
-  LA_FABRIKA = "La Fabrika",
-  PARALELNI_POLIS = "Paralelní Polis - Institute of Cryptoanarchy",
-}
 
 enum Sections {
   SCHEDULE = "schedule",
@@ -228,17 +153,6 @@ const allEvents = ref();
 
 const MOBILE_BREAKPOINT = 1120;
 
-const getEventsFromVenue = (venue: string, events: any) => {
-  switch (venue) {
-    case Venues.LA_FABRIKA:
-      return events.filter((event: any) => event.room === Venues.LA_FABRIKA);
-    case Venues.PARALELNI_POLIS:
-      return events.filter(
-        (event: any) => event.room === Venues.PARALELNI_POLIS
-      );
-  }
-};
-
 const headerSectionsButtonClasses = (section: string) =>
   `schedule__header-sections-button ${
     showSection.value === section
@@ -269,69 +183,6 @@ const mergeEvents = (scheduleJsonData: any) => {
       Date.parse("01/01/2022 " + a.start) - Date.parse("01/01/2022 " + b.start)
     );
   });
-};
-
-const hoursToMinutes = (time: string) => {
-  const hours = parseInt(time.substr(0, 2));
-  const minutes = parseInt(time.substr(3, 2));
-  return hours * 60 + minutes;
-};
-
-const prepareDataForTable = (dayObjectWithEvents?: any) => {
-  
-  let startTimeInMinutes = 0;
-  let resultArray = [];
-
-  do {
-    let laFabrikaEvent = dayObjectWithEvents.find((event: any) => {
-      return (
-        event.room === Venues.LA_FABRIKA &&
-        hoursToMinutes(event.start) < startTimeInMinutes + 29 && hoursToMinutes(event.start) + 29 > startTimeInMinutes 
-      );
-    });
-    
-    let polisEvent = dayObjectWithEvents.find((event: any) => {
-      return (
-        event.room === Venues.PARALELNI_POLIS &&
-        hoursToMinutes(event.start) < startTimeInMinutes + 29 && hoursToMinutes(event.start) + 29 > startTimeInMinutes
-      );
-    });
-
-    const isPolisEventAlreadyInArray: any = resultArray.some((event) => {
-      if (event.paralelniPolis && event.paralelniPolis.event && polisEvent) return event.paralelniPolis.event.id === polisEvent.id
-    })
-    if (isPolisEventAlreadyInArray) {
-      polisEvent = undefined
-    }
-
-    const isLaFabrikaAlreadyInArray: any = resultArray.some((event) => 
-    {
-      if (event.laFabrika && event.laFabrika.event && laFabrikaEvent) return event.laFabrika.event.id === laFabrikaEvent.id
-    })
-    if (isLaFabrikaAlreadyInArray) {
-      laFabrikaEvent = undefined
-    }
-      
-    if (polisEvent || laFabrikaEvent) {
-      resultArray.push({
-        paralelniPolis: (polisEvent && !isPolisEventAlreadyInArray) ? {
-          event: polisEvent,
-          duration: hoursToMinutes(polisEvent.duration),
-          rowSpan: Math.floor(hoursToMinutes(polisEvent.duration) / 30),
-        } : undefined,
-        laFabrika: (laFabrikaEvent && !isLaFabrikaAlreadyInArray) ? {
-          event: laFabrikaEvent,
-          duration: hoursToMinutes(laFabrikaEvent.duration),
-          rowSpan: Math.floor(hoursToMinutes(laFabrikaEvent.duration) / 30),
-        } : undefined,
-        startTime: startTimeInMinutes,
-      });
-    }
-
-    startTimeInMinutes += 30;
-  } while (startTimeInMinutes < hoursToMinutes("23:59"));
-
-  return resultArray;
 };
 
 const setModalContent = (event: any) => {
@@ -403,7 +254,6 @@ onMounted(async () => {
   friday.value = mergeEvents(scheduleJsonData.value[0].rooms);
   saturday.value = mergeEvents(scheduleJsonData.value[1].rooms);
   sunday.value = mergeEvents(scheduleJsonData.value[2].rooms);
-  const res = prepareDataForTable(friday.value);
 
   allEvents.value = [...friday.value, ...saturday.value, ...sunday.value];
   speakers.value = getSpeakersFromEvents(allEvents.value);
@@ -497,22 +347,6 @@ onUnmounted(() => {
   }
 }
 
-.schedule__content-desktop-columns {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  gap: 1.5rem;
-  width: 100%;
-  margin-bottom: -15rem;
-}
-
-.schedule__content-desktop-column {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  width: 100%;
-}
-
 .schedule__header {
   background-color: white;
   width: 100%;
@@ -596,35 +430,4 @@ onUnmounted(() => {
   font-weight: 300;
 }
 
-.schedule__day-title {
-  font-size: 25px;
-  color: var(--col-primary-action);
-  padding: 17rem 0 2rem 0;
-  text-align: center;
-}
-
-@media (min-width: 650px) {
-  .schedule__day-title {
-    font-size: 30px;
-  }
-}
-
-@media (min-width: 1120px) {
-  .schedule__day-title {
-    padding: 25rem 0 2rem 0;
-  }
-}
-
-.schedule__table {
-  height: 100%;
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.schedule__table-cell {
-  width: 50%;
-  border: none;
-  position: relative;
-  height: 100%;
-}
 </style>
