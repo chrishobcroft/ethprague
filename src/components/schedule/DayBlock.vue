@@ -73,7 +73,6 @@ const hoursToMinutes = (time: string) => {
 };
 
 const getCellStyle = (rowData: any, venue: any) => {
-  console.log('rowData.laFabrika ? {} : rowData.isInTimeRange ?',rowData, rowData.laFabrika ? {} : rowData.isInTimeRange ? {padding: '50'} : {padding: '0'});
   const changedPadding = rowData.isInTimeRange ? {padding: '50px'} : {padding: '0'}
 
   return venue ? {} : changedPadding
@@ -96,7 +95,7 @@ const prepareDataForTable = (dayObjectWithEvents?: any) => {
 
   do {
     const isInTimeRange = startTimeInMinutes > earliestEventTime && startTimeInMinutes < latestEventTime
-    console.log('isInTimeRange: ', isInTimeRange);
+    
     let laFabrikaEvent = dayObjectWithEvents.find((event: any) => {
       return (
         event.room === Venues.LA_FABRIKA &&
@@ -155,7 +154,7 @@ const prepareDataForTable = (dayObjectWithEvents?: any) => {
     startTimeInMinutes += 30;
   } while (startTimeInMinutes < hoursToMinutes("23:59"));
 
-  console.log("resultArray: ", resultArray);
+  
   return resultArray;
 };
 </script>
