@@ -73,7 +73,7 @@ const hoursToMinutes = (time: string) => {
 };
 
 const getCellStyle = (rowData: any, venue: any) => {
-  const changedPadding = rowData.isInTimeRange ? {padding: '50px'} : {padding: '0'}
+  const changedPadding = rowData.isInTimeRange ? {padding: '50px 0'} : {padding: '0'}
 
   return venue ? {} : changedPadding
 }
