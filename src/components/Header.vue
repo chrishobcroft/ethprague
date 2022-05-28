@@ -1,17 +1,27 @@
 <template>
   <div class="header">
     <div class="header__content">
-      <a href="#manifesto-buttons">
+      <router-link
+        class="header__local-link"
+        :to="{ path: '/', hash: '#manifesto-buttons' }"
+      >
         <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
-      </a>
+      </router-link>
 
       <div class="header__local-links">
-        <a
+        <router-link
           class="header__local-link"
           v-for="localLink in localLinks"
+          :to="{ path: '/', hash: `#${localLink}` }"
           :key="localLink"
-          :href="`#${localLink}`"
-        >{{ localLink }}</a>
+          >{{ localLink }}
+        </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header__local-link" :to="{ path: '/', hash: '#SponsorsAndPartners' }">
+          Sponsors & Partners
+        </router-link>
+        <router-link class="header__local-link" to="/schedule">
+          Schedule
+        </router-link>
       </div>
 
       <div class="header__social-links">
@@ -28,9 +38,14 @@
 
   <div class="header-mobile">
     <div class="header-mobile__content">
-      <a href="#manifesto-buttons" class="header__eth-logo-link">
+       <router-link
+        class="header__eth-logo-link"
+        :to="{ path: '/', hash: '#manifesto-buttons' }"
+        @click="isHamMenuOpen = false"
+      >
         <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
-      </a>
+      </router-link>
+
 
       <img
         class="header-mobile__hamburger-menu"
@@ -52,14 +67,20 @@
 
     <Transition name="fade">
       <div v-show="isHamMenuOpen" class="header-mobile__local-links">
-        <a
+        <router-link
           @click="isHamMenuOpen = false"
           class="header-mobile__local-link"
           v-for="localLink in localLinks"
+          :to="{ path: '/', hash: `#${localLink}` }"
           :key="localLink"
-          :href="`#${localLink}`"
-        >{{ localLink }}</a>
-        <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
+          >{{ localLink }}
+        </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" :to="{ path: '/', hash: '#SponsorsAndPartners' }">
+          Sponsors & Partners
+        </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" to="/schedule">
+          Schedule
+        </router-link>
       </div>
     </Transition>
   </div>
@@ -73,9 +94,7 @@ const localLinks = [
   // "Hackathon",
   "Speakers",
   "FAQ",
-  "Sponsors & Partners",
 ];
-
 </script>
 
 <style scoped>
@@ -221,7 +240,10 @@ const localLinks = [
 
 .header__logo-eth {
   cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(90%) sepia(70%) saturate(7500%)
+    hue-rotate(355deg) brightness(104%) contrast(108%);
 }
+
 /* Animation */
 .fade-enter-active,
 .fade-leave-active {

@@ -1,25 +1,28 @@
 <template>
-  <div  id="manifesto-buttons" />
+  <div id="manifesto-buttons" />
   <div class="manifesto">
     <div class="manifesto__buttons">
       <div class="manifesto__buttons-row">
-      <a
-        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
-        target="_blank"
-        class="manifesto__button-link"
-      >
-        <button class="manifesto__button">Apply to hack <span class="manifesto__headless-arrow"/></button>
-      </a>
+        <a
+          href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
+          target="_blank"
+          class="manifesto__button-link"
+        >
+          <button class="manifesto__button">
+            Apply to hack <span class="manifesto__headless-arrow" />
+          </button>
+        </a>
 
-     
-      <a
-        href="https://cf23uhv4kuq.typeform.com/to/lZwG0Eq3"
-        target="_blank"
-        class="manifesto__button-link"
-      >
-        <button class="manifesto__button">Apply to help <span class="manifesto__headless-arrow"/></button>
-      </a>
-      <!-- <a
+        <a
+          href="https://cf23uhv4kuq.typeform.com/to/lZwG0Eq3"
+          target="_blank"
+          class="manifesto__button-link"
+        >
+          <button class="manifesto__button">
+            Apply to help <span class="manifesto__headless-arrow" />
+          </button>
+        </a>
+        <!-- <a
         href="https://cfp.paralelnipolis.cz/ethprague-2022/"
         target="_blank"
         class="manifesto__button-link"
@@ -27,28 +30,35 @@
         <button class="manifesto__button">Apply to speak <span class="manifesto__headless-arrow"/></button>
       </a> -->
       </div>
-     <div class="manifesto__buttons-row-one-button">
-     <a
-       href="https://tickets.paralelnipolis.cz/dtp/ethprague2022/?"
-       target="_blank"
-       class="manifesto__button-link"
-     >
-       <button class="manifesto__button manifesto__button-one-button">Get a ticket<span class="manifesto__headless-arrow"/></button>
-     </a>
-<!--      <a-->
-<!--        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"-->
-<!--        target="_blank"-->
-<!--        class="manifesto__button-link"-->
-<!--      >-->
-<!--        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>-->
-<!--      </a>-->
-     </div>
+      <div class="manifesto__buttons-row">
+        <a
+          href="https://tickets.paralelnipolis.cz/dtp/ethprague2022/?"
+          target="_blank"
+          class="manifesto__button-link"
+        >
+          <button class="manifesto__button">
+            Get a ticket<span class="manifesto__headless-arrow" />
+          </button>
+        </a>
+        <router-link class="manifesto__button-link" to="/schedule">
+          <button class="manifesto__button">
+            Schedule <span class="manifesto__headless-arrow" />
+          </button>
+        </router-link>
+        <!--      <a-->
+        <!--        href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"-->
+        <!--        target="_blank"-->
+        <!--        class="manifesto__button-link"-->
+        <!--      >-->
+        <!--        <button class="manifesto__button">Apply for scholarships <span class="manifesto__headless-arrow"/></button>-->
+        <!--      </a>-->
+      </div>
     </div>
 
-    <div id='Manifesto' class="manifesto__text-container">
+    <div id="Manifesto" class="manifesto__text-container">
       <SectionTitle title="manifesto" />
       <div class="manifesto__text-content">
-        ETHPrague isn’t looking for the next get rich quickly scheme or groundbreaking DeFi apps, instead it’s an event focusing on the future potential of Ethereum and concepts or applications which don’t yet exist. We want to tackle challenges which will or might arise in the next decade and we believe Ethereum will play a major role in solving these. The future is in your hands, anon! You decide whether we end up living in a dark authoritarian dystopia or a bright solarpunk utopia. 
+        ETHPrague isn’t looking for the next get rich quickly scheme or groundbreaking DeFi apps, instead it’s an event focusing on the future potential of Ethereum and concepts or applications which don’t yet exist. We want to tackle challenges which will or might arise in the next decade and we believe Ethereum will play a major role in solving these. The future is in your hands, anon! You decide whether we end up living in a dark authoritarian dystopia or a bright solarpunk utopia.
       </div>
     </div>
   </div>
@@ -70,7 +80,8 @@ import SectionTitle from "@/components/SectionTitle.vue";
   background-color: white;
   text-align: justify;
 }
-.manifesto__buttons, .manifesto__buttons-row-one-button {
+.manifesto__buttons,
+.manifesto__buttons-row-one-button {
   max-width: 1600px;
   display: flex;
   width: 100%;
@@ -117,17 +128,15 @@ import SectionTitle from "@/components/SectionTitle.vue";
   margin: auto;
 }
 
-
-
 @media (max-width: 1120px) {
-  .manifesto__button { 
+  .manifesto__button {
     font-size: 20px;
     height: 150px;
   }
 }
 
 @media (max-width: 600px) {
-  .manifesto__button { 
+  .manifesto__button {
     font-size: 15px;
     height: 120px;
     white-space: break-spaces;
@@ -143,14 +152,15 @@ import SectionTitle from "@/components/SectionTitle.vue";
 @media (max-width: 1120px) {
   .manifesto__buttons-row {
     flex-wrap: wrap;
-    gap:30px
+    gap: 30px;
   }
   .manifesto__button-one-button {
     max-width: 100%;
   }
 }
 
-.manifesto__button:hover, .manifesto__button:focus {
+.manifesto__button:hover,
+.manifesto__button:focus {
   border: solid 2px var(--col-primary-action);
   color: white;
   box-shadow: inset 30px -8em 0 0 var(--col-primary-action);
@@ -186,14 +196,14 @@ import SectionTitle from "@/components/SectionTitle.vue";
 }
 
 @media (max-width: 1120px) {
-  .manifesto__text-content { 
+  .manifesto__text-content {
     font-size: 30px;
     line-height: 40px;
   }
 }
 
 @media (max-width: 600px) {
-  .manifesto__text-content { 
+  .manifesto__text-content {
     font-size: 23px;
     line-height: 35px;
   }
@@ -211,7 +221,7 @@ import SectionTitle from "@/components/SectionTitle.vue";
 #manifesto-buttons {
   display: block;
   position: relative;
-  top: -80px; 
+  top: -80px;
   visibility: hidden;
 }
 </style>
