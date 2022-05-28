@@ -430,4 +430,23 @@ onUnmounted(() => {
   font-weight: 300;
 }
 
+.schedule__day-title {
+  font-size: 25px;
+  color: var(--col-primary-action);
+  padding: 17rem 0 2rem 0;
+  text-align: center;
+}
+
+@media (min-width: 650px) {
+  .schedule__day-title {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1120px) {
+  .schedule__day-title {
+    padding: 25rem 0 2rem 0;
+  }
+}
+
 </style>
