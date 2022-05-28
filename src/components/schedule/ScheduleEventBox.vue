@@ -1,37 +1,42 @@
 <template>
-  <div class="schedule-event__box">
+  <div class="schedule-event-box">
         <div
-          class="schedule-event__box-time"
+          class="schedule-event-box__time"
           :style="getEventTrackColor(event.track)"
         >
-          <div class="schedule-event__box-time-start">{{ event.start }}</div>
-          <div class="schedule-event__box-time-duration">
+          <div class="schedule-event-box__time-start">{{ event.start }}</div>
+          <div class="schedule-event-box__time-duration">
             {{ hoursToMinutes(event.duration) }} min
           </div>
         </div>
 
-        <div class="schedule-event__box-abstract">
+        <div class="schedule-event-box__abstract">
           <div>
-            <div class="schedule-event__box-title">
-              {{ event.title }}
+            <div class="schedule-event-box__title-row">
+                <div class="schedule-event-box__title">
+                  {{ event.title }}
+                </div>
+                <!-- <a @click.stop href="#" rel="noopener noreferrer" class="schedule-event-box__calendar-icon">
+                  <img @click.stop width="25" src="../../assets/calendar.png" />
+                </a> -->
             </div>
             <span
-              class="schedule-event__box-persons-name"
+              class="schedule-event-box__persons-name"
               v-for="(person, index) in event.persons"
               :key="person.public_name"
             >
               {{ event.persons.length === index + 1 ? person.public_name : person.public_name + ', ' }}
             </span>
-            <div class="schedule-event__box-abstract-text">
+            <div class="schedule-event-box__abstract-text">
               {{ event.abstract }}
             </div>
           </div>
 
-          <div class="schedule-event__box-footer">
-            <div class="schedule-event__box-track">
+          <div class="schedule-event-box__footer">
+            <div class="schedule-event-box__track">
               {{ event.track }}
             </div>
-            <div class="schedule-event__box-room">
+            <div class="schedule-event-box__room">
               {{ event.room }}
             </div>
           </div>
@@ -93,7 +98,7 @@ const getEventTrackColor = (eventType: string) => {
 
 <style scoped>
 
-.schedule-event__box {
+.schedule-event-box {
   max-width: 1100px;
   width: 100%;
   margin-bottom: 1.5rem;
@@ -107,22 +112,22 @@ const getEventTrackColor = (eventType: string) => {
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box {
+  .schedule-event-box {
     flex-direction: row;
   }
 }
 
 @media (min-width: 1120px) {
-  .schedule-event__box {
+  .schedule-event-box {
     margin: 0;
     height: 100%;
   }
 }
 
-.schedule-event__box:hover {
+.schedule-event-box:hover {
   filter: drop-shadow(-8px 8px 8px rgba(0, 0, 0, 0.15));
 }
-.schedule-event__box-time {
+.schedule-event-box__time {
   border-radius: 18px;
   padding: 1.5rem;
   display: flex;
@@ -130,27 +135,27 @@ const getEventTrackColor = (eventType: string) => {
   justify-content: space-between;
 }
 
-.schedule-event__box-time-start {
+.schedule-event-box__time-start {
   font-size: 17px;
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-time-start {
+  .schedule-event-box__time-start {
     font-size: 25px;
   }
 }
 
-.schedule-event__box-time-duration {
+.schedule-event-box__time-duration {
   font-size: 12px;
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-time-duration  {
+  .schedule-event-box__time-duration  {
     font-size: 15px;
   }
 }
 
-.schedule-event__box-abstract {
+.schedule-event-box__abstract {
   padding: 1.5rem;
   width: 100%;
   display: flex;
@@ -158,7 +163,7 @@ const getEventTrackColor = (eventType: string) => {
   justify-content: space-between;
 }
 
-.schedule-event__box-title {
+.schedule-event-box__title {
   font-size: 15px;
   color: black;
   text-transform: uppercase;
@@ -166,13 +171,13 @@ const getEventTrackColor = (eventType: string) => {
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-title{
+  .schedule-event-box__title{
     font-size: 25px;
     line-height: 29px;
   }
 }
 
-.schedule-event__box-abstract-text {
+.schedule-event-box__abstract-text {
   font-size: 14px;
   color: black;
   line-height: 19px;
@@ -180,28 +185,28 @@ const getEventTrackColor = (eventType: string) => {
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-abstract-text {
+  .schedule-event-box__abstract-text {
   font-size: 17px;
   line-height: 22px;
 }
 }
 
-.schedule-event__box-persons-name{
+.schedule-event-box__persons-name{
   font-size: 15px;
   color: rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 650px) {
-  .schedule-event__box-persons-name {
+  .schedule-event-box__persons-name {
     font-size: 25px;
     color: rgba(0, 0, 0, 0.5);
   }
 }
 
-.schedule-event__box-track, .schedule-event__box-room {
+.schedule-event-box__track, .schedule-event-box__room {
   color: black;
 }
-.schedule-event__box-footer {
+.schedule-event-box__footer {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -209,18 +214,29 @@ const getEventTrackColor = (eventType: string) => {
   font-size: 14px;
 }
 
+.schedule-event-box__title-row {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
+.schedule-event-box__calendar-icon {
+
+}
+
 @media (min-width: 650px) {
-  .schedule-event__box-footer {
+  .schedule-event-box__footer {
     flex-direction: row;
   }
 }
 
 @media (min-width: 1120px) {
-  .schedule-event__box-abstract-text {
+  .schedule-event-box__abstract-text {
     display: none;
   }
 
-  .schedule-event__box-room {
+  .schedule-event-box__room {
     display: none;
   }
 }
