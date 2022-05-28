@@ -16,6 +16,9 @@
           :key="localLink"
           >{{ localLink }}
         </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header__local-link" :to="{ path: '/', hash: '#SponsorsAndPartners' }">
+          Sponsors & Partners
+        </router-link>
         <router-link class="header__local-link" to="/schedule">
           Schedule
         </router-link>
@@ -35,9 +38,14 @@
 
   <div class="header-mobile">
     <div class="header-mobile__content">
-      <a href="#manifesto-buttons" class="header__eth-logo-link">
+       <router-link
+        class="header__eth-logo-link"
+        :to="{ path: '/', hash: '#manifesto-buttons' }"
+        @click="isHamMenuOpen = false"
+      >
         <img class="header__logo-eth" src="../assets/ETH.svg" alt="tickets" />
-      </a>
+      </router-link>
+
 
       <img
         class="header-mobile__hamburger-menu"
@@ -75,6 +83,9 @@
           :key="localLink"
           >{{ localLink }}
         </router-link>
+        <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" :to="{ path: '/', hash: '#SponsorsAndPartners' }">
+          Sponsors & Partners
+        </router-link>
         <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" to="/schedule">
           Schedule
         </router-link>
@@ -92,7 +103,7 @@ const localLinks = [
   // "Hackathon",
   "Speakers",
   "FAQ",
-  "SponsorsAndPartners",
+  // "Sponsors & Partners",
 ];
 </script>
 

@@ -263,7 +263,7 @@ const modalContent = computed({
     line-height: 29px;
   }
 
-  .modal__description, .modal__abstract, .modal__description-text, .modal__person-bio-detail  {
+  .modal__description, .modal__abstract, .modal__description-text, .modal__person-bio-detail, .modal__person-bio  {
     font-size: 17px;
   }
 

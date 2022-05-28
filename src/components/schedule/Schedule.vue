@@ -479,6 +479,7 @@ onUnmounted(() => {
   align-items: center;
   width: 100%;
   padding: 50px var(--app-padding);
+  margin-top: -20rem;
 }
 
 .schedule__content--desktop {
@@ -502,6 +503,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 1.5rem;
   width: 100%;
+  margin-bottom: -15rem;
 }
 
 .schedule__content-desktop-column {
@@ -596,22 +598,20 @@ onUnmounted(() => {
 
 .schedule__day-title {
   font-size: 25px;
-  margin: 5rem 0 2rem 0;
   color: var(--col-primary-action);
-  scroll-margin-top: 180px;
+  padding: 17rem 0 2rem 0;
+  text-align: center;
 }
 
 @media (min-width: 650px) {
   .schedule__day-title {
     font-size: 30px;
-    text-align: center;
-    /* scroll-margin-top: 100px; */
   }
 }
 
 @media (min-width: 1120px) {
   .schedule__day-title {
-    scroll-margin-top: 280px;
+    padding: 25rem 0 2rem 0;
   }
 }
 
@@ -624,5 +624,7 @@ onUnmounted(() => {
 .schedule__table-cell {
   width: 50%;
   border: none;
+  position: relative;
+  height: 100%;
 }
 </style>
