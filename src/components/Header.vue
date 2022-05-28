@@ -67,14 +67,6 @@
 
     <Transition name="fade">
       <div v-show="isHamMenuOpen" class="header-mobile__local-links">
-        <!-- <a
-          @click="isHamMenuOpen = false"
-          class="header-mobile__local-link"
-          v-for="localLink in localLinks"
-          :key="localLink"
-          :href="`#${localLink}`"
-          >{{ localLink }}</a
-        > -->
         <router-link
           @click="isHamMenuOpen = false"
           class="header-mobile__local-link"
@@ -89,7 +81,6 @@
         <router-link @click="isHamMenuOpen = false" class="header-mobile__local-link" to="/schedule">
           Schedule
         </router-link>
-        <!-- <button class="header__button header__button-mobile-menu">tickets</button> -->
       </div>
     </Transition>
   </div>
@@ -103,7 +94,6 @@ const localLinks = [
   // "Hackathon",
   "Speakers",
   "FAQ",
-  // "Sponsors & Partners",
 ];
 </script>
 
@@ -253,6 +243,7 @@ const localLinks = [
   filter: brightness(0) saturate(100%) invert(90%) sepia(70%) saturate(7500%)
     hue-rotate(355deg) brightness(104%) contrast(108%);
 }
+
 /* Animation */
 .fade-enter-active,
 .fade-leave-active {

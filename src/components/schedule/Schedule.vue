@@ -50,7 +50,7 @@
         </div>
         <div class="schedule__venues">
           <div class="schedule__venue">La Fabrika</div>
-          <div class="schedule__venue">Paraleni Polis</div>
+          <div class="schedule__venue">Paralelni Polis</div>
         </div>
       </div>
     </div>
