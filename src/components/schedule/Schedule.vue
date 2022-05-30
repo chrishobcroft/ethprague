@@ -1,5 +1,24 @@
 <template>
   <div id="Schedule" class="schedule">
+    <div class="schedule__venues-opening">
+    <div class="schedule__venue-opening">
+      <strong>La Fabrika</strong><br/>
+      (entrance for registered)<br/>
+      address: Komunardu 1001, Prague<br/>
+      Fri 10am – 10pm<br/>
+      Sat 9am – 10pm<br/>
+      Sun 9am – 7pm<br/>
+    </div>
+
+    <div class="schedule__venue-opening" >
+      <strong>Paralelni Polis</strong><br/>
+      (registration desk + entrance)<br/>
+      address: Delnicka 475/43, Prague<br/>
+      from Friday 10th (10am)<br/>
+      till Sunday 12th (7pm)<br/>
+    </div>
+    </div>
+
     <div
       :class="[
         'schedule__header',
@@ -447,6 +466,26 @@ onUnmounted(() => {
   .schedule__day-title {
     padding: 25rem 0 2rem 0;
   }
+}
+
+.schedule__venues-opening {
+  font-size: 15px;
+  display: flex;
+  margin: 3rem 0 0;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+}
+
+@media (min-width: 1120px) {
+  .schedule__venues-opening{
+    font-size: 17px;
+  }
+}
+.schedule__venue-opening {
+  margin: 0 auto;
+  width: 34rem;
+  padding: var(--app-padding)
 }
 
 </style>
