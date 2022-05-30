@@ -99,6 +99,7 @@ const friends = [
   { name: "ethswarm", link: "https://ethswarm.org/", image:  "ethswarm.svg" },
   { name: "connext", link: "https://connext.network/", image:  "connext.svg" },
   { name: "openq", link: "https://www.openq.dev/", image:  "openq.png" },
+  { name: "nodereal", link: "https://nodereal.io/", image:  "nodereal.svg" },
 ];
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
