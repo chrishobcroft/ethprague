@@ -87,7 +87,7 @@ const awards = [
     description: "Make your contracts beautiful! Show us breathtaking structures of code which will orchestrate the symphony of your dapp. For that you shall be remembered and awarded!"
   },
   {
-    name: "Hacker's favorite",
+    name: "Hackers' favourite",
     price: "2500 EUR",
     description: "The participating hackers should have their say as well! The project with the most votes from other competing hackers will be awarded the Hacker's favorite."
   },
