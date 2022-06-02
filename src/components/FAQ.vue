@@ -66,7 +66,6 @@ const blocks = [
         '<ul> ' +
         '<li> 1 track of informative Solarpunk related and technical talks </li>' +
         '<li> 1 track of hands-on workshops </li>' +
-        '<li> 1 track of panels & fire-side chats </li>' +
         '</ul>' +
         '<p> Also, we have cookies! There is going to be free all-day catering provided for all participants!</p>',
     blockHeight: '300px'

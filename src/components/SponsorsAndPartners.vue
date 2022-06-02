@@ -65,11 +65,35 @@
           <img
             :src="getSponsorsOrPartnersImage(company.image)"
             :alt="company.name"
-            class="sponsors-and-partners__friends-icon"
+            class="sponsors-and-partners__few-icon"
           />
         </a>
       </div>
     </div>
+
+<!--    <div class="sponsors-and-partners__separation-line" />-->
+
+<!--    <div class="sponsors-and-partners__block">-->
+<!--      <div-->
+<!--          class="sponsors-and-partners__small-title sponsors-and-partners__title-few"-->
+<!--      >-->
+<!--        Media & Partners-->
+<!--      </div>-->
+<!--      <div class="sponsors-and-partners__others-icons">-->
+<!--        <a-->
+<!--            v-for="company in partners"-->
+<!--            :key="company.name"-->
+<!--            :href="company.link"-->
+<!--            target="_blank"-->
+<!--        >-->
+<!--          <img-->
+<!--              :src="getSponsorsOrPartnersImage(company.image)"-->
+<!--              :alt="company.name"-->
+<!--              class="sponsors-and-partners__friends-icon"-->
+<!--          />-->
+<!--        </a>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -93,14 +117,20 @@ const few = [
 const friends = [
   { name: "boba-network", link: "https://simon@boba.network/", image: "boba-network.png" },
   { name: "chainsafe", link: "https://chainsafe.io/", image: "chainsafe.svg" },
-  { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "starkware", link: "https://starkware.co/", image:  "starkware.svg" },
   { name: "wintermute", link: "https://www.wintermute.com/", image:  "wintermute.svg" },
+  { name: "golem-foundation", link: "https://golem.foundation/", image:  "golem-foundation.png" },
   { name: "ethswarm", link: "https://ethswarm.org/", image:  "ethswarm.svg" },
   { name: "connext", link: "https://connext.network/", image:  "connext.svg" },
   { name: "openq", link: "https://www.openq.dev/", image:  "openq.png" },
   { name: "nodereal", link: "https://nodereal.io/", image:  "nodereal.svg" },
 ];
+
+const partners = [
+  { name: "rekt", link: "https://simon@boba.network/", image: "boba-network.png" },
+  { name: "banklessdao", link: "https://simon@boba.network/", image: "boba-network.png" },
+  { name: "serotonin", link: "https://simon@boba.network/", image: "boba-network.png" }
+]
 
 const getSponsorsOrPartnersImage = (imageName: string) => {
   return require(`../assets/sponsors-and-partners/${imageName}`);
@@ -166,6 +196,13 @@ const getSponsorsOrPartnersImage = (imageName: string) => {
 }
 
 .sponsors-and-partners__friends-icons {
+  column-gap: 115px;
+  row-gap: 90px;
+  filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%);
+  /*margin-bottom: 90px*/
+}
+
+.sponsors-and-partners__others-icons {
   column-gap: 115px;
   row-gap: 90px;
   filter: sepia(100%) grayscale(1) brightness(40%) contrast(338%)

@@ -1,27 +1,30 @@
 <template>
   <div id="manifesto-buttons" />
   <div class="manifesto">
+    <h1>
+      Tickets are sold out & applications are now closed!
+    </h1>
     <div class="manifesto__buttons">
       <div class="manifesto__buttons-row">
-        <a
-          href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"
-          target="_blank"
-          class="manifesto__button-link"
-        >
-          <button class="manifesto__button">
-            Apply to hack <span class="manifesto__headless-arrow" />
-          </button>
-        </a>
+<!--        <a-->
+<!--          href="https://cf23uhv4kuq.typeform.com/to/XABwNH5T"-->
+<!--          target="_blank"-->
+<!--          class="manifesto__button-link"-->
+<!--        >-->
+<!--          <button class="manifesto__button">-->
+<!--            Join waiting list <span class="manifesto__headless-arrow" />-->
+<!--          </button>-->
+<!--        </a>-->
 
-        <a
-          href="https://cf23uhv4kuq.typeform.com/to/lZwG0Eq3"
-          target="_blank"
-          class="manifesto__button-link"
-        >
-          <button class="manifesto__button">
-            Apply to help <span class="manifesto__headless-arrow" />
-          </button>
-        </a>
+<!--        <a-->
+<!--          href="https://cf23uhv4kuq.typeform.com/to/lZwG0Eq3"-->
+<!--          target="_blank"-->
+<!--          class="manifesto__button-link"-->
+<!--        >-->
+<!--          <button class="manifesto__button">-->
+<!--            Apply to help <span class="manifesto__headless-arrow" />-->
+<!--          </button>-->
+<!--        </a>-->
         <!-- <a
         href="https://cfp.paralelnipolis.cz/ethprague-2022/"
         target="_blank"
@@ -31,18 +34,18 @@
       </a> -->
       </div>
       <div class="manifesto__buttons-row">
-        <a
-          href="https://tickets.paralelnipolis.cz/dtp/ethprague2022/?"
-          target="_blank"
-          class="manifesto__button-link"
-        >
-          <button class="manifesto__button">
-            Get a ticket<span class="manifesto__headless-arrow" />
-          </button>
-        </a>
+<!--        <a-->
+<!--          href="https://tickets.paralelnipolis.cz/dtp/ethprague2022/?"-->
+<!--          target="_blank"-->
+<!--          class="manifesto__button-link"-->
+<!--        >-->
+<!--          <button class="manifesto__button">-->
+<!--            Get a ticket<span class="manifesto__headless-arrow" />-->
+<!--          </button>-->
+<!--        </a>-->
         <router-link class="manifesto__button-link" to="/schedule">
           <button class="manifesto__button">
-            Schedule <span class="manifesto__headless-arrow" />
+            See schedule <span class="manifesto__headless-arrow" />
           </button>
         </router-link>
         <!--      <a-->

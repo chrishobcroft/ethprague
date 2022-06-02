@@ -2,7 +2,7 @@
   <div class="sleep-and-rest__block-content-text">
   <span>
     There is a variety of affordable hotels around the venue. We have partnered
-    with some! Alpha Soon<sup>TM</sup>
+    with some!
   </span>
   <br /><br />
   <h3 style="text-align: center">Hotel Belvedere</h3>
