@@ -4,7 +4,7 @@
     <div class="hackathon__text-container">
       <SectionTitle title="hackathon awards" />
       <div class="hackathon__text-content">
-        We are not doing sponsored tracks instead we want to evaluate the best project in their respective domain.
+        The event's judges will award the best projects in the following domains:
       </div>
     </div>
 
