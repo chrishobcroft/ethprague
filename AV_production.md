@@ -6,13 +6,23 @@ There will be 4 stages across 4 days of Prague DeFi and ethprague. From outside,
 
 # Talks/Speakers
 
-## Main Stage
+## Main Stage (La Fabrika)
 
-For mainstage La Fabrika, we should have similar setup to last year: one staticam for full stage, one camera with operator for closeups.
+### Video
+
+Propose similar setup to last year: one staticam for full stage, one camera with operator for closeups.
 
 Closeup camera should be located to not block people's paths.
 
-Should be able to put these to the bjg screen: slides, staticam, closeup cam and master broadcast-signal. Also should have low-down monitor
+Should be able to put these to the bjg screen: slides, staticam, closeup cam and master broadcast-signal.
+
+Also should have low-down monitors with time and slides, for speaker.
+
+### Audio
+
+2 headset mic for speaker
+
+clicker for slides.
 
 Main stage MC should have earpiece
 
