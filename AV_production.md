@@ -91,7 +91,9 @@ Room-mic (maybe auto-levelling) with each camera, to capture general ambience.
 
 ## The Band (Justin, Jakub and friends)
 
-A band has been forming in recent years in the Ethereum community. Led by Justin (big brained cryptography guy) supported by Jakub (ethprague 2022/23 organising team helper), with
+A band has been forming in recent years in the Ethereum community. Led by Justin (big brained cryptography guy) supported by Jakub (ethprague 2022/23 organising team helper), with other local musicians combining vocals, guitar, mandolin, accordion, violin etc.
+
+Rehearsals will recommence 2 weeks before the event.
 
 Their tech rider is [here](https://github.com/chrishobcroft/ethprague/blob/09639fc5cd576fa55cd7f39eb73793de3bd30ec1/Justin-Holmes-technical-rider-3.0.0.pdf).
 
@@ -101,7 +103,15 @@ Sound Healing
 
 # Media Platform
 
+
+
 ## Platform
+
+Live content (Video with synchronised Audio)
+
+will be published as `rtmp` or `SRT`, to [livepeer.studio](https://livepeer.studio)'s hosted API.
+
+Published content will be recorded at source, as no guarantees can be made that content will be stored remotely.
 
 ## User Experience
 
