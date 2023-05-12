@@ -22,23 +22,46 @@ Also should have low-down monitors with time and slides, for speaker cue.
 
 2 handsfree mic(s) for speakers, stage manager to manage mic swapping with volunteer.
 
-1 clicker for slides.
-
+2 handheld mic(s) held by volunteers in audience to a) read questions from AMA from remote participants (see below), b) connect IRL audience to the AV (e.g. questions). Objective: to have at least 1 question from remote audience.
 
 
 Main stage MC should have earpiece and handsfree mic.
 
+### Other
+
+1 clicker for slides.
+
+
+
+
 # Side Stage(s)
 
-For smaller stage(s) with talks, should have 1 staticam capturing full stage, speaker, and projector. Try to get the lighting balance right, to get slides very visible (as this is the priority), while also showing the human, and then it really can be this simple.
+## Video
 
-2 mics each stage: 1 for speaker, 1 with a volunteer to give voice to IRL audience.
+1 staticam capturing full stage, speaker, and projector.
 
+Set the lighting so that slides are very visible (as this is the visual priority), while also showing the human, and then it really can be this simple.
 
+### Alternative
 
-Alternative video setup would be to livestream audio from mics and *only* slides from screencap, which removes the need for a camera and optimises for the content: slides and audio.
+Livestream *only* the slides from screencap. This removes the need for a camera and optimises for the valuable content: slides and audio. Maybe can put a well-placed staticam as a picture-in-picture but this might not be mecessary.
+
+## Audio
+
+2 handheld mics for each stage: 1 for speaker, 1 with a volunteer to give voice to IRL audience and to relay questions from AMA tool (see below).
+
 
 # Workshops
+
+## Video
+
+HDMI cable for workshop facilitator to plug into (requires coordination via Camilla for comm's for speakers), and monitor showing that the connection has worked. Livestream what gets published to this HDMI cable. No need for camera.
+
+## Audio
+
+2 handsfree mic(s) for workshop facilitators, volunteers to manage mic swapping between workshops.
+
+1 room mic for capturing general ambience and any questions.
 
 # Venue
 
@@ -60,6 +83,6 @@ Alternative video setup would be to livestream audio from mics and *only* slides
 
  
 
-2. Questions from the Remote Audience: needs a way to introduce the questions being output by the synchronous AMA tool. Propose a set of rolling volunteer/interns to be ready with microphone to introduce the question(s). Target is to have at least 1 question from remote audience.
+
 
 3. Workshop cameras: priority is to share audio (2 workshop coordinators mic'd up, plua a room mic for questions) volunteer to
