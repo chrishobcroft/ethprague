@@ -4,6 +4,8 @@ I will give my suggestions for requirements but others might have other ideas. L
 
 There will be 4 stages across 4 days of Prague DeFi and ethprague. From outside, they are two separate events. On the inside, they have strong common thread (same venues, same organising team, same pretalx, same video production team).
 
+Each of the 4 stages to have its own livestream, and we don't press "Stop Streaming" until Sunday night. Use content from venue (see below) to fill any "dead" time.
+
 # Talks/Speakers
 
 ## Main Stage (La Fabrika)
@@ -63,9 +65,32 @@ HDMI cable for workshop facilitator to plug into (requires coordination via Cami
 
 1 room mic for capturing general ambience and any questions.
 
-# Venue
+# Venue (Privacy)
+
+Objective: to capture and share a sense of the mass of human energy from across the entire event. Must be careful to preserve privacy.
+
+Can be used to "fill" time as required,
+e.g. between talks, or after talks have finished for the day.
+
+Try to include energy from all venues including Vnitroblock.
+
+
+
+## Video
+
+2 (or more) staticams, positioned carefully around the venue(s), with narrow depth of field to focus on an objet d'art, non-human mascot or similar in the foregroumd (ideally something dynamic to give a sense of movement), but showing (heavily-blurred / anonymised) human energy in the background.
+
+
+Bonus points if we can mount one outside and show trees and humans and sunlight and nature.
+
+## Audio
+
+Room-mic (maybe auto-levelling) with each camera, to capture general ambience.
 
 # Culture
+
+Yoga
+Sound Healing
 
 # Media Platform
 
