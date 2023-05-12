@@ -65,7 +65,7 @@ HDMI cable for workshop facilitator to plug into (requires coordination via Cami
 
 1 room mic for capturing general ambience and any questions.
 
-# Venue (Privacy)
+# Venue (note on Privacy)
 
 Objective: to capture and share a sense of the mass of human energy from across the entire event. Must be careful to preserve privacy.
 
@@ -97,13 +97,13 @@ Rehearsals will recommence 2 weeks before the event.
 
 Their tech rider is [here](https://github.com/chrishobcroft/ethprague/blob/09639fc5cd576fa55cd7f39eb73793de3bd30ec1/Justin-Holmes-technical-rider-3.0.0.pdf).
 
+There will also be Yoga, Sound Healing
 
-Yoga
-Sound Healing
+
 
 # Media Platform
 
-
+Content will be shared via a web3-native livestream publishing platform. The platform will be 
 
 ## Platform
 
