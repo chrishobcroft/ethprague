@@ -103,23 +103,37 @@ There will also be Yoga, Sound Healing
 
 # Media Platform
 
-Content will be shared via a web3-native livestream publishing platform. The platform will be 
+Content will be shared via a web3-native livestream publishing platform. 
+
+
 
 ## Platform
 
-Live content (Video with synchronised Audio)
+Live content (4K 30Mbps Video with synchronised 320kbps Stereo Audio)
 
-will be published as `rtmp` or `SRT`, to [livepeer.studio](https://livepeer.studio)'s hosted API.
+will be published in `16x9` aspect ratio, as `rtmp` or `SRT`, to [livepeer.studio](https://livepeer.studio)'s hosted API.
 
 Published content will be recorded at source, as no guarantees can be made that content will be stored remotely.
 
 ## User Experience
 
-### Live Video
+The platform will be composed of a set of web3 primitives to provide an interactive user-centric experience combining media, communication and governance.
+
+### Live Video Stream
+
+There will be 1 live video stream for each stage (see above), consisting of synchronised video and audio.
+
+This stream can be play/paused, mute/unmute, and a rewound as far as the content is cached in the browser session. It can also be made full screen, and available as pop-out player on mobile (@vablov please confirm).
 
 ### web3 Sign In
 
+Signing in will 
+
 ### Live Chat
+
+There will be 1 live chat for each live video stream.
+
+Remote participants will be able to view chat messages without logging in. 
 
 ### AMA tool
 
