@@ -93,7 +93,8 @@ Room-mic (maybe auto-levelling) with each camera, to capture general ambience.
 
 A band has been forming in recent years in the Ethereum community. Led by Justin (big brained cryptography guy) supported by Jakub (ethprague 2022/23 organising team helper), with
 
-Their tech rider is attached.
+Their tech rider is [here](https://github.com/chrishobcroft/ethprague/blob/09639fc5cd576fa55cd7f39eb73793de3bd30ec1/Justin-Holmes-technical-rider-3.0.0.pdf).
+
 
 Yoga
 Sound Healing
