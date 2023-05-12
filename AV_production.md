@@ -16,15 +16,17 @@ Closeup camera should be located to not block people's paths.
 
 Should be able to put these to the bjg screen: slides, staticam, closeup cam and master broadcast-signal.
 
-Also should have low-down monitors with time and slides, for speaker.
+Also should have low-down monitors with time and slides, for speaker cue.
 
 ### Audio
 
-2 headset mic for speaker
+2 handsfree mic(s) for speakers, stage manager to manage mic swapping with volunteer.
 
-clicker for slides.
+1 clicker for slides.
 
-Main stage MC should have earpiece
+
+
+Main stage MC should have earpiece and handsfree mic.
 
 # Side Stage(s)
 
