@@ -123,11 +123,11 @@ The platform will be composed of a set of web3 primitives to provide an interact
 
 There will be 1 live video stream for each stage (see above), consisting of synchronised video and audio.
 
-This stream can be play/paused, mute/unmute, and a rewound as far as the content is cached in the browser session. It can also be made full screen, and available as pop-out player on mobile (@vablov please confirm).
+This stream can be play/paused, mute/unmute, and a rewound as far as the content is cached in the browser session. It will be embedded in the webpage, but will also be able to be made full screen, as well as being available as a pop-out player on mobile (@pabloVoorvaart please confirm).
 
 ### web3 Sign In
 
-Signing in will 
+Signing in will unlock interactive features. There will be no mention of money in the dApp.
 
 ### Live Chat
 
