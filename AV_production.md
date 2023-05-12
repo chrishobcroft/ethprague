@@ -133,12 +133,14 @@ Signing in will unlock interactive features. There will be no mention of money i
 
 There will be 1 live chat for each live video stream.
 
-Remote participants will be able to view chat messages without logging in. 
+Remote participants will be able to view chat messages without signing in. They will be reqiured to sign in, in order to be able to post messages.
 
 ### AMA tool
 
- 
+There will be a mechanism for submitting questions to be asked of the current speaker.
+
+Questions will be curated by permissioned users, and popular submissions will be considered for incorporation into the content (see above).
 
 
 
-3. Workshop cameras: priority is to share audio (2 workshop coordinators mic'd up, plua a room mic for questions) volunteer to
+
