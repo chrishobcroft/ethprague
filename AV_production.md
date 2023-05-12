@@ -89,6 +89,12 @@ Room-mic (maybe auto-levelling) with each camera, to capture general ambience.
 
 # Culture
 
+## The Band (Justin, Jakub and friends)
+
+A band has been forming in recent years in the Ethereum community. Led by Justin (big brained cryptography guy) supported by Jakub (ethprague 2022/23 organising team helper), with
+
+Their tech rider is attached.
+
 Yoga
 Sound Healing
 
