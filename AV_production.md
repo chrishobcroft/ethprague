@@ -1,5 +1,3 @@
-I will give my suggestions for requirements but others might have other ideas. Let's resolve any conflict together?
-
 # Overview
 
 There will be 4 stages across 4 days of Prague DeFi and ethprague. From outside, they are two separate events. On the inside, they have strong common thread (same venues, same organising team, same pretalx, same video production team).
@@ -26,15 +24,11 @@ Also should have low-down monitors with time and slides, for speaker cue.
 
 2 handheld mic(s) held by volunteers in audience to a) read questions from AMA from remote participants (see below), b) connect IRL audience to the AV (e.g. questions). Objective: to have at least 1 question from remote audience.
 
-
 Main stage MC should have earpiece and handsfree mic.
 
 ### Other
 
 1 clicker for slides.
-
-
-
 
 # Side Stage(s)
 
@@ -51,7 +45,6 @@ Livestream *only* the slides from screencap. This removes the need for a camera 
 ## Audio
 
 2 handheld mics for each stage: 1 for speaker, 1 with a volunteer to give voice to IRL audience and to relay questions from AMA tool (see below).
-
 
 # Workshops
 
@@ -74,12 +67,9 @@ e.g. between talks, or after talks have finished for the day.
 
 Try to include energy from all venues including Vnitroblock.
 
-
-
 ## Video
 
 2 (or more) staticams, positioned carefully around the venue(s), with narrow depth of field to focus on an objet d'art, non-human mascot or similar in the foregroumd (ideally something dynamic to give a sense of movement), but showing (heavily-blurred / anonymised) human energy in the background.
-
 
 Bonus points if we can mount one outside and show trees and humans and sunlight and nature.
 
@@ -99,13 +89,9 @@ Their tech rider is [here](https://github.com/chrishobcroft/ethprague/blob/09639
 
 There will also be Yoga, Sound Healing
 
-
-
 # Media Platform
 
 Content will be shared via a web3-native livestream publishing platform. 
-
-
 
 ## Platform
 
@@ -140,7 +126,3 @@ Remote participants will be able to view chat messages without signing in. They 
 There will be a mechanism for submitting questions to be asked of the current speaker.
 
 Questions will be curated by permissioned users, and popular submissions will be considered for incorporation into the content (see above).
-
-
-
-
