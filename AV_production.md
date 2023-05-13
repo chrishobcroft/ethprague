@@ -50,7 +50,7 @@ Livestream *only* the slides from screencap. This removes the need for a camera 
 
 ## Video
 
-HDMI cable for workshop facilitator to plug into (requires coordination via Camilla for comm's for speakers), and monitor showing that the connection has worked. Livestream what gets published to this HDMI cable. No need for camera.
+HDMI cable for workshop facilitator to plug into (requires coordination via Camilla for comm's for speakers), and monitor showing that the connection has worked. Livestream what gets published to this HDMI cable. No need for camera (unless the facilitator wishes to add one of their own).
 
 ## Audio
 
